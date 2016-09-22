@@ -3,6 +3,7 @@
 ###########################
 source("readFiles.R")
 source("gausfit.R")
+library("scatterplot3d")
 
 ######################
 # Einlesen der Daten #
@@ -74,10 +75,48 @@ errfac=sqrt(1/sum(1/aerr^2))
 
 cat(paste("\nUmrechnungsfaktor a=",factor,"+-",errfac," 1/s\n\n",sep=""))
 
+#######################
+# Zeit-Ort-Umrechnung #
+#######################
+sinamp=gitter
+sinamp[,1,]=sinamp[,1,]*factor
+
+
+######################################################
+# Gaußfits an Nulltes Maximum zur Positionskorrektur #
+######################################################
+grenzen=c(10,12)*10^(-5)
+mittelpunkte=c()
+
+for(i in 1:12){
+  
+  try({
+    mittelpunkt=gausfit(data.frame(x=sinamp[,1,i],y=sinamp[,2,i]),grenzen)
+    #plotgaus(mittelpunkt,grenzen)
+    mittelpunkte[i]=mittelpunkt["mu","Estimate"]
+  })
+  #print(i)
+}
+
+sinamp[,1,]=sinamp[,1,]-mittelpunkte
+
+
+
 ############################
 # Festlegen der Fitgrenzen #
 ############################
+fitgrenzen=array(dim=c(9,2))
+fitgrenzen[1,]=c(-1,1)
+fitgrenzen[2,]=c(-2.7,-1)
+fitgrenzen[3,]=c(1,2.6)
+fitgrenzen[4,]=c(-4.5,-2.7)
+fitgrenzen[5,]=c(3,5)
+fitgrenzen[6,]=c(-6.5,-4.5)
+fitgrenzen[7,]=c(5,6.5)
+fitgrenzen[8,]=c(-8.1,-6.5)
+fitgrenzen[9,]=c(7,8.5)
 
+fitgrenzen=fitgrenzen*10^(-5)
 
 
 ####################
@@ -89,17 +128,137 @@ colors=c("cadetblue1","cadetblue","blue","seagreen","green4","green","chartreuse
 #####################
 # Plotten der Daten #
 #####################
-xlim=c(0,0.00025)
+xlim=c(-0.000125,0.000125)
 ylim=c(0,10)
 zlim=c(1,12)
 p=scatterplot3d(xlim,zlim,ylim,type="n",box=FALSE,grid=TRUE,y.ticklabs=c(""),xlab=expression(sin(theta)),ylab="",zlab="Amplitude / V")
 
-sinamp=gitter
-sinamp[,1,]=sinamp[,1,]*factor
-#plot(sinamp[,1,1],sinamp[,2,1],type="n",bty="l")
 for(i in 1:N){
   p$points3d(sinamp[,1,i],((13-i)*sinamp[,2,i]/sinamp[,2,i]),sinamp[,2,i],type="p",pch=4,cex=0.5,col=colors[i])
-  #p$points3d()
-  #grid()
-
+  #k=i
+  #try({
+  #  fitdata=ninegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6))
+  #  #plotninegaus(fitdata,c(min(sinamp[,1,k]),max(sinamp[,1,k])),p,col="black",z=13-i)
+  #  printninefitdata(fitdata)
+  #  mus=getmus(fitdata)
+  #})
+  
 }
+
+#k=12
+#plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6)
+#grid()
+#fitdata=gausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),fitgrenzen[1,])
+#plotgaus(fitdata,fitgrenzen[1,])
+#printfitdata(fitdata)
+#for(i in c(2,3,4,5)){
+#  try({ 
+#    if(i==3)
+#      fitdata=gauslinfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),fitgrenzen[i,],B0=-0.2/1.6*10^5)
+#    else
+#      fitdata=gauslinfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),fitgrenzen[i,])
+#  plotgauslin(fitdata,fitgrenzen[i,])
+#  plotgaus(fitdata,c(-1,1)*10^(-4),C=0,col="blue")
+#  printfitdata(fitdata)
+#  mu=fitdata["mu","Estimate"]
+#  abline(v=mu)})
+#}
+
+#k=12
+a=function(x){x}
+fits=c()
+
+for(k in 1:6){
+  plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6)
+  grid()
+  try({
+    fitdata=threegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6))
+    fits[[k]]=fitdata
+    plotthreegaus(fitdata,c(min(sinamp[,1,k]),max(sinamp[,1,k])))
+    mus=getmus3(fitdata)
+    for(i in 2:2){
+      abline(v=mus[i])
+    }
+    printthreefitdata(fitdata)
+    
+  })
+}
+for(k in 7:7){
+  plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6)
+  grid()
+  try({
+    fitdata=threegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5*10^(-6))
+    fits[[k]]=fitdata
+    plotthreegaus(fitdata,c(min(sinamp[,1,k]),max(sinamp[,1,k])))
+    mus=getmus3(fitdata)
+    for(i in 2:2){
+      abline(v=mus[i])
+    }
+    printthreefitdata(fitdata)
+    
+  })
+}
+
+for(k in 8:8){
+  plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6)
+  grid()
+  try({
+    fitdata=threegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6))
+    fits[[k]]=fitdata
+    plotthreegaus(fitdata,c(min(sinamp[,1,k]),max(sinamp[,1,k])))
+    mus=getmus3(fitdata)
+    for(i in 2:2){
+      abline(v=mus[i])
+    }
+    printthreefitdata(fitdata)
+    
+  })
+}
+for(k in 9:9){
+  plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6)
+  grid()
+  try({
+    fitdata=fivegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6))
+    fits[[k]]=fitdata
+    plotfivegaus(fitdata,c(min(sinamp[,1,k]),max(sinamp[,1,k])))
+    mus=getmus5(fitdata)
+    for(i in 2:4){
+      abline(v=mus[i])
+    }
+    printfivefitdata(fitdata)
+    
+  })
+}
+
+for(k in 10:11){
+  plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6)
+  grid()
+  try({
+    fitdata=sevengausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6))
+    fits[[k]]=fitdata
+    plotsevengaus(fitdata,c(min(sinamp[,1,k]),max(sinamp[,1,k])))
+    mus=getmus5(fitdata)
+    for(i in 1:5){
+      abline(v=mus[i])
+    }
+    printsevenfitdata(fitdata)
+    
+  })
+}
+for(k in 12:12){
+  plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6)
+  grid()
+  try({
+    fitdata=ninegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6))
+    fits[[k]]=fitdata
+    plotninegaus(fitdata,c(min(sinamp[,1,k]),max(sinamp[,1,k])))
+    printninefitdata(fitdata)
+    mus=getmus(fitdata)
+    for(i in 1:7){
+      abline(v=mus[i])
+    }
+
+  })
+}
+
+source("auswertung3.R")
