@@ -92,10 +92,8 @@
 \section*{Abstract}
 
 
-Im Rahmen dieses Versuches werden Grundlagen der Beugung an Amplituden- und Phasengittern und der Fourieroptik vermittelt. 
-Hierzu werden die Gitterkonstanten eines Sinusgitters sowie verschiedener Amplitudengitter an Hand der Beugungsmaxima bestimmt. Zudem werden für die Amplitudengitter das Auflösungsvermögen und für eines dieser Gitter die Aperaturfunktion und Verhältnis der Spaltbreite zur Gitterkonstante bestimmt. 
-Die wesentlichen Teile des Versuchsaufbaus, der verwendet wird, sind dabei eine monochromatischen, kohärenten Lichtquelle (ein Helium-Neon-Laser), die nach Durchgang durch eine Blende auf das Gitter (bzw. Ultraschallzelle) trifft, ein rotierender Motorspiegel der das zeitliche Signal in ein räunliches umwandelt, sowie an ein Oszilloskop angeschlossene Photodioden. Außerdem werden verschiedene Linsen und Spiegel verwendet um den Strahlengang geeignet zu lenken.
-Unsere Ergebnisse...
+In diesem Versuch wird über die Messung von Beugungs-Spektren eines He-Ne-Lasers ($\lambda = 632,8nm$) die Gitterkonstante verschiedener Gitter (Sinusgitter, Amplitudengitter) und die Aperturfunktion eines bestimmten Gitters bestimmt. Der Hauptteil des Versuches beschäftigt sich mit der Untersuchung von Ultraschallwellen in Flüssigkeit als Phasengitter. Dazu wird die Intensitätsänderung der Beugungsordnung in Abhängigkeit der Spannung des Schallerzeugers (Piezoquarz) ausgewertet, die Wellenlänge der Ultraschallwelle bestimmt Nennerund mit der Raman-Nath-Theorie verglichen.
+
 \newpage
 \tableofcontents
 \newpage
@@ -106,10 +104,14 @@ Unsere Ergebnisse...
 
 
 
-
 \newpage
 \section{Theoretische Grundlagen}
 
+\subsection{Beugung}
+
+Trifft eine Lichtwelle auf ein Hindernis z.B. einen Spalt wird das Phänomen der Beugung beobachtet. In Abbildung \ref{Fraunhofer} ist  der Grundaufbau eines Experiments zum Nachweis von Beugungsphänomenen (Fraunhofersche Anordnung) dargestellt, der in diesem Experiment verwendet wird. 
+
+\gra{Fraunhofer}{Fraunhofersche Anordnung \label{Fraunhofer}}           
 
 \newpage
 \section{Sinusgitter}
@@ -195,6 +197,38 @@ g_{ges} = 996 \pm 7 nm
 \newpage
 \subsection{Auswertung}
 
+\subsubsection{Referenzgitter}
+
+Da das Oszilloskop eine Zeitdifferenz zwischen den Maxima angibt und keine Winkel, wird mit einem Referenzgitter mit bekannter Gitterkonstante zunächst eine Eichung des Winkel-Zeit-Verhältnisses durchgeführt und ein Umrechnungsfaktor bestimmt. Wir tragen hierfür die Zeit über die theoretische Lage der Maxima auf, die sich aus \[\sin\theta=\frac{n\lambda}{K_R}\] mit $K_R = 0.125 mm$ ergibt und führen einen linearen Fit durch.
+
+\vskip 10 pt
+ \begin{table}[h!]
+ {\centering{}
+\begin{tabular}{c||c|c}
+ m & $\sin(\theta)$ & t/$10^{-4}$ \\ \hline\hline
+ -2 &&    $ -1.3427 \pm 0.0011 $  \\ \hline
+ -1 && $ -0.6719 \pm 0.0005 $     \\ \hline
+ 0 &&  $ 0\pm 0.0004$         \\ \hline
+ 1 &&   $ 0.6729 \pm 0.0005 $        \\ \hline
+ 2 &&     $ 1.3479 \pm 0.0012 $        \\ \hline
+
+ \end{tabular}}
+ 
+ \caption{Abstände der Beugungsmaxima}
+\end{table}
+\vskip 10 pt
+
+\gra{Zeiteichung}{Zeit-Winkel-Eichung\label{EINHORN}}
+
+Aus der Steigung des Linearen Fits (siehe Abbildung \ref{EINHORN} ) lässt sich nun der Faktor für die Umrechnung von Zeit nach Winkeln bestimmen:
+
+\begin{align*}
+a &= 
+\text{mit} a = \frac{\sin(\theta))}{t}
+\end{align*}
+
+
+
 \subsubsection{Aperturfunktion}
 
 
@@ -217,15 +251,23 @@ Maximumg 0. Ordnung  & -  & - & $2.72 \pm 0.06$
 \vskip 10 pt
 
 
-Aus diesen und der zuvor berechneten Gitterkonstante $g_1 =    $ (siehe ref!!!) läaat sich mittels der Fourierreihe (siehe ref!!!) nun die Aperturfunktion näherungsweise bestimmen:
+Aus diesen und der zuvor berechneten Gitterkonstante $g_1 = (807 \pm 9) nm$ (siehe ref!!!) lässt sich mittels der Fourierreihe (siehe ref!!!) nun die Aperturfunktion näherungsweise bestimmen:
 
-FORMEL
+\[f(x)\approx\sum^{5}_{k=0}\pm\sqrt{I_k}\cos\left(\frac{2k\pi x}{g_1} \right) \]
 
-
-
-
+\gra{apertur}{Genäherte Aperturfunktion von Gitter 1} \label{kotz}
 
 
+
+Aus der Aperturfunktion bestimmen wir nun die Spaltbreite $b$, indem wir das FHWM durch Bestimmung des Schnittpunktes der Aperturfunktion mit der Konstanten mit dem Wert $x=\frac{max}{2}$  berechnen (siehe Abbildung \ref{LONDOOON}), wobei max für das Maximum der Aperturfunktion steht.
+
+\gra{Spaltbreite}{Bestimmung der Spaltbreite aus der Aperturfunktion}\label{LONDOOON}
+
+Wir erhalten:
+
+\begin{align*}
+b = 120 nm
+\end{align*}
 
 \newpage
 \subsection{Diskussion\label{BOOOOOMMMM!!!!!!!!!}} 
