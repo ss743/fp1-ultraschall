@@ -76,14 +76,16 @@ for(i in c(1,2,4,5)){
   a[i,2]=t[i,2]/t[i,1]*a[i,1]
 }
 
-
+ 
 aval=a[,1]
 aval=aval[!is.na(aval)]
 aerr=a[,2]
 aerr=aerr[!is.na(aerr)]
 
-factor=sum(aval/aerr^2)/sum(1/aerr^2)
-errfac=sqrt(1/sum(1/aerr^2))
+factor=74.35#sum(aval/aerr^2)/sum(1/aerr^2)
+errfac=0.05#sqrt(1/sum(1/aerr^2))
+
+corrfac=factor/1.1762
 
 cat(paste("\nUmrechnungsfaktor a=",factor,"+-",errfac," 1/s\n\n",sep=""))
 
@@ -103,17 +105,17 @@ fitgrenzen1[,8]=c(6.9,7.7)
 fitgrenzen1[,9]=c(7.7,8.5)
 fitgrenzen1[,10]=c(8.5,9.2)
 fitgrenzen1[,11]=c(9.3,10.0)
-fitgrenzen1=fitgrenzen1*10^(-4)
+fitgrenzen1=fitgrenzen1*10^(-4)*corrfac
 fitgrenzen1b=array(dim=c(2,1))
 fitgrenzen1b[,1]=c(5.3,6.2)
-fitgrenzen1b=fitgrenzen1b*10^(-4)
+fitgrenzen1b=fitgrenzen1b*10^(-4)*corrfac
 
 fitgrenzen2=array(dim=c(2,4))
 fitgrenzen2[,1]=c(8.5,9.4)
 fitgrenzen2[,2]=c(11.3,12.3)
 fitgrenzen2[,3]=c(14.2,15.2)
 fitgrenzen2[,4]=c(17.2,18.2)
-fitgrenzen2=fitgrenzen2*10^(-4)
+fitgrenzen2=fitgrenzen2*10^(-4)*corrfac
 
 fitgrenzen3=array(dim=c(2,5))
 fitgrenzen3[,1]=c(3.6,4.2)
@@ -121,7 +123,7 @@ fitgrenzen3[,2]=c(4.6,5.2)
 fitgrenzen3[,3]=c(5.4,6.2)
 fitgrenzen3[,4]=c(6.5,7.2)
 fitgrenzen3[,5]=c(7.5,8.1)
-fitgrenzen3=fitgrenzen3*10^(-4)
+fitgrenzen3=fitgrenzen3*10^(-4)*corrfac
 
 fitgrenzen4=array(dim=c(2,5))
 fitgrenzen4[,1]=c(2.7,3.25)
@@ -129,7 +131,7 @@ fitgrenzen4[,2]=c(4.6,5.2)
 fitgrenzen4[,3]=c(5.4,6.2)
 fitgrenzen4[,4]=c(6.5,7.2)
 fitgrenzen4[,5]=c(8.5,9.1)
-fitgrenzen4=fitgrenzen4*10^(-4)
+fitgrenzen4=fitgrenzen4*10^(-4)*corrfac
 
 fitgrenzen5=array(dim=c(2,5))
 fitgrenzen5[,1]=c(1.7,2.25)
@@ -137,7 +139,7 @@ fitgrenzen5[,2]=c(3.5,4.3)
 fitgrenzen5[,3]=c(5.4,6.2)
 fitgrenzen5[,4]=c(7.4,8.1)
 fitgrenzen5[,5]=c(9.5,10)
-fitgrenzen5=fitgrenzen5*10^(-4)
+fitgrenzen5=fitgrenzen5*10^(-4)*corrfac
 
 
 #####################
