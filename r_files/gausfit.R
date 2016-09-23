@@ -797,10 +797,10 @@ threegausfunction <- function(fitdata,x){ #--- Plotten der gefitteten Gaußfunkt
   sig1<-fitdata["sig1","Estimate"]
   sig2<-fitdata["sig2","Estimate"]
   sig3<-fitdata["sig3","Estimate"]
-  print(x)
-  print(c(C,0))
+  #print(x)
+  #print(c(C,0))
   #plot (function(x){C + N1*1/(sqrt(2*pi)*sig1)*exp(-(x-mu1)^2/(2*sig1^2))+ N2*1/(sqrt(2*pi)*sig2)*exp(-(x-mu2)^2/(2*sig2^2))+ N3*1/(sqrt(2*pi)*sig3)*exp(-(x-mu3)^2/(2*sig3^2))},bereich[1],bereich[2],add=TRUE,col=col)
-  print(C + N1*1/(sqrt(2*pi)*sig1)*exp(-(x-mu1)^2/(2*sig1^2))+ N2*1/(sqrt(2*pi)*sig2)*exp(-(x-mu2)^2/(2*sig2^2))+ N3*1/(sqrt(2*pi)*sig3)*exp(-(x-mu3)^2/(2*sig3^2)))
+  #print(C + N1*1/(sqrt(2*pi)*sig1)*exp(-(x-mu1)^2/(2*sig1^2))+ N2*1/(sqrt(2*pi)*sig2)*exp(-(x-mu2)^2/(2*sig2^2))+ N3*1/(sqrt(2*pi)*sig3)*exp(-(x-mu3)^2/(2*sig3^2)))
   return(C + N1*1/(sqrt(2*pi)*sig1)*exp(-(x-mu1)^2/(2*sig1^2))+ N2*1/(sqrt(2*pi)*sig2)*exp(-(x-mu2)^2/(2*sig2^2))+ N3*1/(sqrt(2*pi)*sig3)*exp(-(x-mu3)^2/(2*sig3^2)))
 }
 
