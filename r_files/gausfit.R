@@ -496,6 +496,25 @@ getmuerrs <- function(fitdata){
   return(c(smu1,smu2,smu3,smu4,smu5,smu6,smu7,smu8,smu9))
 }
 
+getmuerrs5 <- function(fitdata){
+  smu1<-fitdata["mu1","Std. Error"]
+  smu2<-fitdata["mu2","Std. Error"]
+  smu3<-fitdata["mu3","Std. Error"]
+  smu4<-fitdata["mu4","Std. Error"]
+  smu5<-fitdata["mu5","Std. Error"]
+
+  return(c(smu1,smu2,smu3,smu4,smu5))
+}
+
+getmuerrs3 <- function(fitdata){
+  smu1<-fitdata["mu1","Std. Error"]
+  smu2<-fitdata["mu2","Std. Error"]
+  smu3<-fitdata["mu3","Std. Error"]
+
+  return(c(smu1,smu2,smu3))
+}
+
+
 
 
 printninefitdata <- function(fitdata,title=""){ #--- Ausgabe der Gaußfit-Daten

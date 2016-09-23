@@ -3,6 +3,7 @@
 ###########################
 source("readFiles.R")
 source("gausfit.R")
+source("round.R")
 library("scatterplot3d")
 
 ######################
@@ -131,7 +132,7 @@ colors=c("cadetblue1","cadetblue","blue","seagreen","green4","green","chartreuse
 xlim=c(-0.000125,0.000125)
 ylim=c(0,10)
 zlim=c(1,12)
-p=scatterplot3d(xlim,zlim,ylim,type="n",box=FALSE,grid=TRUE,y.ticklabs=c(""),xlab=expression(sin(theta)),ylab="",zlab="Amplitude / V")
+p=scatterplot3d(xlim,zlim,ylim,type="n",box=FALSE,grid=TRUE,y.ticklabs=c(""),xlab=expression(sin(theta)),ylab="",zlab="I / V",mar=c(4,4,1,1))
 
 for(i in 1:N){
   p$points3d(sinamp[,1,i],((13-i)*sinamp[,2,i]/sinamp[,2,i]),sinamp[,2,i],type="p",pch=4,cex=0.5,col=colors[i])
@@ -144,6 +145,14 @@ for(i in 1:N){
   #})
   
 }
+
+U=c(0.00,0.88,1.73,2.43,3.20,4.20,5.10,6.08,7.04,8.01,8.97,9.69)
+legendvector=c()
+for(i in 1:12){
+  legendvector[i]=paste("U = ",U[i]," V",sep="")
+}
+
+legend(x=-2.5,y=8.1,legendvector,fill=colors,cex=0.7,bty="n")
 
 #k=12
 #plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6)
@@ -169,30 +178,38 @@ a=function(x){x}
 fits=c()
 
 for(k in 1:6){
-  plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6)
+  par(mar=c(5,5,1,2))
+  plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6,xlab=expression(sin(theta)),ylab="I / V")
   grid()
   try({
     fitdata=threegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6))
     fits[[k]]=fitdata
     plotthreegaus(fitdata,c(min(sinamp[,1,k]),max(sinamp[,1,k])))
     mus=getmus3(fitdata)
+    smus=getmuerrs3(fitdata)
     for(i in 2:2){
       abline(v=mus[i])
+      rmu=roundfunc(c(mus[i],smus[i]))
+      text(x=5*10^(-5),y=(5-0.2*i),paste("Peak ",i-1," bei sin(theta)=",rmu[1],"+-",rmu[2],sep=""),cex=0.6)
     }
     printthreefitdata(fitdata)
     
   })
 }
 for(k in 7:7){
-  plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6)
+  par(mar=c(5,5,1,2))
+  plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6,xlab=expression(sin(theta)),ylab="I / V")
   grid()
   try({
     fitdata=threegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5*10^(-6))
     fits[[k]]=fitdata
     plotthreegaus(fitdata,c(min(sinamp[,1,k]),max(sinamp[,1,k])))
     mus=getmus3(fitdata)
+    smus=getmuerrs3(fitdata)
     for(i in 2:2){
       abline(v=mus[i])
+      rmu=roundfunc(c(mus[i],smus[i]))
+      text(x=5*10^(-5),y=(5-0.2*i),paste("Peak ",i-1," bei sin(theta)=",rmu[1],"+-",rmu[2],sep=""),cex=0.6)
     }
     printthreefitdata(fitdata)
     
@@ -200,30 +217,38 @@ for(k in 7:7){
 }
 
 for(k in 8:8){
-  plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6)
+  par(mar=c(5,5,1,2))
+  plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6,xlab=expression(sin(theta)),ylab="I / V")
   grid()
   try({
     fitdata=threegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6))
     fits[[k]]=fitdata
     plotthreegaus(fitdata,c(min(sinamp[,1,k]),max(sinamp[,1,k])))
     mus=getmus3(fitdata)
+    smus=getmuerrs3(fitdata)
     for(i in 2:2){
       abline(v=mus[i])
+      rmu=roundfunc(c(mus[i],smus[i]))
+      text(x=5*10^(-5),y=(5-0.2*i),paste("Peak ",i-1," bei sin(theta)=",rmu[1],"+-",rmu[2],sep=""),cex=0.6)
     }
     printthreefitdata(fitdata)
     
   })
 }
 for(k in 9:9){
-  plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6)
+  par(mar=c(5,5,1,2))
+  plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6,xlab=expression(sin(theta)),ylab="I / V")
   grid()
   try({
     fitdata=fivegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6))
     fits[[k]]=fitdata
     plotfivegaus(fitdata,c(min(sinamp[,1,k]),max(sinamp[,1,k])))
     mus=getmus5(fitdata)
+    smus=getmuerrs5(fitdata)
     for(i in 2:4){
       abline(v=mus[i])
+      rmu=roundfunc(c(mus[i],smus[i]))
+      text(x=5*10^(-5),y=(5-0.2*i),paste("Peak ",i-1," bei sin(theta)=",rmu[1],"+-",rmu[2],sep=""),cex=0.6)
     }
     printfivefitdata(fitdata)
     
@@ -231,22 +256,26 @@ for(k in 9:9){
 }
 
 for(k in 10:11){
-  plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6)
+  par(mar=c(5,5,1,2))
+  plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6,xlab=expression(sin(theta)),ylab="I / V")
   grid()
   try({
     fitdata=sevengausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6))
     fits[[k]]=fitdata
     plotsevengaus(fitdata,c(min(sinamp[,1,k]),max(sinamp[,1,k])))
     mus=getmus5(fitdata)
+    smus=getmuerrs5(fitdata)
     for(i in 1:5){
       abline(v=mus[i])
+      rmu=roundfunc(c(mus[i],smus[i]))
+      text(x=8*10^(-5),y=(3.2-0.2*i),paste("Peak ",i," bei sin(theta)=",rmu[1],"+-",rmu[2],sep=""),cex=0.6)
     }
     printsevenfitdata(fitdata)
     
   })
 }
 for(k in 12:12){
-  plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6)
+  plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6,xlab=expression(sin(theta)),ylab="I / V")
   grid()
   try({
     fitdata=ninegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6))
@@ -254,8 +283,11 @@ for(k in 12:12){
     plotninegaus(fitdata,c(min(sinamp[,1,k]),max(sinamp[,1,k])))
     printninefitdata(fitdata)
     mus=getmus(fitdata)
+    smus=getmuerrs(fitdata)
     for(i in 1:7){
       abline(v=mus[i])
+      rmu=roundfunc(c(mus[i],smus[i]))
+      text(x=9*10^(-5),y=(2.5-0.2*i),paste("Peak ",i," bei sin(theta)=",rmu[1],"+-",rmu[2],sep=""),cex=0.6)
     }
 
   })

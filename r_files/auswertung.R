@@ -52,7 +52,16 @@ fitgrenzen=fitgrenzen*10^(-4)
 mu=array(dim=c(5,2))
 t=array(dim=c(5,2))
 a=array(dim=c(5,2))
-sin=c(-1.582,-0.791,0,0.791,1.582)*10^(-4)
+
+###########
+# Eichung #
+###########
+K=1/8*10^(-3)
+lambda=632.8*10^(-9)
+m=c(-2,-1,0,1,2)
+sin=lambda/K*m
+
+#sin=c(-1.582,-0.791,0,0.791,1.582)*10^(-4)
 for(i in 1:5){
   fit=gausfit(data.frame(x=ref[,1],y=ref[,2]),bereich=fitgrenzen[,i])
   plotgaus(fit, fitgrenzen[,i])
@@ -66,6 +75,8 @@ for(i in c(1,2,4,5)){
   a[i,1]=sin[i]/t[i,1]
   a[i,2]=t[i,2]/t[i,1]*a[i,1]
 }
+
+
 aval=a[,1]
 aval=aval[!is.na(aval)]
 aerr=a[,2]
