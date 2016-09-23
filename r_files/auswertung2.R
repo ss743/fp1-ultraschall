@@ -52,7 +52,8 @@ fitgrenzen=fitgrenzen*10^(-4)
 mu=array(dim=c(5,2))
 t=array(dim=c(5,2))
 a=array(dim=c(5,2))
-sin=c(-1.582,-0.791,0,0.791,1.582)*10^(-4)
+#sin=c(-1.582,-0.791,0,0.791,1.582)*10^(-4)
+sin=c(-0.0101248,-0.0050624,0,0.0050624,0.0101248)
 for(i in 1:5){
   fit=gausfit(data.frame(x=ref[,1],y=ref[,2]),bereich=fitgrenzen[,i])
   plotgaus(fit, fitgrenzen[,i])
@@ -71,8 +72,11 @@ aval=aval[!is.na(aval)]
 aerr=a[,2]
 aerr=aerr[!is.na(aerr)]
 
-factor=sum(aval/aerr^2)/sum(1/aerr^2)
-errfac=sqrt(1/sum(1/aerr^2))
+factor=70.64#sum(aval/aerr^2)/sum(1/aerr^2)
+errfac=0.06#sqrt(1/sum(1/aerr^2))
+
+corrfac=factor/1.117575
+
 
 cat(paste("\nUmrechnungsfaktor a=",factor,"+-",errfac," 1/s\n\n",sep=""))
 
@@ -86,7 +90,7 @@ sinamp[,1,]=sinamp[,1,]*factor
 ######################################################
 # Gaußfits an Nulltes Maximum zur Positionskorrektur #
 ######################################################
-grenzen=c(10,12)*10^(-5)
+grenzen=c(10,12)*10^(-5)*corrfac
 mittelpunkte=c()
 
 for(i in 1:12){
@@ -117,7 +121,7 @@ fitgrenzen[7,]=c(5,6.5)
 fitgrenzen[8,]=c(-8.1,-6.5)
 fitgrenzen[9,]=c(7,8.5)
 
-fitgrenzen=fitgrenzen*10^(-5)
+fitgrenzen=fitgrenzen*10^(-5)*corrfac
 
 
 ####################
@@ -129,7 +133,7 @@ colors=c("cadetblue1","cadetblue","blue","seagreen","green4","green","chartreuse
 #####################
 # Plotten der Daten #
 #####################
-xlim=c(-0.000125,0.000125)
+xlim=c(-0.000125,0.000125)*corrfac
 ylim=c(0,10)
 zlim=c(1,12)
 p=scatterplot3d(xlim,zlim,ylim,type="n",box=FALSE,grid=TRUE,y.ticklabs=c(""),xlab=expression(sin(theta)),ylab="",zlab="I / V",mar=c(4,4,1,1))
@@ -152,7 +156,7 @@ for(i in 1:12){
   legendvector[i]=paste("U = ",U[i]," V",sep="")
 }
 
-legend(x=-2.5,y=8.1,legendvector,fill=colors,cex=0.7,bty="n")
+legend(x=-1.5,y=7.6,legendvector,fill=colors,cex=0.7,bty="n")
 
 #k=12
 #plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6)
@@ -182,7 +186,7 @@ for(k in 1:6){
   plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6,xlab=expression(sin(theta)),ylab="I / V")
   grid()
   try({
-    fitdata=threegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6))
+    fitdata=threegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6)*corrfac)
     fits[[k]]=fitdata
     plotthreegaus(fitdata,c(min(sinamp[,1,k]),max(sinamp[,1,k])))
     mus=getmus3(fitdata)
@@ -190,7 +194,7 @@ for(k in 1:6){
     for(i in 2:2){
       abline(v=mus[i])
       rmu=roundfunc(c(mus[i],smus[i]))
-      text(x=5*10^(-5),y=(5-0.2*i),paste("Peak ",i-1," bei sin(theta)=",rmu[1],"+-",rmu[2],sep=""),cex=0.6)
+      text(x=5*10^(-3),y=(5-0.2*i),paste("Peak ",i-1," bei sin(theta)=",rmu[1],"+-",rmu[2],sep=""),cex=0.6)
     }
     printthreefitdata(fitdata)
     
@@ -201,7 +205,7 @@ for(k in 7:7){
   plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6,xlab=expression(sin(theta)),ylab="I / V")
   grid()
   try({
-    fitdata=threegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5*10^(-6))
+    fitdata=threegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5*10^(-6)*corrfac)
     fits[[k]]=fitdata
     plotthreegaus(fitdata,c(min(sinamp[,1,k]),max(sinamp[,1,k])))
     mus=getmus3(fitdata)
@@ -209,7 +213,7 @@ for(k in 7:7){
     for(i in 2:2){
       abline(v=mus[i])
       rmu=roundfunc(c(mus[i],smus[i]))
-      text(x=5*10^(-5),y=(5-0.2*i),paste("Peak ",i-1," bei sin(theta)=",rmu[1],"+-",rmu[2],sep=""),cex=0.6)
+      text(x=5*10^(-3),y=(5-0.2*i),paste("Peak ",i-1," bei sin(theta)=",rmu[1],"+-",rmu[2],sep=""),cex=0.6)
     }
     printthreefitdata(fitdata)
     
@@ -221,7 +225,7 @@ for(k in 8:8){
   plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6,xlab=expression(sin(theta)),ylab="I / V")
   grid()
   try({
-    fitdata=threegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6))
+    fitdata=threegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6)*corrfac)
     fits[[k]]=fitdata
     plotthreegaus(fitdata,c(min(sinamp[,1,k]),max(sinamp[,1,k])))
     mus=getmus3(fitdata)
@@ -229,7 +233,7 @@ for(k in 8:8){
     for(i in 2:2){
       abline(v=mus[i])
       rmu=roundfunc(c(mus[i],smus[i]))
-      text(x=5*10^(-5),y=(5-0.2*i),paste("Peak ",i-1," bei sin(theta)=",rmu[1],"+-",rmu[2],sep=""),cex=0.6)
+      text(x=5*10^(-3),y=(5-0.2*i),paste("Peak ",i-1," bei sin(theta)=",rmu[1],"+-",rmu[2],sep=""),cex=0.6)
     }
     printthreefitdata(fitdata)
     
@@ -240,7 +244,7 @@ for(k in 9:9){
   plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6,xlab=expression(sin(theta)),ylab="I / V")
   grid()
   try({
-    fitdata=fivegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6))
+    fitdata=fivegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6)*corrfac)
     fits[[k]]=fitdata
     plotfivegaus(fitdata,c(min(sinamp[,1,k]),max(sinamp[,1,k])))
     mus=getmus5(fitdata)
@@ -248,7 +252,7 @@ for(k in 9:9){
     for(i in 2:4){
       abline(v=mus[i])
       rmu=roundfunc(c(mus[i],smus[i]))
-      text(x=5*10^(-5),y=(5-0.2*i),paste("Peak ",i-1," bei sin(theta)=",rmu[1],"+-",rmu[2],sep=""),cex=0.6)
+      text(x=5*10^(-3),y=(5-0.2*i),paste("Peak ",i-1," bei sin(theta)=",rmu[1],"+-",rmu[2],sep=""),cex=0.6)
     }
     printfivefitdata(fitdata)
     
@@ -260,7 +264,7 @@ for(k in 10:11){
   plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6,xlab=expression(sin(theta)),ylab="I / V")
   grid()
   try({
-    fitdata=sevengausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6))
+    fitdata=sevengausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6)*corrfac)
     fits[[k]]=fitdata
     plotsevengaus(fitdata,c(min(sinamp[,1,k]),max(sinamp[,1,k])))
     mus=getmus5(fitdata)
@@ -268,7 +272,7 @@ for(k in 10:11){
     for(i in 1:5){
       abline(v=mus[i])
       rmu=roundfunc(c(mus[i],smus[i]))
-      text(x=8*10^(-5),y=(3.2-0.2*i),paste("Peak ",i," bei sin(theta)=",rmu[1],"+-",rmu[2],sep=""),cex=0.6)
+      text(x=5*10^(-3),y=(3.2-0.2*i),paste("Peak ",i," bei sin(theta)=",rmu[1],"+-",rmu[2],sep=""),cex=0.6)
     }
     printsevenfitdata(fitdata)
     
@@ -278,7 +282,7 @@ for(k in 12:12){
   plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6,xlab=expression(sin(theta)),ylab="I / V")
   grid()
   try({
-    fitdata=ninegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6))
+    fitdata=ninegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6)*corrfac)
     fits[[k]]=fitdata
     plotninegaus(fitdata,c(min(sinamp[,1,k]),max(sinamp[,1,k])))
     printninefitdata(fitdata)
@@ -287,7 +291,7 @@ for(k in 12:12){
     for(i in 1:7){
       abline(v=mus[i])
       rmu=roundfunc(c(mus[i],smus[i]))
-      text(x=9*10^(-5),y=(2.5-0.2*i),paste("Peak ",i," bei sin(theta)=",rmu[1],"+-",rmu[2],sep=""),cex=0.6)
+      text(x=6*10^(-3),y=(2.5-0.2*i),paste("Peak ",i," bei sin(theta)=",rmu[1],"+-",rmu[2],sep=""),cex=0.6)
     }
 
   })

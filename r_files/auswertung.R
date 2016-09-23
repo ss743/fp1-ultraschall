@@ -75,7 +75,7 @@ for(i in c(1,2,4,5)){
   a[i,1]=sin[i]/t[i,1]
   a[i,2]=t[i,2]/t[i,1]*a[i,1]
 }
-
+print(sin)
  
 aval=a[,1]
 aval=aval[!is.na(aval)]

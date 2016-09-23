@@ -67,7 +67,7 @@ threegausfit <- function(input,bereich=c(input$x[1],input$x[length(input$x)]),we
     fit = nls(thegaussian,daten,weights=1/err^2,start=list(C=ymin,N=N0,mu=mu0,sig=sig0))
   }
   else
-    fit = nls(thegaussian,daten,start=list(C=ymin,N1=N0[1],N2=N0[2],N3=N0[3],mu1=-1.72*10^(-5),mu2=0.19*10^(-5),mu3=2.4*10^(-5),sig1=sig0,sig2=sig0,sig3=sig0))
+    fit = nls(thegaussian,daten,start=list(C=ymin,N1=N0[1],N2=N0[2],N3=N0[3],mu1=-1.72*10^(-5)*corrfac,mu2=0.19*10^(-5)*corrfac,mu3=2.4*10^(-5)*corrfac,sig1=sig0,sig2=sig0,sig3=sig0))
   
   return(summary(fit)$parameters)
   
@@ -103,7 +103,7 @@ fivegausfit <- function(input,bereich=c(input$x[1],input$x[length(input$x)]),wei
     fit = nls(thegaussian,daten,weights=1/err^2,start=list(C=ymin,N=N0,mu=mu0,sig=sig0))
   }
   else
-    fit = nls(thegaussian,daten,start=list(C=ymin,N1=N0[1],N2=N0[2],N3=N0[3],N4=N0[4],N5=N0[5],mu1=-3.52*10^(-5),mu2=-1.72*10^(-5),mu3=0.19*10^(-5),mu4=2.4*10^(-5),mu5=3.78*10^(-5),sig1=sig0,sig2=sig0,sig3=sig0,sig4=sig0,sig5=sig0))
+    fit = nls(thegaussian,daten,start=list(C=ymin,N1=N0[1],N2=N0[2],N3=N0[3],N4=N0[4],N5=N0[5],mu1=-3.52*10^(-5)*corrfac,mu2=-1.72*10^(-5)*corrfac,mu3=0.19*10^(-5)*corrfac,mu4=2.4*10^(-5)*corrfac,mu5=3.78*10^(-5)*corrfac,sig1=sig0,sig2=sig0,sig3=sig0,sig4=sig0,sig5=sig0))
   
   return(summary(fit)$parameters)
   
@@ -138,7 +138,7 @@ ninegausfit <- function(input,bereich=c(input$x[1],input$x[length(input$x)]),wei
     fit = nls(thegaussian,daten,weights=1/err^2,start=list(C=ymin,N=N0,mu=mu0,sig=sig0))
   }
   else
-    fit = nls(thegaussian,daten,start=list(C=ymin,N1=N0[1],N2=N0[2],N3=N0[3],N4=N0[4],N5=N0[5],N6=N0[6],N7=N0[7],N8=N0[8],N9=N0[9],mu1=-3.52*10^(-5),mu2=-1.72*10^(-5),mu3=0.19*10^(-5),mu4=2.4*10^(-5),mu5=3.78*10^(-5),mu6=-5.5*10^(-5),mu7=6*10^(-5),mu8=-7.3*10^(-5),mu9=8*10^(-5),sig1=sig0,sig2=sig0,sig3=sig0,sig4=sig0,sig5=sig0,sig6=sig0,sig7=sig0,sig8=sig0,sig9=sig0))
+    fit = nls(thegaussian,daten,start=list(C=ymin,N1=N0[1],N2=N0[2],N3=N0[3],N4=N0[4],N5=N0[5],N6=N0[6],N7=N0[7],N8=N0[8],N9=N0[9],mu1=-3.52*10^(-5)*corrfac,mu2=-1.72*10^(-5)*corrfac,mu3=0.19*10^(-5)*corrfac,mu4=2.4*10^(-5)*corrfac,mu5=3.78*10^(-5)*corrfac,mu6=-5.5*10^(-5)*corrfac,mu7=6*10^(-5)*corrfac,mu8=-7.3*10^(-5)*corrfac,mu9=8*10^(-5)*corrfac,sig1=sig0,sig2=sig0,sig3=sig0,sig4=sig0,sig5=sig0,sig6=sig0,sig7=sig0,sig8=sig0,sig9=sig0))
   
   return(summary(fit)$parameters)
   
@@ -173,7 +173,7 @@ sevengausfit <- function(input,bereich=c(input$x[1],input$x[length(input$x)]),we
     fit = nls(thegaussian,daten,weights=1/err^2,start=list(C=ymin,N=N0,mu=mu0,sig=sig0))
   }
   else
-    fit = nls(thegaussian,daten,start=list(C=ymin,N1=N0[1],N2=N0[2],N3=N0[3],N4=N0[4],N5=N0[5],N6=N0[6],N7=N0[7],mu1=-3.52*10^(-5),mu2=-1.72*10^(-5),mu3=0.19*10^(-5),mu4=2.4*10^(-5),mu5=3.78*10^(-5),mu6=-5.5*10^(-5),mu7=6*10^(-5),sig1=sig0,sig2=sig0,sig3=sig0,sig4=sig0,sig5=sig0,sig6=sig0,sig7=sig0))
+    fit = nls(thegaussian,daten,start=list(C=ymin,N1=N0[1],N2=N0[2],N3=N0[3],N4=N0[4],N5=N0[5],N6=N0[6],N7=N0[7],mu1=-3.52*10^(-5)*corrfac,mu2=-1.72*10^(-5)*corrfac,mu3=0.19*10^(-5)*corrfac,mu4=2.4*10^(-5)*corrfac,mu5=3.78*10^(-5)*corrfac,mu6=-5.5*10^(-5)*corrfac,mu7=6*10^(-5)*corrfac,sig1=sig0,sig2=sig0,sig3=sig0,sig4=sig0,sig5=sig0,sig6=sig0,sig7=sig0))
   
   return(summary(fit)$parameters)
   

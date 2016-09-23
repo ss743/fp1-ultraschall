@@ -113,6 +113,8 @@ Trifft eine Lichtwelle auf ein Hindernis z.B. einen Spalt wird das Phänomen der
 
 \gra{Fraunhofer}{Fraunhofersche Anordnung \label{Fraunhofer}}           
 
+\subsection{Raman-Nath-Theorie}
+\label{Raman-Nath}
 \newpage
 \section{Sinusgitter}
 
@@ -199,6 +201,8 @@ g_{ges} = 996 \pm 7 nm
 
 \subsubsection{Referenzgitter}
 
+\label{Happyisttoll}
+
 Da das Oszilloskop eine Zeitdifferenz zwischen den Maxima angibt und keine Winkel, wird mit einem Referenzgitter mit bekannter Gitterkonstante zunächst eine Eichung des Winkel-Zeit-Verhältnisses durchgeführt und ein Umrechnungsfaktor bestimmt. Wir tragen hierfür die Zeit über die theoretische Lage der Maxima auf, die sich aus \[\sin\theta=\frac{n\lambda}{K_R}\] mit $K_R = 0.125 mm$ ergibt und führen einen linearen Fit durch.
 
 \vskip 10 pt
@@ -206,15 +210,15 @@ Da das Oszilloskop eine Zeitdifferenz zwischen den Maxima angibt und keine Winke
  {\centering{}
 \begin{tabular}{c||c|c}
  m & $\sin(\theta)$ & t/$10^{-4}$ \\ \hline\hline
- -2 &&    $ -1.3427 \pm 0.0011 $  \\ \hline
- -1 && $ -0.6719 \pm 0.0005 $     \\ \hline
- 0 &&  $ 0\pm 0.0004$         \\ \hline
- 1 &&   $ 0.6729 \pm 0.0005 $        \\ \hline
- 2 &&     $ 1.3479 \pm 0.0012 $        \\ \hline
+ -2 &$-0.0101$&    $ -1.3427 \pm 0.0011 $  \\ \hline
+ -1 &$-0.0051$& $ -0.6719 \pm 0.0005 $     \\ \hline
+ 0 &$0$&  $ 0\pm 0.0004$         \\ \hline
+ 1 &$0.0051$&   $ 0.6729 \pm 0.0005 $        \\ \hline
+ 2 &$0.0101$&     $ 1.3479 \pm 0.0012 $        \\ \hline
 
- \end{tabular}}
+ \end{tabular}
  
- \caption{Abstände der Beugungsmaxima}
+ \caption{Abstände der Beugungsmaxima}}
 \end{table}
 \vskip 10 pt
 
@@ -223,10 +227,21 @@ Da das Oszilloskop eine Zeitdifferenz zwischen den Maxima angibt und keine Winke
 Aus der Steigung des Linearen Fits (siehe Abbildung \ref{EINHORN} ) lässt sich nun der Faktor für die Umrechnung von Zeit nach Winkeln bestimmen:
 
 \begin{align*}
-a &= 
-\text{mit} a = \frac{\sin(\theta))}{t}
+a &= (74.35\pm0.05)\,\frac1{\mathrm{s}}&
+\text{mit } a = \frac{\sin(\theta))}{t}
 \end{align*}
 
+\subsubsection{Bestimmung verschiedener Gitterkonstanten}
+Wir haben für 5 verschiedenen unbekannte Amplitudengitter Interferenzmuster aufgenommen und bestimmen nun aus diesen die jeweilige Gitterkonstante. Die Zeitabhängigkeit der Interferenzmuster werden nun mithilfe des in \ref{Happyisttoll} berechneten Wertes in eine $\sin\theta$-Abhängigkeit umgerechnet. Anschließend wird aus den Beugungsordnungen in Abhängigkeit der Positionen der Maxima die Gitterkonstante des jeweiligen Gitters bestimmt. Die Steigung $a$ des linearen Fits $m=\frac{K}{\lambda}\sin\theta$ beträgt nun $a=\frac{K}{\lambda}$. Damit gilt für die Gitterkonstante: $$K=a\cdot\lambda$$.
+
+Wir erhalten nun mit dieser Rechnung die folgenden Werte für die Gitterkonstanten:
+\begin{align*}
+	K_1&=(129.26\pm0.07)\,\mathrm{\mu m}\\
+	K_2&=(34.26\pm0.03)\,\mathrm{\mu m}\\
+	K_3&=(102.9\pm0.3)\,\mathrm{\mu m}\\
+	K_4&=(72\pm6)\,\mathrm{\mu m}\\
+	K_5&=(51.57\pm0.08)\,\mathrm{\mu m}\\
+\end{align*}
 
 
 \subsubsection{Aperturfunktion}
@@ -236,7 +251,7 @@ Wir bestimmen die Aperturfunktion für Gitter 1, da wir hier die meisten Maxima 
 Aus den Amplituden der gefitteten  Gaußfunktionen erhalten wir hierbei die Intensität, wobei wir wir für jedes Maximum die Amplitude aus linkem und rechtem Maximum gewichtet mitteln (siehe ref!!!). 
  \vskip 10 pt
  \begin{table}[h!]
- {\centering{}
+ {\centering
 \begin{tabular}{c||c|c|c}
  					& $I_1/V$ 	& $I_2/V$ & $I_{ges}/V$	\\ \hline\hline
 Maximum 5. Ordnung     & $0.08 \pm 0.14$  & $0.040 \pm 0.009$      &  $0.04012 \pm  0.00008$                       \\ \hline
@@ -245,8 +260,8 @@ Maximum 3. Ordnung	&	 $0.402 \pm 0.009$ 	   	&  $0.447 \pm 0.010$  	&  $0.425 \p
 Maximum 2. Ordnung      	&  $0.95 \pm 0.02$  	&  $0.92 \pm 0.02$  &  $0.935 \pm 0.014$  \\ \hline
 Maximum 1. Ordnung    & $2.8 \pm 0.1$ & $2.9 \pm 0.1$ &   $2.88 \pm 0.07$        \\ \hline                                           
 Maximumg 0. Ordnung  & -  & - & $2.72 \pm 0.06$
- \end{tabular}}
- \caption{Abstände der Beugungsmaxima}
+ \end{tabular}
+ \caption{Abstände der Beugungsmaxima}}
 \end{table}
 \vskip 10 pt
 
@@ -284,7 +299,61 @@ b = 120 nm
 \newpage
 \subsection{Auswertung}
 \subsubsection{Zeiteichung}
+Wie in \ref{Happyisttoll} haben wir das Referenzgitter mit $K_R=125 \mu m$ zur Zeiteichung benutzt. (siehe Abbildung \ref{simonhatsverkackt})
 
+\graTwo[0.49]{ultraschall-eichgitter}{ultraschall-zeiteichung}{Interferenzmuster des Referenzgitters und linearer Fit zur Bestimmung des Umrechnungsfaktors\label{simonhatsverkackt}}
+
+Aus dem linearen Fit erhalten wir:
+\begin{align*}
+a &=(70.64\pm0.06)\,\frac1{\mathrm{s}}&
+\text{mit } a = \frac{\sin(\theta)}{t}
+\end{align*}
+
+\subsubsection{Bestimmung der Beugungsmaxima}
+\gra[1]{ultraschall-regenbogen}{Interferenzmuster der Ultraschallwelle für verschiedene Spannungen \label{regenbogen}}
+In Abbildung \ref{regenbogen} sind die Beugungsbilder an der Ultraschallwelle für verschiedene Spannungen aufgetragen. An diese Beugungsmuster haben wir eine Summe von Gaußfunktionen gefittet. Die Ergebnisse der Fits sind im Anhang unter \ref{fitergebnisse} zu finden. Bei hohen Spannungen lassen sich bis zu 3 Beugungsordnungen sehen und sinnvoll aus dem Fit bestimmen, wobei bei niedrigen Spannungen nur noch das nullte Hauptmaximum zu bestimmen ist. 
+
+\subsubsection{Berechnung der Intensitäten an den Maxima}
+Da nicht für jede Spannung alle Beugungsmaxima zu sehen sind, wurde für jedes Maximum über alle für dieses Maximum bestimmten Positionen gewichtet gemittelt und an den Kurven, an denen diese Beugungsordnung nicht zu erkennen ist, für die Intensität der Funktionswert des Fits an der gemittelten Position benutzt. Nun werden die Intensitäten $I$ mit $\hat{I}=\frac{I}{I_0}$ genormt. $I_0$ ist hierbei die Intensität am Maximum nullter Ordnung bei der Spannung $U=0$V.
+
+\subsubsection{Überprüfung der Raman-Nath-Theorie}
+Die Raman-Nath-Theorie (siehe \ref{Raman-Nath}) besagt, dass sich die Intensität in Abhängigkeit der Spannung nach folgender Formel verhält:
+\begin{align}
+	I_m&=J_m^2(\alpha U) \label{besselquadratfunktion}
+\end{align}
+$J_m(x)$ sind hierbei die Besselfunktionen.
+
+\gra{ultraschall-besselfits}{Normierte Intensität der Beugungsmaxima über die Spannung mit Besselquadratfits zur Überprüfung der Raman-Nath-Theorie\label{besselfits}}
+
+In Abbildung \ref{besselfits} sieht man die an die Daten gefitteten Funktionen. Tabelle \ref{besselfitdaten} zeigt die Parameter der gefitteten Funktionen.
+
+\begin{table}[h!]
+	\centering{
+		
+		\begin{tabular}{c|c}
+			
+			m&$\alpha$\\\hline
+			-3&$0,271\pm0,005$\\
+			-2&$0,225\pm0,003$\\
+			-1&$0,271\pm0,012$\\
+			 0&$0,164\pm0,004$\\
+			 1&$0,271\pm0,012$\\
+			 2&$0,243\pm0,004$\\
+			 3&$0,280\pm0,003$\\			
+		\end{tabular}
+		\caption{Fitparameter $\alpha$ der Besselquadratfits (siehe Formel (\ref{besselquadratfunktion}))\label{besselfitdaten}}
+		}
+\end{table}
+
+\subsubsection{Bestimmung der Wellenlänge von Isooktan}
+Aus den Abständen der Beugungsordnungen der Interferenz an der Schallwelle kann nun, analog zu REFERENZ AMPLITUDENGITTER, die Wellenlänge der Schallwelle bestimmt werden: $$m=\frac{\Lambda}{\lambda}\sin\theta$$
+In Abbildung \ref{schallwellenlaenge} haben wir durch einen linearen Fit die Steigung $a$ von $m$ über $\sin\theta$ bestimmt. Daraus erhalten wir die Wellenlänge der Schallwelle mit:
+$$\Lambda=a\cdot\lambda=(557\pm2) \,\mathrm{\mu m}$$
+\gra{schallwellenlaenge}{Bestimmung der Schallwellenlänge aus der Steigung von $m$ über $\sin\theta$\label{schallwellenlaenge}}
+
+\subsubsection{Berechnung der Wellenlänge von Isooktan}
+Zum Vergleich berechnen wir die Wellenlänge der Schallwelle nun mithilfe der Frequenz und der Schallgeschwindigkeit in Isooktan. Die gemessene Frequenz beträgt: $\nu=(2092,35\pm0.03)kHz$ und für die Schallgeschwindigkeit verwenden wir den Literaturwert aus \cite{staat}: $c_{\mathrm{schall}}=1111\mathrm{\frac{m}{s}}$.
+Für die Wellenlänge erhalten wir nun: $$\Lambda=\frac{c_{\mathrm{schall}}}{\nu}=(530,982\pm0.008) \,\mathrm{\mu m}$$
 \newpage
 \subsection{Diskussion}
 
@@ -300,7 +369,8 @@ b = 120 nm
 
 \newpage
 \section{Anhang} 
-
+\subsection{Gaußfits}
+\label{fitergebnisse}
 
 \subsection{Laborheft\label{Laborheft}} 
 \begin{minipage}{\textwidth}
@@ -333,14 +403,13 @@ b = 120 nm
 %\bibitem{molmasse}
 %  \emph{http://www.convertunits.com/molarmass/<ELEMENTNAME AUF ENGLISCH>}, Stand 28.09.2015
   
-\bibitem{bibhall}
-\emph{http://www.schule-bw.de/unterricht/faecher/physik/online\_material/e\_lehre\_2/teilchenfeld/\\halleffekt.htm}, Stand 15.09.2016
+\bibitem{staat}
+\emph{http://hacol13.physik.uni-freiburg.de/fp/Versuche/FP1/FP1-2-Ultraschall/Staatsex-Ultraschall.pdf}, Stand 23.09.2016
 
 \bibitem{anleitung}
-\emph{http://hacol13.physik.uni-freiburg.de/fp/Versuche/FP1/FP1-8-Kernspinresonanz/Anleitung.pdf}, Stand 15.09.2016
+\emph{http://hacol13.physik.uni-freiburg.de/fp/Versuche/FP1/FP1-2-Ultraschall/Anleitung.pdf}, Stand 23.09.2016
 
-\bibitem{Babykatze}
-\emph{http://hacol13.physik.uni-freiburg.de/fp/Versuche/FP1/FP1-8-Kernspinresonanz/Anhang/A.Klett.pdf}, Stand 19.09.2016
+
 \end{thebibliography}
 
 \end{document}
