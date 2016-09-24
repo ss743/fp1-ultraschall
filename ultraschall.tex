@@ -10,6 +10,7 @@
 \usepackage{hyperref}
 \usepackage{cancel}
 \usepackage{dsfont}
+\usepackage{mathrsfs}
 \usepackage{physics}
 \usepackage{lmodern}
 \usepackage{enumerate}
@@ -79,7 +80,9 @@
 }
 \newcommand{\del}[2][]{\frac{\partial #1}{\partial #2}}
 \newcommand{\code}[1]{\texttt{#1}}
-
+\DeclareMathOperator{\sinc}{\mathit{sinc}}
+\DeclareMathOperator{\rect}{\mathit{rect}}
+\DeclareMathOperator{\comb}{\mathit{comb}}
 
 %Titel,Inhalt----------------------------------------------------------------------------------------------------------
 
@@ -113,10 +116,193 @@ Trifft eine Lichtwelle auf ein Hindernis z.B. einen Spalt wird das Phänomen der
 
 \gra{Fraunhofer}{Fraunhofersche Anordnung \label{Fraunhofer}}   
 
-        
+Ein paralleles Lichtbündel lässt sich durch eine Sammellinse, die im Abstand einer Brennweite zur Lichtquelle steht, erzeugen. Am Gitter wird das Licht dann gebeugt. Dabei gilt das Huygen'sche Prinzip, nach dem jeder Punkt einer Wellenfront Quelle einer Kugelwelle mit gleicher Frequenz der ursprünglichen Welle ist. Die Amplitude des optischen Feldes hinter dem Gitter ergibt sich demnach aus der Überlagerung aller so entstehenden Wellen unter Berücksichtigung ihrer Amplitude und Phase. Konstruktive und destruktive Interferenz (je nach Gangunterschied), die sich aus diesen Überlagerungen ergibt, bildet schließlich das charakteristische Beugungsmuster. Eine zweite Sammellinse bildet das Beugungsmuster auf einen Schirm ab, der als unendlich weit entfernt angenommen wird, sodass von Fraunhofer-Beugung gesprochen werden kann. Man spricht von Fraunhofer-Beugung, wenn das Beugungsmuster im Fernfeld beobachtet wird. Die Position der Maxima und Minima kann dann an Hand von geometrischen Überlegungen bestimmt werden oder alternativ mit Hilfe des Kirchhoff'schen Integraltheorems und den daraus abgeleiteten Fresnel-Kirchhoff-Integralformel (siehe \label{Fourier})
 
-\subsection{Raman-Nath-Theorie}
+\subsection{Fourieroptik}  
+
+Aus dem  Kirchhoff'schen Integraltheorems lässt sich die Fresnel-Kirchhoff-Integralformel entwickeln, mit der sich die Beugung von Licht durch ein beliebiges Hindernis errechnen lässt. Die Geometrie des Hindernisses ist dabei durch die Aperturfunktion $g$ gegeben. Es gilt dann für die Intensitätsvertilung $I$ auf dem Schirm im Fernfeld: 
+
+\begin{align}
+I=|U(x_0)|^2=\left| \int\limits_{-\infty}^{\infty} g(x,y)e^{-ikx}dx \right|^2
+\end{align}
+
+
+
+Die Intensitätsverteilung auf dem Schirm ist also das Betragsquadrat der Fouriertransformierten. Umgekehrt lässt sich damit auch die Aperturfunktion aus einer beobachteten Intensitätsverteilung berechnen. Im folgenden werden wir die Aperturfunktion ud die Intenstitätsverteilung für einen Einzelspalt und ein Gitter genauer betrachten.
+
+\subsection{Einzelspalt}
+       
+Die Aperturfunktion eines Einzelspaltes mit der Breite $b$ un der Länge $l$ ist wie folgt gegeben:
+
+\begin{align}
+g(x)=\begin{cases}1 &\mbox{ falls }|x|\leq\frac{b}{2}\\0 &\mbox{ sonst }\end{cases}
+\end{align}
+
+Die Fouriertransformation dieser ist durch die $sinc$ Funkion gegeben:
+
+\begin{align}
+\mathscr{F}\left[ g(x) \right] = \left| b\right| \cdot \sinc\left( \frac{k \cdot b}{2}\right)  = 2 \cdot \left| b\right| \cdot \frac{\sinc\left( \frac{k \cdot b}{2}\right)}{k \cdot b}
+\end{align}
+
+\gra{Einzelspalt}{Fourierpaar für einen Einzelspalt}
+
+Die Intensitätsverteilung des Beugungsmusters im Fernfeld ist somit:
+
+\begin{align}
+I = \left| \mathscr{F}\left[ g(x) \right]\right| ^2 = \left( \left| b\right| \cdot \sinc\left( \frac{k \cdot \left| b\right| }{2} \right) \right) ^2
+\end{align}
+
+\subsection{Gitter mit N Linien}
+
+Für ein Gitter der  Breite L mit N Linien, der Spaltbreite b und der Gitterkonstane K ergibt sich die Aperturfunktion durch Wiederholung der Funktion eines Einzelspaltes:
+
+\begin{align}
+g\left( x\right) = \left( \rect\left( \frac{x}{b}\right) * \comb \left( \frac{x}{K}\right) \right) \cdot \rect \left( \frac{x}{L}\right) 
+\end{align}
+
+wobei * eine Konvolution markiert und die Funktion $\comb$ wie folgt definiert ist:
+
+\begin{align}
+\comb\left(  \frac{x}{b}\right)  = \sum_{n = -\infty}^{+ \infty} \delta\left(x-n\cdot b \right) 
+\end{align}
+
+Die Fouriertransformierte der Aperturfunktion ist gegeben durch:
+
+FORMEL!!!!!!!
+
+\gra{Mehrspalt}{Fraunhoferbeugungsmuster eines Gitters}
+
+Die Intensitätsverteilung des Lichts ergibt sich dabei als proportional zu folgendem Ausdrck:
+
+\begin{align}
+I(\Theta) &= \left| \mathscr{F}\left[ g(x) \right]\right| ^2 = \left(\frac{\sin\left(\beta (\Theta) \right) }{\beta(\Theta)} \right)^2 \cdot \left(\frac{\sin\left(N \gamma \right) }{N \sin (\gamma)} \right)^2\\
+\beta(\Theta) &= \frac{kb\sin(\Theta)}{2}\\
+\gamma(\Theta) &= \frac{kK\sin(\Theta)}{2}\\
+\end{align}
+
+Das Begungsmuster wird mit höheren Werten von N schmäler und die sekundären Maxima kleiner. Der Zusammenhang zwischen Beugungswinkel und Maxima m-ter Ordnung ist:
+
+\begin{align}
+m\lambda = Ksin(\Theta)
+\end{align}
+
+Der Beugungswinkel lässt sich aus dem Versuchsaufbau wie folgt berechnen:
+
+\begin{align}
+\Theta = \mathit{arctan}\left( \frac{x}{d}\right) 
+\end{align}
+
+wobei hier $x$ der Abstand zum Beugunsmaximum 0. Ordnung ist und $d$ der Abstand zwischen Schirm und Gitter.\\
+
+Die Auflösung $a$ eines optischen Gitters ist definiert als: 
+
+\begin{align}
+a = \frac{\lambda}{\Delta \lambda}
+\end{align}
+
+dabei gibt $\lambda$ die Wellenlänge des Lichts und $\Delta \lambda$ den Wellenlängenabstand an, bei dwelchem eine andere Wellenlänge von $\lambda$ bei der Beugung noch unterscheidbar ist. REF
+Das Auflösungsvermögen lässt sich außerdem auch wie folgt ausdrücken:
+\begin{align}
+a = N \cdot m
+\end{align}
+
+wobei $N$ die Anzahl der beleuchteten Spalte ist und $m$ die Anzahl beobachteter Maxima.
+
+Die Aperturfunktion lässt sich aus der Fouriertransformierten der Intensitätsverteilung berechnen, indem man sie als Fourierreihe nähert, deren Koeffizienten den Wurzeln der Intensitäten der Maxima entsprechen:
+
+\begin{align}
+g(x) = \sum_{j = 0}^{\infty} \pm \sqrt{I_j}\cos\left( \frac{2 \pi j x}{K}\right) 
+\end{align}
+
+In allen praktischen Anwendungen ist diese Summe endlich, da die Intensitäten der Maxima mit steigender Beugungsordnung zunehmend abnehmen. 
+
+\subsection{Sinusgitter}
+
+Die Aperturfunktion für ein Sinusgitter ist gegeben durch:
+
+\begin{align}
+g\left( x\right) &= \left[ \frac{1}{2} + \frac{m}{2} \cdot \cos\left( 2 \pi k_0 x \right)   \right] \cdot \rect \left( \frac{x}{b} \right)  &&\text{wobei } 0 < m < 1
+\end{align}
+
+wobei: 
+
+\begin{itemize}
+\item $m =$ Stärke der Modulation
+\item $b =$ Begrenzung der Gitterstruktur
+\item $k_0 = $ räumliche Frequenz
+\end{itemize}
+
+Die Intensitätsverteilung für ein Sinusgitter ist dementsprechend:
+
+\begin{align}
+I = \left| \mathscr{F}\left[ g(x) \right]\right| ^2 = \sinc^2 \left(bk \right) + \frac{m^2}{4}\cdot\sinc\left[  b \left( k + k_0\right) \right] + \frac{m^2}{4}\cdot\sinc\left[  b \left( k - k_0\right) \right]
+\end{align}
+
+\gra{Sinusgitter}{Fraunhoferbeugungsmuster für ein dünnes Sinusgitter \label{Sinusgitter}}
+
+Aus Abbildung \ref{Sinusgitter} ist ersichtlich, dass es drei Hauptmaxima an den Stellen $k = 0$ 
+sowie $ k = \pm 2 \pi z $ ( wobei $z$ die Entfernung zum Sinusgitter ist). Die Intensitäten der Maxima 1. Ordnung entsprechen dabei einem Viertel der Intensität des Maximums 0. Ordnung. Die Aperturfunktion kann mit ref!!!!!!! wie folgt ausgedrückt werden:
+
+\begin{align}
+g\left( x\right) = \sqrt{I_0} + \sqrt{I_1}\cdot\cos\left( \frac{2 \pi x}{K}\right) 
+\end{align}
+
+
+\subsection{Phasengitter}
+
+Während Amplitudegitter lediglich die Amplitude gebeugten Lichtes modulieren, beeinflussen optische Gitter die Phase des durchlaufenden Lichts durch Variationen im Brechungsindex, während kein Intensitätsverlust statt findet. In Abbildung \ref{Phasengitter} ist das Fraunhoferbeugungsmuster eines Sinus-Phasengitters dargestellt.
+
+\gra{Phasengitter}{Fraunhoferbeugungsmuster für ein Sinus - Phasengitter \label{Phasengitter}}
+
+Die Aperturfunktion eines solchen Gitters ist wie folgt gegeben:
+
+\begin{align}
+g\left( x\right) = \exp^{i\frac{m}{2}\sin\left( 2 \pi k_0 x\right)} \cdot \rect\left( \frac{x}{b} \right) 
+\end{align}
+
+Die Fouriertransformation dieser Funktion lässt sich mit Hilfe der Besselfunktionen wie folgt angeben:
+
+\begin{align}
+\mathscr{F}\left[ g(x) \right] = \sum_{q = - \infty}^{+ \infty} J_q \frac{m}{2} b \cdot \sinc\left(b \left( k -q \cdot k_0\right) \right) 
+\end{align}
+
+Die Intensität der Hauptmaxima eines solchen Phasengitters ergibt sich zu:
+
+\begin{align} \label{23}
+I_q \left(k \right) = J_q ^2\frac{m}{2}
+\end{align}
+\subsection{Ultraschallphasengitter und Raman-Nath-Theorie}
 \label{Raman-Nath}
+
+Eine laufende Schallwelle verursacht periodische Dichteschwankungen in einem Medium, was wiederum periodische Schwankungen des Brechungsindexes zur Folge hat. Trifft ein kohärenter, paralleler Lichtstrahl (in diesem Experiment ein Heliu-Neon-Laser) nun senkrecht zur Ultraschallwelle auf das Medium, tritt das Licht phasenversetzt aus und im Fernfeld führt diese verzerrte Phasenfront zu einer Überlagerung und einem Beugungsbild. Der Brechungsindex $n$ eines schalldurchsetzten Mediums mit Schall der Wellenlänge $\Gamma$ ist gegeben durch:
+
+\begin{align}
+n\left(x \right) = n_0 + \Delta n \cdot \sin \left(\frac{2 \pi x}{\Gamma} \right) 
+\end{align}
+Die Intenität des Schalls $S$ ist proportional zum Quadrat der an der Ultraschallzelle angelegten Spannung $ U$. Dies bedeutet, dass duch anlegen verschiedener Spannungen die Dichte $\rho$ und damit der Brechungsindex varriert werden können:
+
+\begin{align}
+U^2 \propto S \propto \left( \frac{\Delta n}{n -1} \right)^2 = \left( \frac{\Delta \rho}{\rho_0}\right)^2  
+\end{align}
+
+Vorrasugesetzt die breite $D$ des schalldurchsetzten Mediums und die Schallintensität sind nicht zu hoch, lässt sich Gleichung \ref{23} mit der Raman-Nath-Theorie modifizieren. Die Variablen transformieren sich wie folgt:
+
+\begin{align}
+q &\rightarrow m\\
+m &= \frac{\Delta n D 4 \pi}{\lambda}
+\end{align}
+
+Die Winkel, unter denen die Peaks des Beugungsmusters beobachtet werden, können wie folgt bestimmt werden:
+
+\begin{align}
+\sin\left( \Theta\right) = \pm m \frac{\lambda}{\Lambda}
+\end{align}
+
+Gleichung \ref{23} wird außerdem zu:
+
+\begin{align}
+I_m = J_m^2 \left( \frac{\Delta n D 2 \pi}{\lambda} \right) = J_m^2\left(\alpha U \right) 
+\end{align}
 \newpage
 \section{Sinusgitter}
 
