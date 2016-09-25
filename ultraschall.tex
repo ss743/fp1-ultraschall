@@ -170,7 +170,7 @@ Die Fouriertransformierte der Aperturfunktion ist gegeben durch:
 
 FORMEL!!!!!!!
 
-\gra{Mehrspalt}{Fraunhoferbeugungsmuster eines Gitters}
+\gra{bla}{Fraunhoferbeugungsmuster eines Gitters}
 
 Die Intensitätsverteilung des Lichts ergibt sich dabei als proportional zu folgendem Ausdrck:
 
@@ -200,7 +200,7 @@ Die Auflösung $a$ eines optischen Gitters ist definiert als:
 a = \frac{\lambda}{\Delta \lambda}
 \end{align}
 
-dabei gibt $\lambda$ die Wellenlänge des Lichts und $\Delta \lambda$ den Wellenlängenabstand an, bei dwelchem eine andere Wellenlänge von $\lambda$ bei der Beugung noch unterscheidbar ist. REF
+dabei gibt $\lambda$ die Wellenlänge des Lichts und $\Delta \lambda$ den Wellenlängenabstand an, bei welchem eine andere Wellenlänge von $\lambda$ bei der Beugung noch unterscheidbar ist. REF
 Das Auflösungsvermögen lässt sich außerdem auch wie folgt ausdrücken:
 \begin{align}
 a = N \cdot m
@@ -211,8 +211,8 @@ wobei $N$ die Anzahl der beleuchteten Spalte ist und $m$ die Anzahl beobachteter
 Die Aperturfunktion lässt sich aus der Fouriertransformierten der Intensitätsverteilung berechnen, indem man sie als Fourierreihe nähert, deren Koeffizienten den Wurzeln der Intensitäten der Maxima entsprechen:
 
 \begin{align}
-g(x) = \sum_{j = 0}^{\infty} \pm \sqrt{I_j}\cos\left( \frac{2 \pi j x}{K}\right) 
-\end{align}
+g(x) = \sum_{j = 0}^{\infty} \pm \sqrt{I_j}\cos\left( \frac{2 \pi j x}{K}\right) \label{Fourier1}
+\end{align} 
 
 In allen praktischen Anwendungen ist diese Summe endlich, da die Intensitäten der Maxima mit steigender Beugungsordnung zunehmend abnehmen. 
 
@@ -304,12 +304,15 @@ Gleichung \ref{23} wird außerdem zu:
 I_m = J_m^2 \left( \frac{\Delta n D 2 \pi}{\lambda} \right) = J_m^2\left(\alpha U \right) 
 \end{align}
 \newpage
+\section{Genereller Versuchsaufbau und Durchführung}
+
+\gra{Versuchsaufbau}{Versuchsaufbau}
 \section{Sinusgitter}
 
 \newpage
 \subsection{Versuchsaufbau und -Durchführung}
 
-
+In diesem Teil des Versuchs wird ein vereinfachter Versuchsaufbau benutzt. Ein Laserstrahl trifft direkt auf das Sinusgitter und das Beugungsmuster ist auf einem Schirm wenige Zentimeter hinter dem Sinusgitter zu beobachten. Für fünf verschiedene Abstände zwischen Gitter und Schirm wird jeweils die Lage der Beugungsmaxima 1. Ordnung gemessen und hieraus die Gitterkonstante bestimmt, sodass wir über die Mittelung mehrerer Werte einen genaueren Wert für die Gitterkonstante des Sinusgitters erwarten.
 
 
 
@@ -342,33 +345,33 @@ Messung 5  & $5.6 \pm 0.1$  & $5.7 \pm 0.1$ & $5.61 \pm 0.07$
 \end{table}
 \vskip 10 pt
 
-Hieraus lässt sich nun mit ref!!!!!! die Gitterkonstante berechnen wobei sich der Fehler wieder mit Gauß'scher Fehlerfortpflanzung berechnen lässt:
+Hieraus lässt sich nun mit ref!!!!!! die Gitterkonstante $K$ berechnen wobei sich der Fehler wieder mit Gauß'scher Fehlerfortpflanzung berechnen lässt:
 
 \begin{align*}
-s_g = \sqrt{\left(\del[g]{l}\cdot s_{l}\right)^2+\left(\del[g]{d}\cdot s_{d}\right)^2}
+s_K = \sqrt{\left(\del[K]{l}\cdot s_{l}\right)^2+\left(\del[K]{d}\cdot s_{d}\right)^2}
 \end{align*}
 
 Wir erhalten:
 
 \begin{itemize}
-\item Messung 1: $g = 996 \pm 16$ nm
-\item Messung 2: $g = 1082 \pm 40$ nm
-\item Messung 3: $g = 989 \pm 13$ nm
-\item Messung 4: $g = 994 \pm 23$ nm
-\item Messung 5: $g = 995 \pm 12$ nm
+\item Messung 1: $K = 996 \pm 16$ nm
+\item Messung 2: $K = 1082 \pm 40$ nm
+\item Messung 3: $K = 989 \pm 13$ nm
+\item Messung 4: $K = 994 \pm 23$ nm
+\item Messung 5: $K = 995 \pm 12$ nm
 \end{itemize}
 
 Als Endergebnis berechnen wir nun noch das gewichtete Mittel mit Fehler:
 
 \begin{align*}
-g_{ges} &=\frac{\sum\limits_i \frac{1}{\sigma_i²} \cdot g_i}{\sum\limits_i \frac{1}{\sigma_i²}}\\
-s_{g_{ges}} &= \frac{1}{\sum\limits_i \frac{1}{\sigma_i²}}
+K_{ges} &=\frac{\sum\limits_i \frac{1}{\sigma_i²} \cdot K_i}{\sum\limits_i \frac{1}{\sigma_i²}}\\
+s_{K_{ges}} &= \frac{1}{\sum\limits_i \frac{1}{\sigma_i²}}
 \end{align*}
 
 und erhalten:
 
 \begin{align*}
-g_{ges} = 996 \pm 7 nm
+K_{ges} = 996 \pm 7 nm
 \end{align*}
 
 \newpage
@@ -454,17 +457,17 @@ Maximumg 0. Ordnung  & -  & - & $2.72 \pm 0.06$
 \vskip 10 pt
 
 
-Aus diesen und der zuvor berechneten Gitterkonstante $g_1 = (807 \pm 9) nm$ (siehe ref!!!) lässt sich mittels der Fourierreihe (siehe ref!!!) nun die Aperturfunktion näherungsweise bestimmen:
+Aus diesen und der zuvor berechneten Gitterkonstante $K_1 = (807 \pm 9) nm$ (siehe ref!!!) lässt sich mittels der Fourierreihe (siehe \ref{Fourier1}) nun die Aperturfunktion näherungsweise bestimmen:
 
 \[f(x)\approx\sum^{5}_{k=0}\pm\sqrt{I_k}\cos\left(\frac{2k\pi x}{g_1} \right) \]
 
-\gra{apertur}{Genäherte Aperturfunktion von Gitter 1} \label{kotz}
+\gra{apertur}{Genäherte Aperturfunktion von Gitter 1 \label{kotz}} 
 
 
 
 Aus der Aperturfunktion bestimmen wir nun die Spaltbreite $b$, indem wir das FHWM durch Bestimmung des Schnittpunktes der Aperturfunktion mit der Konstanten mit dem Wert $x=\frac{max}{2}$  berechnen (siehe Abbildung \ref{LONDOOON}), wobei max für das Maximum der Aperturfunktion steht.
 
-\gra{Spaltbreite}{Bestimmung der Spaltbreite aus der Aperturfunktion}\label{LONDOOON}
+\gra{Spaltbreite}{Bestimmung der Spaltbreite aus der Aperturfunktion\label{LONDOOON}}
 
 Wir erhalten:
 
