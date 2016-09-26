@@ -95,7 +95,7 @@
 \section*{Abstract}
 
 
-In diesem Versuch wird über die Messung von Beugungs-Spektren eines He-Ne-Lasers ($\lambda = 632,8nm$) die Gitterkonstante verschiedener Gitter (Sinusgitter, Amplitudengitter) und die Aperturfunktion eines bestimmten Gitters bestimmt. Der Hauptteil des Versuches beschäftigt sich mit der Untersuchung von Ultraschallwellen in Flüssigkeit als Phasengitter. Dazu wird die Intensitätsänderung der Beugungsordnung in Abhängigkeit der Spannung des Schallerzeugers (Piezoquarz) ausgewertet, die Wellenlänge der Ultraschallwelle bestimmt Nennerund mit der Raman-Nath-Theorie verglichen.
+In diesem Versuch wird über die Messung von Beugungs-Spektren eines He-Ne-Lasers ($\lambda = 632,8nm$) die Gitterkonstante verschiedener Gitter (Sinusgitter, Amplitudengitter) und die Aperturfunktion eines bestimmten Gitters bestimmt. Der Hauptteil des Versuches beschäftigt sich mit der Untersuchung von Ultraschallwellen in Flüssigkeit als Phasengitter. Dazu wird die Intensitätsänderung der Beugungsordnung in Abhängigkeit der Spannung des Schallerzeugers (Piezoquarz) ausgewertet, die Wellenlänge der Ultraschallwelle bestimmt und mit der Raman-Nath-Theorie verglichen.
 
 \newpage
 \tableofcontents
@@ -104,6 +104,8 @@ In diesem Versuch wird über die Messung von Beugungs-Spektren eines He-Ne-Laser
 %Schreiben----------------------------------------------------------------------------------------------------------
 \pagenumbering{arabic} %verstecke Seitenzahl
 \section{Einleitung}
+
+
 
 
 
@@ -170,7 +172,7 @@ Die Fouriertransformierte der Aperturfunktion ist gegeben durch:
 
 FORMEL!!!!!!!
 
-\gra{bla}{Fraunhoferbeugungsmuster eines Gitters}
+\gra{bla}{Fraunhoferbeugungsmuster eines Gitters \cite{Demtröder}} 
 
 Die Intensitätsverteilung des Lichts ergibt sich dabei als proportional zu folgendem Ausdrck:
 
@@ -304,9 +306,14 @@ Gleichung \ref{23} wird außerdem zu:
 I_m = J_m^2 \left( \frac{\Delta n D 2 \pi}{\lambda} \right) = J_m^2\left(\alpha U \right) 
 \end{align}
 \newpage
-\section{Genereller Versuchsaufbau und Durchführung}
+\section{Genereller Versuchsaufbau}
 
-\gra{Versuchsaufbau}{Versuchsaufbau}
+\gra{Versuchsaufbau}{Versuchsaufbau \label{Versuchsaufbau}}
+
+In Abbildung \ref{Versuchsaufbau} ist der generelle Versuchsaufbau dargestellt, der in den eintelnen Versuchsteilen angepasst wird.
+Der Laserstrahl eines Helium-Neon-Lasers mit der Wellenlänge $\lambda = 632.8 nm$ wird nach Aufteilen durch einen Strahlteiler  teilweise durch eine erste Sammellinse (Linse 1) aufgeweitet und beim Treffen auf eine zweite Sammellinse (Linse 2), welche im Abstand der Summe der beiden Brennweiten steht, parallelisiert. Das Lichtbündel wird dann nach Durchlauf durch eine Blende an einem Gitter (je nach Versuchsaufbau Sinus-, Amplituden-, oder Phasengitter) gebeugt und trifft auf einen rotierenden Spiegel. Auf Grund der Drehung wird das Beugungsmuster 12.5 mal pro Sekunde auf die Photodiode (Diode 2) projeziert. Das detektierte Signal wird verstärkt und an einem Oszilloskop, das mit einem Computer verbunden ist analysiert. Das Oszilloskop wird durch das Signal der ersten Photodiode getriggert, die das Signal des ungebeugten Lichtstrahls, das nach dem Strahlteiler direkt auf den rotierenden Spiegel trifft, detektiert.
+
+\newpage
 \section{Sinusgitter}
 
 \newpage
@@ -431,7 +438,7 @@ Wir erhalten nun mit dieser Rechnung die folgenden Werte für die Gitterkonstant
 	K_2&=(34.26\pm0.03)\,\mathrm{\mu m}\\
 	K_3&=(102.9\pm0.3)\,\mathrm{\mu m}\\
 	K_4&=(72\pm6)\,\mathrm{\mu m}\\
-	K_5&=(51.57\pm0.08)\,\mathrm{\mu m}\\
+	K_5&=(51.57\pm0.08)\,\mathrm{\mu m}\\  \label{K1}
 \end{align*}
 
 
@@ -448,8 +455,9 @@ Aus den Amplituden der gefitteten  Gaußfunktionen erhalten wir hierbei die Inte
 Maximum 5. Ordnung     & $0.08 \pm 0.14$  & $0.040 \pm 0.009$      &  $0.04012 \pm  0.00008$                       \\ \hline
 Maximum 4. Ordnung		& $0.186 \pm 0.009$ 	&  $0.177 \pm 0.009$    	&  $0.182 \pm 0.006$ \\ \hline 
 Maximum 3. Ordnung	&	 $0.402 \pm 0.009$ 	   	&  $0.447 \pm 0.010$  	&  $0.425 \pm 0.007$  \\ \hline
-Maximum 2. Ordnung      	&  $0.95 \pm 0.02$  	&  $0.92 \pm 0.02$  &  $0.935 \pm 0.014$  \\ \hline
-Maximum 1. Ordnung    & $2.8 \pm 0.1$ & $2.9 \pm 0.1$ &   $2.88 \pm 0.07$        \\ \hline                                           
+Maximum 2. Ordnung    & $0.666 \pm 0.016$ & $0.681 \pm 0.014$ &   $0.6735 \pm 0.07$        \\ \hline                                           
+Maximum 1. Ordnung      	&  $0.95 \pm 0.02$  	&  $0.92 \pm 0.02$  &  $0.935 \pm 0.014$  \\ \hline
+
 Maximumg 0. Ordnung  & -  & - & $2.72 \pm 0.06$
  \end{tabular}
  \caption{Abstände der Beugungsmaxima}}
@@ -457,9 +465,9 @@ Maximumg 0. Ordnung  & -  & - & $2.72 \pm 0.06$
 \vskip 10 pt
 
 
-Aus diesen und der zuvor berechneten Gitterkonstante $K_1 = (807 \pm 9) nm$ (siehe ref!!!) lässt sich mittels der Fourierreihe (siehe \ref{Fourier1}) nun die Aperturfunktion näherungsweise bestimmen:
+Aus diesen und der zuvor berechneten Gitterkonstante $K_1 = (129.26 \pm 0.07) \mu m$ (siehe \ref{K1} lässt sich mittels der Fourierreihe (siehe \ref{Fourier1}) nun die Aperturfunktion näherungsweise bestimmen:
 
-\[f(x)\approx\sum^{5}_{k=0}\pm\sqrt{I_k}\cos\left(\frac{2k\pi x}{g_1} \right) \]
+\[g(x)\approx\sum^{5}_{k=0}\pm\sqrt{I_k}\cos\left(\frac{2k\pi x}{K_1} \right) \]
 
 \gra{apertur}{Genäherte Aperturfunktion von Gitter 1 \label{kotz}} 
 
@@ -467,20 +475,47 @@ Aus diesen und der zuvor berechneten Gitterkonstante $K_1 = (807 \pm 9) nm$ (sie
 
 Aus der Aperturfunktion bestimmen wir nun die Spaltbreite $b$, indem wir das FHWM durch Bestimmung des Schnittpunktes der Aperturfunktion mit der Konstanten mit dem Wert $x=\frac{max}{2}$  berechnen (siehe Abbildung \ref{LONDOOON}), wobei max für das Maximum der Aperturfunktion steht.
 
-\gra{Spaltbreite}{Bestimmung der Spaltbreite aus der Aperturfunktion\label{LONDOOON}}
+\gra{Fehler-apertur}{Bestimmung der Spaltbreite aus der Aperturfunktion\label{LONDOOON}}
+
+Den Fehler schätzen wir durch die Bestimmung des FHWM für eine "Ober- bzw. Untergrenze" der Aperturfunktion, d.h. für eine Aperturfunktion bei der die Fehler der Intensitäten addiert wurden (in blau) und eine Aperturfunktion bei der die Fehler der Intenstitäten subtrahiert wurden (in rot).
 
 Wir erhalten:
 
+\begin{itemize}
+\item $FWHM = 11.31475 \mu m $
+\item$ FWHM_{max} = 11.32025 \mu m  $
+\item $ FWHM_{min} = 11.30991 \mu m  $
+\end{itemize}
+
 \begin{align*}
-b = 120 nm
+b = 2 \cdot FHWM = 22.630  \pm  0.010 \mu m
 \end{align*}
+
+wobei sich der Fehler wie folgt berechnet:
+
+\begin{align*}
+s_b = 2 \cdot s_{FWHM} = 2 \cdot \frac{FWHM_{max}-FWHM_{min}}{2} = 0.010 \mu m
+\end{align*}
+
+Das Verhältnis $V$ von Spaltbreite und Gitterkonstante ergibt sich zu:
+
+\begin{align*}
+V=\frac{b}{K_1} = 0.1751\pm 0.0008
+\end{align*}
+wobei der Fehler sich mit Gauß'scher Fehlerfortpflanzung berechnet: 
+\begin{align*}
+ s_V=V\sqrt{\left( \frac{s_b}{b}\right)^2 +\left( \frac{s_{K_1}}{K_1}\right)^2 }
+\end{align*}
+
 
 \newpage
 \subsection{Diskussion\label{BOOOOOMMMM!!!!!!!!!}} 
 
-\section{Ultraschall-Phasengitter}
 
 \newpage
+\section{Ultraschall-Phasengitter}
+
+
 \subsection{Versuchsaufbau und -Durchführung}
 
 
@@ -609,24 +644,41 @@ Für die Wellenlänge erhalten wir nun: $$\Lambda=\frac{c_{\mathrm{schall}}}{\nu
 \thispagestyle{empty}
 \begin{thebibliography}{9}
 
-%\bibitem{staat}
-%  Tobijas Kotyk,
-%  \emph{Versuche zur Radioaktivität im Physikalischen Fortgeschrittenen Praktikum an der Albert-Ludwigs-Universität Freiburg},
-%  Albert-Ludwigs-Universität, Freiburg,
-%  2005
-  
-
-  
-%\bibitem{molmasse}
-%  \emph{http://www.convertunits.com/molarmass/<ELEMENTNAME AUF ENGLISCH>}, Stand 28.09.2015
+\bibitem{kirch}
+  G. Kirchhoff,
+  \emph{Zur Theorie der Lichtstrahlen},
+  Annalen der Physik,
+  Vol. 254,
+  1882
+\bibitem{good}
+  Joseph W. Goodman,
+  \emph{Introduction to Fourier Optics},
+  Stanford University,
+  2nd sedition,
+  1996
+\bibitem{rana}
+  C.V. Raman, N.S. Nagendra Nath,
+  \emph{Diffraction of Light by High Frequency Sound Waves: Part 1},
+  Indian Institute of Science Bangalore,
+  1935
+\bibitem{anleitung}
+  M. Köhli,
+  \emph{Versuchsanleitung Fortgeschrittenen Praktikum: Ultraschall},
+  Albert-Ludwigs-Universität Freiburg,
+  2011
   
 \bibitem{staat}
-\emph{http://hacol13.physik.uni-freiburg.de/fp/Versuche/FP1/FP1-2-Ultraschall/Staatsex-Ultraschall.pdf}, Stand 23.09.2016
+  Lutz Lefevre,
+  \emph{Beugung am Amplitudengitter und Phasengitter},
+  Albert-Ludwigs-Universität Freiburg,
+  1977
 
-\bibitem{anleitung}
-\emph{http://hacol13.physik.uni-freiburg.de/fp/Versuche/FP1/FP1-2-Ultraschall/Anleitung.pdf}, Stand 23.09.2016
-
-
+\bibitem{Demtröder}
+Wolfgang Demtröder
+ \emph{Experimentalphysik 2: Elektrizität und Optik},
+ Springer-Verlag,
+ 6. Auflage,
+ 2014
 \end{thebibliography}
 
 \end{document}
