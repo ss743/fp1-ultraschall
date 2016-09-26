@@ -126,7 +126,7 @@ Ein paralleles Lichtbündel lässt sich durch eine Sammellinse, die im Abstand e
 
 \subsection{Fourieroptik}  
 
-Aus dem  Kirchhoff'schen Integraltheorems lässt sich die Fresnel-Kirchhoff-Integralformel entwickeln, mit der sich die Beugung von Licht durch ein beliebiges Hindernis errechnen lässt. Die Geometrie des Hindernisses ist dabei durch die Aperturfunktion $g$ gegeben. Es gilt dann für die Intensitätsverteilung $I$ auf dem Schirm im Fernfeld: 
+Aus dem  Kirchhoff'schen Integraltheorems lässt sich die Fresnel-Kirchhoff-Integralformel entwickeln, mit der sich die Beugung von Licht durch ein beliebiges Hindernis errechnen lässt. Die Geometrie des Hindernisses ist dabei durch die Aperturfunktion $g$ gegeben. Es gilt dann für die Intensitätsverteilung $I$ auf dem Schirm im Fernfeld \cite{kirch}: 
 
 \begin{align}
 I=|U(x_0)|^2=\left| \int\limits_{-\infty}^{\infty} g(x,y)e^{-ikx}dx \right|^2
@@ -134,11 +134,11 @@ I=|U(x_0)|^2=\left| \int\limits_{-\infty}^{\infty} g(x,y)e^{-ikx}dx \right|^2
 
 
 
-Die Intensitätsverteilung auf dem Schirm ist also das Betragsquadrat der Fouriertransformierten. Umgekehrt lässt sich damit auch die Aperturfunktion aus einer beobachteten Intensitätsverteilung berechnen. Im folgenden werden wir die Aperturfunktion ud die Intenstitätsverteilung für einen Einzelspalt und ein Gitter genauer betrachten.
+Die Intensitätsverteilung auf dem Schirm ist also das Betragsquadrat der Fouriertransformierten. Umgekehrt lässt sich damit auch die Aperturfunktion aus einer beobachteten Intensitätsverteilung berechnen. Im folgenden werden wir die Aperturfunktion ud die Intenstitätsverteilung für einen Einzelspalt und ein Gitter genauer betrachten. \cite{good}
 
 \subsection{Einzelspalt}
        
-Die Aperturfunktion eines Einzelspaltes mit der Breite $b$ un der Länge $l$ ist wie folgt gegeben:
+Die Aperturfunktion eines Einzelspaltes mit der Breite $b$ un der Länge $l$ ist wie folgt gegeben \cite{Demtröder}:
 
 \begin{align}
 g(x)=\begin{cases}1 &\mbox{ falls }|x|\leq\frac{b}{2}\\0 &\mbox{ sonst }\end{cases}
@@ -160,7 +160,7 @@ I = \left| \mathscr{F}\left[ g(x) \right]\right| ^2 = \left( \left| b\right| \cd
 
 \subsection{Gitter mit N Linien} \label{Gitter}
 
-Für ein Gitter der  Breite L mit N Linien, der Spaltbreite b und der Gitterkonstane K ergibt sich die Aperturfunktion durch Wiederholung der Funktion eines Einzelspaltes:
+Für ein Gitter der  Breite L mit N Linien, der Spaltbreite b und der Gitterkonstane K ergibt sich die Aperturfunktion durch Wiederholung der Funktion eines Einzelspaltes \cite{staat}:
 
 \begin{align}
 g\left( x\right) = \left( \rect\left( \frac{x}{b}\right) * \comb \left( \frac{x}{K}\right) \right) \cdot \rect \left( \frac{x}{L}\right) 
@@ -188,10 +188,10 @@ I(\Theta) &= \left| \mathscr{F}\left[ g(x) \right]\right| ^2 = \left(\frac{\sin\
 \gamma(\Theta) &= \frac{kK\sin(\Theta)}{2}\\
 \end{align}
 
-Das Begungsmuster wird mit höheren Werten von N schmäler und die sekundären Maxima kleiner. Der Zusammenhang zwischen Beugungswinkel und Maxima m-ter Ordnung ist:
+Das Begungsmuster wird mit höheren Werten von N schmäler und die sekundären Maxima kleiner. Der Zusammenhang zwischen Beugungswinkel und Maxima m-ter Ordnung ist \cite{Demtröder}:
 
 \begin{align}
-m\lambda = Ksin(\Theta) \label{11}
+m\lambda = Ksin(\Theta) \label{11} 
 \end{align}
 
 Der Beugungswinkel lässt sich aus dem Versuchsaufbau wie folgt berechnen:
@@ -208,7 +208,7 @@ Die Auflösung $a$ eines optischen Gitters ist definiert als:  \label{aufloesung
 a = \frac{\lambda}{\Delta \lambda}
 \end{align}
 
-dabei gibt $\lambda$ die Wellenlänge des Lichts und $\Delta \lambda$ den Wellenlängenabstand an, bei welchem eine andere Wellenlänge von $\lambda$ bei der Beugung noch unterscheidbar ist. REF
+dabei gibt $\lambda$ die Wellenlänge des Lichts und $\Delta \lambda$ den Wellenlängenabstand an, bei welchem eine andere Wellenlänge von $\lambda$ bei der Beugung noch unterscheidbar ist \cite{Anleitung}
 Das Auflösungsvermögen lässt sich außerdem auch wie folgt ausdrücken:
 \begin{align}
 a = N \cdot m 
@@ -246,7 +246,7 @@ Die Intensitätsverteilung für ein Sinusgitter ist dementsprechend:
 I = \left| \mathscr{F}\left[ g(x) \right]\right| ^2 = \sinc^2 \left(bk \right) + \frac{m^2}{4}\cdot\sinc\left[  b \left( k + k_0\right) \right] + \frac{m^2}{4}\cdot\sinc\left[  b \left( k - k_0\right) \right]
 \end{align}
 
-\gra{Sinusgitter}{Fraunhoferbeugungsmuster für ein dünnes Sinusgitter \label{Sinusgitter}}
+\gra{Sinusgitter}{Fraunhoferbeugungsmuster für ein dünnes Sinusgitter \label{Sinusgitter} \cite{2}}
 
 Aus Abbildung \ref{Sinusgitter} ist ersichtlich, dass es drei Hauptmaxima an den Stellen $k = 0$ 
 sowie $ k = \pm 2 \pi z $ (wobei $z$ die Entfernung zum Sinusgitter ist). Die Intensitäten der Maxima 1. Ordnung entsprechen dabei einem Viertel der Intensität des Maximums 0. Ordnung. Die Aperturfunktion kann mit \ref{Fourier1} wie folgt ausgedrückt werden:
@@ -260,7 +260,8 @@ g\left( x\right) = \sqrt{I_0} + \sqrt{I_1}\cdot\cos\left( \frac{2 \pi x}{K}\righ
 
 Während Amplitudegitter lediglich die Amplitude gebeugten Lichtes modulieren, beeinflussen optische Gitter die Phase des durchlaufenden Lichts durch Variationen im Brechungsindex, während kein Intensitätsverlust statt findet. In Abbildung \ref{Phasengitter} ist das Fraunhoferbeugungsmuster eines Sinus-Phasengitters dargestellt.
 
-\gra{Phasengitter}{Fraunhoferbeugungsmuster für ein Sinus - Phasengitter \label{Phasengitter}}
+\gra{Phasengitter}{Fraunhoferbeugungsmuster für ein Sinus - Phasengitter \label{Phasengitter} \cite{1}}
+
 
 Die Aperturfunktion eines solchen Gitters ist wie folgt gegeben:
 
@@ -282,12 +283,12 @@ I_q \left(k \right) = J_q ^2\frac{m}{2}
 \subsection{Ultraschallphasengitter und Raman-Nath-Theorie}
 \label{Raman-Nath}
 
-Eine laufende Schallwelle verursacht periodische Dichteschwankungen in einem Medium, was wiederum periodische Schwankungen des Brechungsindexes zur Folge hat. Trifft ein kohärenter, paralleler Lichtstrahl (in diesem Experiment ein Helium-Neon-Laser) nun senkrecht zur Ultraschallwelle auf das Medium, tritt das Licht phasenversetzt aus und im Fernfeld führt diese verzerrte Phasenfront zu einer Überlagerung und einem Beugungsbild. Der Brechungsindex $n$ eines schalldurchsetzten Mediums mit Schall der Wellenlänge $\Gamma$ ist gegeben durch:
+Eine laufende Schallwelle verursacht periodische Dichteschwankungen in einem Medium, was wiederum periodische Schwankungen des Brechungsindexes zur Folge hat. Trifft ein kohärenter, paralleler Lichtstrahl (in diesem Experiment ein Helium-Neon-Laser) nun senkrecht zur Ultraschallwelle auf das Medium, tritt das Licht phasenversetzt aus und im Fernfeld führt diese verzerrte Phasenfront zu einer Überlagerung und einem Beugungsbild \cite{anleitung}. Der Brechungsindex $n$ eines schalldurchsetzten Mediums mit Schall der Wellenlänge $\Gamma$ ist gegeben durch:
 
 \begin{align}
 n\left(x \right) = n_0 + \Delta n \cdot \sin \left(\frac{2 \pi x}{\Gamma} \right) 
 \end{align}
-Die Intensität des Schalls $S$ ist proportional zum Quadrat der an der Ultraschallzelle angelegten Spannung $ U$. Dies bedeutet, dass durch Anlegen verschiedener Spannungen die Dichte $\rho$ und damit der Brechungsindex variiert werden können:
+Die Intensität des Schalls $S$ ist proportional zum Quadrat der an der Ultraschallzelle angelegten Spannung $ U$. Dies bedeutet, dass durch Anlegen verschiedener Spannungen die Dichte $\rho$ und damit der Brechungsindex variiert werden können \cite{anleitung}:
 
 \begin{align}
 U^2 \propto S \propto \left( \frac{\Delta n}{n -1} \right)^2 = \left( \frac{\Delta \rho}{\rho_0}\right)^2  
@@ -306,7 +307,7 @@ Die Winkel, unter denen die Peaks des Beugungsmusters beobachtet werden, können
 \sin\left( \Theta\right) = \pm m \frac{\lambda}{\Lambda}
 \end{align}
 
-Gleichung \ref{23} wird außerdem zu:
+Gleichung \ref{23} wird außerdem zu \cite{rana}:
 
 \begin{align}
 I_m = J_m^2 \left( \frac{\Delta n D 2 \pi}{\lambda} \right) = J_m^2\left(\alpha U \right) 
@@ -314,7 +315,7 @@ I_m = J_m^2 \left( \frac{\Delta n D 2 \pi}{\lambda} \right) = J_m^2\left(\alpha 
 \newpage
 \section{Genereller Versuchsaufbau} \label{Aufbau}
 
-\gra[1]{Versuchsaufbau}{Versuchsaufbau \label{Versuchsaufbau}}
+\gra[1]{Versuchsaufbau}{Versuchsaufbau \label{Versuchsaufbau} \cite{anleitung}}
 
 In Abbildung \ref{Versuchsaufbau} ist der generelle Versuchsaufbau dargestellt, der in den eintelnen Versuchsteilen angepasst wird.
 Der Laserstrahl eines Helium-Neon-Lasers mit der Wellenlänge $\lambda = 632.8 nm$ wird nach Aufteilen durch einen Strahlteiler  teilweise durch eine erste Sammellinse (Linse 1) aufgeweitet und beim Treffen auf eine zweite Sammellinse (Linse 2), welche im Abstand der Summe der beiden Brennweiten steht, parallelisiert. Das Lichtbündel wird dann nach Durchlauf durch eine Blende an einem Gitter (je nach Versuchsaufbau Sinus-, Amplituden-, oder Phasengitter) gebeugt und trifft auf einen rotierenden Spiegel. Auf Grund der Drehung wird das Beugungsmuster 12.5 mal pro Sekunde auf die Photodiode (Diode 2) projiziert. Das detektierte Signal wird verstärkt und an einem Oszilloskop, das mit einem Computer verbunden ist analysiert. Das Oszilloskop wird durch das Signal der ersten Photodiode getriggert, die das Signal des ungebeugten Lichtstrahls, das nach dem Strahlteiler direkt auf den rotierenden Spiegel trifft, detektiert.
@@ -322,6 +323,7 @@ Der Laserstrahl eines Helium-Neon-Lasers mit der Wellenlänge $\lambda = 632.8 n
 \newpage
 
 \section{Sinusgitter}
+
 
 
 \subsection{Versuchsaufbau und -Durchführung}
@@ -346,7 +348,7 @@ Wir erhalten:
  \begin{table}[h!]
  {\centering{}
 \begin{tabular}{c||c|c|c}
- 					& $l_1$/cm 	& $l_2$/cm & $l{ges}$/cm	\\ \hline\hline
+ 					& $l_1$/cm 	& $l_2$/cm & $l{ges}$/cm 	\\ \hline\hline
 Messung 1		& $3.9 \pm 0.1$ 	&  $3.9 \pm 0.1$    	&  $3.95 \pm 0.07$ \\ \hline 
 Messung 2	&	 $1.9 \pm 0.1$ 	   	&  $1.8 \pm 0.1$  	&  $1.87 \pm 0.07$  \\ \hline
 Messung 3      	&  $5.0 \pm 0.1$  	&  $4.9 \pm 0.1$  &  $5.00 \pm 0.07$  \\ \hline
@@ -357,7 +359,22 @@ Messung 5  & $5.6 \pm 0.1$  & $5.7 \pm 0.1$ & $5.61 \pm 0.07$
 \end{table}
 \vskip 10 pt
 
-Hieraus lässt sich nun mit \ref{11} die Gitterkonstante $K$ berechnen wobei sich der Fehler wieder mit Gauß'scher Fehlerfortpflanzung berechnen lässt:
+Hieraus lässt sich nun mit den Abständen ziwschen Schrim und Gitter (siehe \ref{Tabelle}) mit \ref{11} die Gitterkonstante $K$ berechnen wobei sich der Fehler wieder mit Gauß'scher Fehlerfortpflanzung berechnen lässt:
+
+ \vskip 10 pt
+ \begin{table}[h!]
+ {\centering{}
+\begin{tabular}{c|c}
+ 					& $d$/cm 		\\ \hline\hline
+Messung 1		& $4.8 \pm 0.05$ 	 \\ \hline 
+Messung 2	&	 $2.6 \pm 0.05$ 	   	  \\ \hline
+Messung 3      	&  $6.0 \pm 0.05$    \\ \hline
+Messung 4    & $3.5 \pm 0.05$         \\ \hline                                           
+Messung 5  & $6.8 \pm 0.05$  
+ \end{tabular}
+ \caption{Abstände zwischen Schirm und Gitter }\label{Tabelle}}
+\end{table}
+\vskip 10 pt
 
 \begin{align*}
 s_K = \sqrt{\left(\del[K]{l}\cdot s_{l}\right)^2+\left(\del[K]{d}\cdot s_{d}\right)^2}
@@ -389,7 +406,9 @@ K_{ges} = 996 \pm 7 nm
 \newpage
 \subsection{Diskussion}
 
+Als Ergebnis der Gitterkonstante erhalten wir $K_{ges} = 996 \pm 7 nm$. Laut Beschriftung hat das Gitter eine Gitterkonstante von 1016 Linien/mm das heißt $K_{lit} = 984 nm$. Innerhalb von zwei Standardabweichungen ist dieser Wert mit unserem gemessenen Wert verträglich. Auffallend ist bei den Messergebnissen außerdem, dass der Gitterkonstantenwert, der sich aus der zweiten Messung ergibt, stark von den anderen Werten abweicht. Dies kann damit zusammenhängen, dass es sich bei der zweiten Messung um die Messung mit dem geringsten Abstand zwischen Schirm und Gitter handelt und der Messwert daher ungenauer ist, was sich in dem größeren Fehler auf diesen Wert äußert. \\
 
+Als Fehler auf den Schirm-Gitter-Abstand haben wir den Ablesefehler abgeschätzt. Den Fehler auf die Koordinatenabstände der Maxima haben wir allerdings größer gewählt, da durch den recht großen Durchmesser des Laserstrahls die Genauigkeit der Messungen eingeschränkt wurde und wir daher davon ausgehen müssen, einen größeren Fehler zu machen.
 
 
 
@@ -761,6 +780,13 @@ Wolfgang Demtröder
  Springer-Verlag,
  6. Auflage,
  2014
+ 
+ \bibitem{1}
+ \emph{https://www.chem.purdue.edu/courses/chm621/text/ft/basiset/rect/rectangle.gif}, Stand 26.9.2016
+ 
+ \bibitem{2}
+ \emph{http://cdn.iopscience.com/images/books/978-0-750-31056-7/live/bk978-0-750-31056-7ch3f7\_online.jpg},
+ Stand 26.9.2016
 \end{thebibliography}
 
 \end{document}
