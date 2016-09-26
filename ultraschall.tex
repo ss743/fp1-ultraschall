@@ -306,7 +306,7 @@ I_m = J_m^2 \left( \frac{\Delta n D 2 \pi}{\lambda} \right) = J_m^2\left(\alpha 
 \newpage
 \section{Genereller Versuchsaufbau und Durchführung}
 
-\gra{Versuchsaufbau}{Versuchsaufbau}
+\gra[1]{Versuchsaufbau}{Versuchsaufbau}
 \section{Sinusgitter}
 
 \newpage
@@ -319,7 +319,7 @@ In diesem Teil des Versuchs wird ein vereinfachter Versuchsaufbau benutzt. Ein L
 \newpage
 \subsection{Auswertung}
 
-Aus den gemessenen Koordinaten der Punkte $P(x/y)$ der Maxima (siehe \ref{Laborheft})berechnen wir zunächst die Abstände $l_1 = \sqrt{x_1²+y_1²}$ und $l_2= \sqrt{x_2²+y_2²} $ zwischen dem Maximum $0.$ Ordnung und den Maxima $1.$ Ordnung. Aus den beiden Abständen zum linken und rechten Maximum $1.$ Ordnung berechnen wir einen gemittelten Abstand $l_{ges}$. Die Fehler berechnen wir mit Gauß'scher Fehlerfortpflanzung aus dem Fehler $s_{x/y}$ auf die Koordinaten:
+Aus den gemessenen Koordinaten der Punkte $P(x/y)$ der Maxima (siehe \ref{Laborheft})berechnen wir zunächst die Abstände $l_1 = \sqrt{x_1²+y_1²}$ und $l_2= \sqrt{x_2^2+y_2^2} $ zwischen dem Maximum $0.$ Ordnung und den Maxima $1.$ Ordnung. Aus den beiden Abständen zum linken und rechten Maximum $1.$ Ordnung berechnen wir einen gemittelten Abstand $l_{ges}$. Die Fehler berechnen wir mit Gauß'scher Fehlerfortpflanzung aus dem Fehler $s_{x/y}$ auf die Koordinaten:
 
 \begin{align*}
 s_{l_1} = s_{l_2} &= \sqrt{\left(\del[l]{x}\cdot s_{x/y}\right)^2+\left(\del[l]{y}\cdot s_{x/y}\right)^2}\\
@@ -413,7 +413,7 @@ Da das Oszilloskop eine Zeitdifferenz zwischen den Maxima angibt und keine Winke
 \end{table}
 \vskip 10 pt
 
-\gra{Zeiteichung}{Zeit-Winkel-Eichung\label{EINHORN}}
+\graTwo[0.49]{referenzgitter}{Zeiteichung}{Zeit-Winkel-Eichung\label{EINHORN}}
 
 Aus der Steigung des Linearen Fits (siehe Abbildung \ref{EINHORN} ) lässt sich nun der Faktor für die Umrechnung von Zeit nach Winkeln bestimmen:
 
@@ -530,30 +530,54 @@ In Abbildung \ref{besselfits} wird nun die normierte Intensität über die Spann
 		\begin{tabular}{c|c}
 			
 			m&$\alpha$\\\hline
-			-3&$0,271\pm0,005$\\
-			-2&$0,225\pm0,003$\\
-			-1&$0,271\pm0,012$\\
-			 0&$0,164\pm0,004$\\
-			 1&$0,271\pm0,012$\\
-			 2&$0,243\pm0,004$\\
+			-3&$0,2\pm0,4$\\
+			-2&$0,231\pm0,009$\\
+			-1&$0,265\pm0,010$\\
+			 0&$0,190\pm0,004$\\
+			 1&$0,271\pm0,009$\\
+			 2&$0,250\pm0,005$\\
 			 3&$0,280\pm0,003$\\			
 		\end{tabular}
 		\caption{Fitparameter $\alpha$ der Besselquadratfits (siehe Formel (\ref{besselquadratfunktion}))\label{besselfitdaten}}
 		}
 \end{table}
 
-\subsubsection{Bestimmung der Wellenlänge von Isooktan}
+\subsubsection{Bestimmung der Wellenlänge von Isooktan}\label{isooktan}
 Aus den Abständen der Beugungsordnungen der Interferenz an der Schallwelle kann nun, analog zu \ref{amplitudengitterkonstante}, die Wellenlänge der Schallwelle bestimmt werden: $$m=\frac{\Lambda}{\lambda}\sin\theta$$
 Hierzu wird das Beugungsmuster bei 9.69 V benutzt, da dies die meisten erkennbaren Maxima aufweist (siehe Abbildung \ref{regenbogen}).
 In Abbildung \ref{schallwellenlaenge} haben wir durch einen linearen Fit die Steigung $a=\frac{m}{\sin\theta}$ bestimmt. Daraus erhalten wir die Wellenlänge der Schallwelle mit:
 $$\Lambda=a\cdot\lambda=(557\pm2) \,\mathrm{\mu m}$$
 \gra{schallwellenlaenge}{Bestimmung der Schallwellenlänge aus der Steigung von $m$ über $\sin\theta$\label{schallwellenlaenge}}
 
-\subsubsection{Berechnung der Wellenlänge von Isooktan}
+\subsubsection{Berechnung der Wellenlänge von Isooktan}\label{isooktanlit}
 Zum Vergleich berechnen wir die Wellenlänge der Schallwelle nun mithilfe der Frequenz und der Schallgeschwindigkeit in Isooktan. Die gemessene Frequenz beträgt: $\nu=(2092,35\pm0.03)kHz$ und für die Schallgeschwindigkeit verwenden wir den Literaturwert aus \cite{staat}: $c_{\mathrm{schall}}=1111\mathrm{\frac{m}{s}}$.
 Für die Wellenlänge erhalten wir nun: $$\Lambda=\frac{c_{\mathrm{schall}}}{\nu}=(530,982\pm0.008) \,\mathrm{\mu m}$$
 \newpage
 \subsection{Diskussion}
+Das Ziel dieses Versuchteils war die Bestätigung der Raman-Nath-Theorie (siehe \ref{Raman-Nath-Auswertung}). Wie in Abbildung \ref{besselfits} zu sehen ist, passen unsere Daten grob zu den quadrierten Besselfunktionen. Allerdings erhalten wir für die verschiedenen Beugungsordnungen deutlich abweichende Werte für die Konstante $\alpha$ (siehe Tabelle \ref{alphas}). 
+\begin{table}[h!]
+	\centering{
+		
+		\begin{tabular}{c|c}
+			
+			m&$\alpha$\\\hline
+			-3&$0,2\pm0,4$\\
+			-2&$0,231\pm0,009$\\
+			-1&$0,265\pm0,010$\\
+			0&$0,190\pm0,004$\\
+			1&$0,271\pm0,009$\\
+			2&$0,250\pm0,005$\\
+			3&$0,280\pm0,003$\\			
+		\end{tabular}
+		\caption{Fitparameter $\alpha$ der Besselquadratfits (siehe Formel (\ref{besselquadratfunktion}))\label{alphas}}
+	}
+\end{table}
+
+Deshalb können wir die Raman-Nath-Theorie hier nicht experimentell bestätigen. Unsere Daten decken allerdings nur einen kleinen Funktionsbereich der quadrierten Besselfunktion ab, weshalb sie nicht ausreichen, um eine qualifizierte Aussage über die Raman-Nath-Theorie treffen zu können.\\
+
+Aus den Abständen der Intensitätsmaxima der Interferenz an der Schallwelle haben wir die Wellenlänge der Schallwelle bestimmt (siehe \ref{isooktan}). Als Ergebnis erhielten wir: $$\Lambda=(557\pm2)\,\mathrm{\mu m}$$ Zum Vergleich berechneten wir in \ref{isooktanlit} die Wellenlänge mithilfe des Literaturwerts für die Schallgeschwindigkeit in Isooktan. Das Ergebnis hierbei ist: $$\Lambda_{\mathrm{lit}}=(530.982\pm0.008)\,\mathrm{\mu m}$$
+
+Die beiden Werte sind in der gleichen Größenordnung, stimmen aber unter der Berücksichtigung ihrer Fehler nicht überein.
 
 \newpage
 \section{Zusammenfassung und Diskussion}
