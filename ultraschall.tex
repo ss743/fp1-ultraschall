@@ -80,9 +80,9 @@
 }
 \newcommand{\del}[2][]{\frac{\partial #1}{\partial #2}}
 \newcommand{\code}[1]{\texttt{#1}}
-\DeclareMathOperator{\sinc}{\mathit{sinc}}
-\DeclareMathOperator{\rect}{\mathit{rect}}
-\DeclareMathOperator{\comb}{\mathit{comb}}
+\DeclareMathOperator{\sinc}{\mathrm{sinc}}
+\DeclareMathOperator{\rect}{\mathrm{rect}}
+\DeclareMathOperator{\comb}{\mathrm{comb}}
 
 %Titel,Inhalt----------------------------------------------------------------------------------------------------------
 
@@ -122,7 +122,7 @@ Ein paralleles Lichtbündel lässt sich durch eine Sammellinse, die im Abstand e
 
 \subsection{Fourieroptik}  
 
-Aus dem  Kirchhoff'schen Integraltheorems lässt sich die Fresnel-Kirchhoff-Integralformel entwickeln, mit der sich die Beugung von Licht durch ein beliebiges Hindernis errechnen lässt. Die Geometrie des Hindernisses ist dabei durch die Aperturfunktion $g$ gegeben. Es gilt dann für die Intensitätsvertilung $I$ auf dem Schirm im Fernfeld: 
+Aus dem  Kirchhoff'schen Integraltheorems lässt sich die Fresnel-Kirchhoff-Integralformel entwickeln, mit der sich die Beugung von Licht durch ein beliebiges Hindernis errechnen lässt. Die Geometrie des Hindernisses ist dabei durch die Aperturfunktion $g$ gegeben. Es gilt dann für die Intensitätsverteilung $I$ auf dem Schirm im Fernfeld: 
 
 \begin{align}
 I=|U(x_0)|^2=\left| \int\limits_{-\infty}^{\infty} g(x,y)e^{-ikx}dx \right|^2
@@ -170,11 +170,13 @@ wobei * eine Konvolution markiert und die Funktion $\comb$ wie folgt definiert i
 
 Die Fouriertransformierte der Aperturfunktion ist gegeben durch:
 
-FORMEL!!!!!!!
+\begin{align}
+	\mathscr{F}[g(x)]&=\left(|b|\cdot\underbrace{\sinc\left(\frac12\cdot b\cdot k\right)}_{\text{Einhüllende}}\cdot|K|\cdot\underbrace{\comb\left(\frac1{2\pi}\cdot K\cdot k\right)}_{\text{Lage der Beugungsmaxima}}\right)*\underbrace{\sinc\left(\frac12\cdot L\cdot k\right)}_{\text{Breite des Beugungspeaks}}\cdot|L|
+\end{align}
 
 \gra{bla}{Fraunhoferbeugungsmuster eines Gitters \cite{Demtröder}} 
 
-Die Intensitätsverteilung des Lichts ergibt sich dabei als proportional zu folgendem Ausdrck:
+Die Intensitätsverteilung des Lichts ergibt sich dabei als proportional zu folgendem Ausdruck:
 
 \begin{align}
 I(\Theta) &= \left| \mathscr{F}\left[ g(x) \right]\right| ^2 = \left(\frac{\sin\left(\beta (\Theta) \right) }{\beta(\Theta)} \right)^2 \cdot \left(\frac{\sin\left(N \gamma \right) }{N \sin (\gamma)} \right)^2\\
@@ -317,7 +319,7 @@ Der Laserstrahl eines Helium-Neon-Lasers mit der Wellenlänge $\lambda = 632.8 n
 
 \section{Sinusgitter}
 
-\newpage
+
 \subsection{Versuchsaufbau und -Durchführung}
 
 In diesem Teil des Versuchs wird ein vereinfachter Versuchsaufbau benutzt. Ein Laserstrahl trifft direkt auf das Sinusgitter und das Beugungsmuster ist auf einem Schirm wenige Zentimeter hinter dem Sinusgitter zu beobachten. Für fünf verschiedene Abstände zwischen Gitter und Schirm wird jeweils die Lage der Beugungsmaxima 1. Ordnung gemessen und hieraus die Gitterkonstante bestimmt, sodass wir über die Mittelung mehrerer Werte einen genaueren Wert für die Gitterkonstante des Sinusgitters erwarten.
@@ -348,8 +350,8 @@ Messung 2	&	 $1.9 \pm 0.1$ 	   	&  $1.8 \pm 0.1$  	&  $1.87 \pm 0.07$  \\ \hline
 Messung 3      	&  $5.0 \pm 0.1$  	&  $4.9 \pm 0.1$  &  $5.00 \pm 0.07$  \\ \hline
 Messung 4    & $2.8 \pm 0.1$ & $2.9 \pm 0.1$ &   $2.88 \pm 0.07$        \\ \hline                                           
 Messung 5  & $5.6 \pm 0.1$  & $5.7 \pm 0.1$ & $5.61 \pm 0.07$
- \end{tabular}}
- \caption{Abstände der Beugungsmaxima}
+ \end{tabular}
+ \caption{Abstände der Beugungsmaxima}}
 \end{table}
 \vskip 10 pt
 
@@ -388,7 +390,7 @@ K_{ges} = 996 \pm 7 nm
 \newpage
 \section{Amplitudengitter}
 
-\newpage
+
 \subsection{Versuchsaufbau und -Durchführung}
 
 
@@ -431,7 +433,16 @@ a &= (74.35\pm0.05)\,\frac1{\mathrm{s}}&
 \end{align*}
 
 \subsubsection{Bestimmung verschiedener Gitterkonstanten}\label{amplitudengitterkonstante}
-Wir haben für 5 verschiedenen unbekannte Amplitudengitter Interferenzmuster aufgenommen und bestimmen nun aus diesen die jeweilige Gitterkonstante. Die Zeitabhängigkeit der Interferenzmuster werden nun mithilfe des in \ref{Happyisttoll} berechneten Wertes in eine $\sin\theta$-Abhängigkeit umgerechnet. Anschließend wird aus den Beugungsordnungen in Abhängigkeit der Positionen der Maxima die Gitterkonstante des jeweiligen Gitters bestimmt. Die Steigung $a$ des linearen Fits $m=\frac{K}{\lambda}\sin\theta$ beträgt nun $a=\frac{K}{\lambda}$. Damit gilt für die Gitterkonstante: $$K=a\cdot\lambda$$.
+Wir haben für 5 verschiedenen unbekannte Amplitudengitter Interferenzmuster aufgenommen und bestimmen nun aus diesen die jeweilige Gitterkonstante. Die Zeitabhängigkeit der Interferenzmuster werden nun mithilfe des in \ref{Happyisttoll} berechneten Wertes in eine $\sin\theta$-Abhängigkeit umgerechnet. 
+
+Durch Gaußfits an die im Beugungsmuster sichtbaren Maxima wird die Position und die Amplitude der Maxima bestimmt.
+
+\graTwo[0.49]{amplitudengitter1a}{amplitudengitter1b}{Bestimmung der Maxima des ersten Amplitudengitters (Verschiedene Skalierungen, um alle Maxima gut erkennen zu können)}
+\graTwo[0.49]{amplitudengitter2}{amplitudengitter3}{Bestimmung der Maxima des zweiten und des dritten Amplitudengitters}
+\graTwo[0.49]{amplitudengitter4}{amplitudengitter5}{Bestimmung der Maxima des vierten und des fünften Amplitudengitters}
+
+Anschließend wird aus den Beugungsordnungen in Abhängigkeit der Positionen der Maxima die Gitterkonstante des jeweiligen Gitters bestimmt. Die Steigung $a$ des linearen Fits $m=\frac{K}{\lambda}\sin\theta$ beträgt nun $a=\frac{K}{\lambda}$. Damit gilt für die Gitterkonstante: $$K=a\cdot\lambda$$
+Der Fehler auf die Gitterkonstante berechnet sich durch Gauß'sche Fehlerfortpflanzung aus der Breite $\sigma$ des Gauß-Peaks.
 
 Wir erhalten nun mit dieser Rechnung die folgenden Werte für die Gitterkonstanten:
 \begin{align*}
@@ -519,7 +530,7 @@ wobei der Fehler sich mit Gauß'scher Fehlerfortpflanzung berechnet:
 
 \subsection{Versuchsaufbau und -Durchführung}
 
-
+Bei diesem Versuchsteil wird die Versuchsanordnung aus \ref{Aufbau} in Abbildung \ref{Versuchsaufbau} verwendet.
 
 
 
