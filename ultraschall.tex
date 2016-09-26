@@ -105,7 +105,11 @@ In diesem Versuch wird über die Messung von Beugungs-Spektren eines He-Ne-Laser
 \pagenumbering{arabic} %verstecke Seitenzahl
 \section{Einleitung}
 
+In diesem Experiment wird das optische Phänomen der Interferenz an Gittern untersucht. Hierzu setzen wir verschiedene optische Gitter ein und untersuchen die an ihnen auftretenden Beugungsmuster eines Helium-Neon-Lasers mit der Wellenlänge $\lambda = 632,8$ nm. Zunächst untersuchen wir das Interferenzmuster eines Sinus-Gitters, um dessen Gitterkonstante zu bestimmen.\\ 
 
+Anschließend untersuchen wir mehrere Amplitudengitter. Von diesen berechnen wir zunächst die Gitterkonstante und anschließend das Auflösungsvermögen. Für eines dieser Gitter stellen wir zusätzlich die Aperturfunktion auf und untersuchen mithilfe dieser das Verhältnis von der Spaltbreite zur Gitterkonstante dieses Gitters.\\
+
+Abschließend widmen wir uns dem Ultraschall-Phasengitter. Dies ist ein Gitter, welches durch eine Ultraschallwelle in Isooktan erzeugt wird. Wir untersuchen nun die Beugungsmuster des Ultraschall-Phasengitters bei verschiedenen Spannungen und vergleichen die Ergebnisse mit der Raman-Nath-Theorie (siehe \ref{Raman-Nath}). Danach bestimmen wir die Wellenlänge der Schallwelle und vergleichen sie mit dem berechneten Wert.
 
 
 
@@ -252,7 +256,7 @@ g\left( x\right) = \sqrt{I_0} + \sqrt{I_1}\cdot\cos\left( \frac{2 \pi x}{K}\righ
 \end{align}
 
 
-\subsection{Phasengitter}
+\subsection{Phasengitter}\label{phasengitter}
 
 Während Amplitudegitter lediglich die Amplitude gebeugten Lichtes modulieren, beeinflussen optische Gitter die Phase des durchlaufenden Lichts durch Variationen im Brechungsindex, während kein Intensitätsverlust statt findet. In Abbildung \ref{Phasengitter} ist das Fraunhoferbeugungsmuster eines Sinus-Phasengitters dargestellt.
 
@@ -278,18 +282,18 @@ I_q \left(k \right) = J_q ^2\frac{m}{2}
 \subsection{Ultraschallphasengitter und Raman-Nath-Theorie}
 \label{Raman-Nath}
 
-Eine laufende Schallwelle verursacht periodische Dichteschwankungen in einem Medium, was wiederum periodische Schwankungen des Brechungsindexes zur Folge hat. Trifft ein kohärenter, paralleler Lichtstrahl (in diesem Experiment ein Heliu-Neon-Laser) nun senkrecht zur Ultraschallwelle auf das Medium, tritt das Licht phasenversetzt aus und im Fernfeld führt diese verzerrte Phasenfront zu einer Überlagerung und einem Beugungsbild. Der Brechungsindex $n$ eines schalldurchsetzten Mediums mit Schall der Wellenlänge $\Gamma$ ist gegeben durch:
+Eine laufende Schallwelle verursacht periodische Dichteschwankungen in einem Medium, was wiederum periodische Schwankungen des Brechungsindexes zur Folge hat. Trifft ein kohärenter, paralleler Lichtstrahl (in diesem Experiment ein Helium-Neon-Laser) nun senkrecht zur Ultraschallwelle auf das Medium, tritt das Licht phasenversetzt aus und im Fernfeld führt diese verzerrte Phasenfront zu einer Überlagerung und einem Beugungsbild. Der Brechungsindex $n$ eines schalldurchsetzten Mediums mit Schall der Wellenlänge $\Gamma$ ist gegeben durch:
 
 \begin{align}
 n\left(x \right) = n_0 + \Delta n \cdot \sin \left(\frac{2 \pi x}{\Gamma} \right) 
 \end{align}
-Die Intenität des Schalls $S$ ist proportional zum Quadrat der an der Ultraschallzelle angelegten Spannung $ U$. Dies bedeutet, dass duch anlegen verschiedener Spannungen die Dichte $\rho$ und damit der Brechungsindex varriert werden können:
+Die Intensität des Schalls $S$ ist proportional zum Quadrat der an der Ultraschallzelle angelegten Spannung $ U$. Dies bedeutet, dass durch Anlegen verschiedener Spannungen die Dichte $\rho$ und damit der Brechungsindex variiert werden können:
 
 \begin{align}
 U^2 \propto S \propto \left( \frac{\Delta n}{n -1} \right)^2 = \left( \frac{\Delta \rho}{\rho_0}\right)^2  
 \end{align}
 
-Vorrasugesetzt die breite $D$ des schalldurchsetzten Mediums und die Schallintensität sind nicht zu hoch, lässt sich Gleichung \ref{23} mit der Raman-Nath-Theorie modifizieren. Die Variablen transformieren sich wie folgt:
+Vorausgesetzt die breite $D$ des schalldurchsetzten Mediums und die Schallintensität sind nicht zu hoch, lässt sich Gleichung \ref{23} mit der Raman-Nath-Theorie modifizieren. Die Variablen transformieren sich wie folgt:
 
 \begin{align}
 q &\rightarrow m\\
@@ -528,11 +532,13 @@ wobei der Fehler sich mit Gauß'scher Fehlerfortpflanzung berechnet:
 
 \subsection{Versuchsaufbau und -Durchführung}
 
-Bei diesem Versuchsteil wird die Versuchsanordnung aus \ref{Aufbau} in Abbildung \ref{Versuchsaufbau} verwendet.
+Bei diesem Versuchsteil wird die Versuchsanordnung aus \ref{Aufbau} in Abbildung \ref{Versuchsaufbau} verwendet. Anstatt der Gitter wird hier nun eine Ultraschallzelle verwendet. Die Ultraschallzelle besteht aus zwei Quarzkristallen, welche eine Schallwelle erzeugen. Die Zelle ist in diesem Versuchsteil mit Isooktan gefüllt. Die Schallwelle im Isooktan wirkt nun als Phasengitter auf den Laserstrahl (siehe \ref{phasengitter}). \\
+
+Zunächst wird bei ausgeschalteter Spannung ein Referenzgitter vermessen, um eine erneute Zeiteichung durchzuführen. Anschließend wird die Spannung variiert und für verschiedene Spannungen die Beugungsbilder aufgezeichnet. Aus diesen wird anschließend das Verhalten der Intensität in Abhängigkeit der Spannung untersucht und mit der Raman-Nath-Theorie (siehe \ref{Raman-Nath}) verglichen. Zuletzt wird aus den Positionen der Intensitätsmaxima die Wellenlänge der Schallwelle bestimmt und mit dem aus dem Literaturwert berechneten Wert verglichen.
 
 
 
-\newpage
+
 \subsection{Auswertung}
 \subsubsection{Zeiteichung}
 Wie in \ref{Happyisttoll} haben wir das Referenzgitter mit $K_R=125 \mu m$ zur Zeiteichung benutzt, indem wir die gemessene zeitliche Position der Beugungsmaxima mit der berechneten Position in folgende Beziehung gesetzt haben:
