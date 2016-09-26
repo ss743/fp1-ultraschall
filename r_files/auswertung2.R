@@ -182,9 +182,10 @@ a=function(x){x}
 fits=c()
 
 for(k in 1:6){
-  par(mar=c(5,5,1,2))
+  par(mar=c(5,5,2,2))
   plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6,xlab=expression(sin(theta)),ylab="I / V")
   grid()
+  title(legendvector[k])
   try({
     fitdata=threegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6)*corrfac)
     fits[[k]]=fitdata
@@ -201,9 +202,10 @@ for(k in 1:6){
   })
 }
 for(k in 7:7){
-  par(mar=c(5,5,1,2))
+  par(mar=c(5,5,2,2))
   plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6,xlab=expression(sin(theta)),ylab="I / V")
   grid()
+  title(legendvector[k])
   try({
     fitdata=threegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5*10^(-6)*corrfac)
     fits[[k]]=fitdata
@@ -221,9 +223,10 @@ for(k in 7:7){
 }
 
 for(k in 8:8){
-  par(mar=c(5,5,1,2))
+  par(mar=c(5,5,2,2))
   plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6,xlab=expression(sin(theta)),ylab="I / V")
   grid()
+  title(legendvector[k])
   try({
     fitdata=threegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6)*corrfac)
     fits[[k]]=fitdata
@@ -240,9 +243,10 @@ for(k in 8:8){
   })
 }
 for(k in 9:9){
-  par(mar=c(5,5,1,2))
+  par(mar=c(5,5,2,2))
   plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6,xlab=expression(sin(theta)),ylab="I / V")
   grid()
+  title(legendvector[k])
   try({
     fitdata=fivegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6)*corrfac)
     fits[[k]]=fitdata
@@ -260,9 +264,10 @@ for(k in 9:9){
 }
 
 for(k in 10:11){
-  par(mar=c(5,5,1,2))
+  par(mar=c(5,5,2,2))
   plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6,xlab=expression(sin(theta)),ylab="I / V")
   grid()
+  title(legendvector[k])
   try({
     fitdata=sevengausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6)*corrfac)
     fits[[k]]=fitdata
@@ -279,8 +284,10 @@ for(k in 10:11){
   })
 }
 for(k in 12:12){
+  par(mar=c(5,5,2,2))
   plot(sinamp[,1,k],sinamp[,2,k],bty="l",pch=4,cex=0.6,xlab=expression(sin(theta)),ylab="I / V")
   grid()
+  title(legendvector[k])
   try({
     fitdata=ninegausfit(data.frame(x=sinamp[,1,k],y=sinamp[,2,k]),sig0=5.5*10^(-6)*corrfac)
     fits[[k]]=fitdata

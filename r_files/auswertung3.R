@@ -50,7 +50,7 @@ ypeaksp3=ypeaksp3/normfactor
 
 ylim=c(min(c(ypeaksm3,ypeaksm2,ypeaksm1,ypeaks0,ypeaksp1,ypeaksp2,ypeaksp2)),max(c(ypeaksm3,ypeaksm2,ypeaksm1,ypeaks0,ypeaksp1,ypeaksp2,ypeaksp2)))
 
-colors=c("red","green","black","black","darkgreen","blue","blueviolet")
+colors=c("darkred","green","black","deeppink","blue","blueviolet","darkgreen")
 
 par(mar=c(5,5,1,2))
 plot(x=U,ypeaksm3,pch=4,cex=0.6,bty="l",col=colors[1],ylim=ylim,ylab="Î",xlab="U / V")
@@ -127,4 +127,11 @@ try({
   salpha[i]=fitdata["alpha","Std. Error"]
   plot(function(x){(besselJ(x*alpha[i],m))^2},0,10,col=colors[i],add=TRUE)
 })
+
+m=c(-3,-2,-1,0,1,2,3)
+legendvector=c()
+for(i in 1:length(m)){
+  legendvector[i]=paste("m = ",m[i],sep="")
+}
+legend(x=7,y=0.9,legendvector,fill=colors,cex=0.7,bty="n")
 

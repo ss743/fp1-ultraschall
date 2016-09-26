@@ -231,7 +231,7 @@ a &= (74.35\pm0.05)\,\frac1{\mathrm{s}}&
 \text{mit } a = \frac{\sin(\theta))}{t}
 \end{align*}
 
-\subsubsection{Bestimmung verschiedener Gitterkonstanten}
+\subsubsection{Bestimmung verschiedener Gitterkonstanten}\label{amplitudengitterkonstante}
 Wir haben für 5 verschiedenen unbekannte Amplitudengitter Interferenzmuster aufgenommen und bestimmen nun aus diesen die jeweilige Gitterkonstante. Die Zeitabhängigkeit der Interferenzmuster werden nun mithilfe des in \ref{Happyisttoll} berechneten Wertes in eine $\sin\theta$-Abhängigkeit umgerechnet. Anschließend wird aus den Beugungsordnungen in Abhängigkeit der Positionen der Maxima die Gitterkonstante des jeweiligen Gitters bestimmt. Die Steigung $a$ des linearen Fits $m=\frac{K}{\lambda}\sin\theta$ beträgt nun $a=\frac{K}{\lambda}$. Damit gilt für die Gitterkonstante: $$K=a\cdot\lambda$$.
 
 Wir erhalten nun mit dieser Rechnung die folgenden Werte für die Gitterkonstanten:
@@ -299,33 +299,39 @@ b = 120 nm
 \newpage
 \subsection{Auswertung}
 \subsubsection{Zeiteichung}
-Wie in \ref{Happyisttoll} haben wir das Referenzgitter mit $K_R=125 \mu m$ zur Zeiteichung benutzt. (siehe Abbildung \ref{simonhatsverkackt})
+Wie in \ref{Happyisttoll} haben wir das Referenzgitter mit $K_R=125 \mu m$ zur Zeiteichung benutzt, indem wir die gemessene zeitliche Position der Beugungsmaxima mit der berechneten Position in folgende Beziehung gesetzt haben:
+$$t=\frac1a\sin\theta$$
 
 \graTwo[0.49]{ultraschall-eichgitter}{ultraschall-zeiteichung}{Interferenzmuster des Referenzgitters und linearer Fit zur Bestimmung des Umrechnungsfaktors\label{simonhatsverkackt}}
 
-Aus dem linearen Fit erhalten wir:
+Aus dem linearen Fit der Zeit über den Sinus des Winkels (siehe Abbildung \ref{simonhatsverkackt}) erhalten wir:
 \begin{align*}
 a &=(70.64\pm0.06)\,\frac1{\mathrm{s}}&
 \text{mit } a = \frac{\sin(\theta)}{t}
 \end{align*}
+Im restlichen Teil dieser Auswertung werden die Zeiten nun über diesen Faktor in $\sin\theta$ umgerechnet und in Abhängigkeit des Sinus aufgetragen.
 
 \subsubsection{Bestimmung der Beugungsmaxima}
 \gra[1]{ultraschall-regenbogen}{Interferenzmuster der Ultraschallwelle für verschiedene Spannungen \label{regenbogen}}
-In Abbildung \ref{regenbogen} sind die Beugungsbilder an der Ultraschallwelle für verschiedene Spannungen aufgetragen. An diese Beugungsmuster haben wir eine Summe von Gaußfunktionen gefittet. Die Ergebnisse der Fits sind im Anhang unter \ref{fitergebnisse} zu finden. Bei hohen Spannungen lassen sich bis zu 3 Beugungsordnungen sehen und sinnvoll aus dem Fit bestimmen, wobei bei niedrigen Spannungen nur noch das nullte Hauptmaximum zu bestimmen ist. 
+In Abbildung \ref{regenbogen} sind die Beugungsbilder an der Ultraschallwelle für verschiedene Spannungen aufgetragen. An diese Beugungsmuster haben wir eine Summe von Gaußfunktionen gefittet.
+\begin{align*}
+	I(\sin\theta)&=C+\sum_{i=1}^{N}A_i\frac{1}{\sqrt{2\pi}\sigma_i}\exp{\frac{-(\sin\theta-\mu_i)}{2\sigma_i^2}}
+\end{align*} 
+Die Ergebnisse der Fits sind im Anhang unter \ref{fitergebnisse} zu finden. Bei hohen Spannungen lassen sich bis zu 3 Beugungsordnungen sehen und sinnvoll an die Daten zu fitten, wobei bei niedrigen Spannungen nur noch das nullte Hauptmaximum sinnvoll zu bestimmen ist. 
 
 \subsubsection{Berechnung der Intensitäten an den Maxima}
-Da nicht für jede Spannung alle Beugungsmaxima zu sehen sind, wurde für jedes Maximum über alle für dieses Maximum bestimmten Positionen gewichtet gemittelt und an den Kurven, an denen diese Beugungsordnung nicht zu erkennen ist, für die Intensität der Funktionswert des Fits an der gemittelten Position benutzt. Nun werden die Intensitäten $I$ mit $\hat{I}=\frac{I}{I_0}$ genormt. $I_0$ ist hierbei die Intensität am Maximum nullter Ordnung bei der Spannung $U=0$V.
+Zur Überprüfung der Raman-Nath-Theorie (siehe \ref{Raman-Nath-Auswertung}) werden die Intensitäten der Intensitätsmaxima bei verschiedenen Spannungen benötigt. Da jedoch nicht für jede Spannung alle Beugungsmaxima zu sehen sind, wurde für jedes Maximum über alle für dieses Maximum bestimmten Positionen gewichtet gemittelt und an den Kurven, an denen diese Beugungsordnung nicht zu erkennen ist, für die Intensität der Funktionswert des Fits an der gemittelten Position benutzt. Nun werden die Intensitäten $I$ mit $\hat{I}=\frac{I}{I_0}$ genormt. $I_0$ ist hierbei die Intensität am Maximum nullter Ordnung bei der Spannung $U=0$V.
 
-\subsubsection{Überprüfung der Raman-Nath-Theorie}
+\subsubsection{Überprüfung der Raman-Nath-Theorie}\label{Raman-Nath-Auswertung}
 Die Raman-Nath-Theorie (siehe \ref{Raman-Nath}) besagt, dass sich die Intensität in Abhängigkeit der Spannung nach folgender Formel verhält:
 \begin{align}
-	I_m&=J_m^2(\alpha U) \label{besselquadratfunktion}
+	I_m(U)&=J_m^2(\alpha U) \label{besselquadratfunktion}
 \end{align}
 $J_m(x)$ sind hierbei die Besselfunktionen.
 
-\gra{ultraschall-besselfits}{Normierte Intensität der Beugungsmaxima über die Spannung mit Besselquadratfits zur Überprüfung der Raman-Nath-Theorie\label{besselfits}}
+\gra[1]{ultraschall-besselfits}{Normierte Intensität der Beugungsmaxima über die Spannung mit Besselquadratfits zur Überprüfung der Raman-Nath-Theorie\label{besselfits}}
 
-In Abbildung \ref{besselfits} sieht man die an die Daten gefitteten Funktionen. Tabelle \ref{besselfitdaten} zeigt die Parameter der gefitteten Funktionen.
+In Abbildung \ref{besselfits} wird nun die normierte Intensität über die Spannung aufgetragen. Anschließend werden quadrierte Besselfunktionen an die Datensätze gefittet. Tabelle \ref{besselfitdaten} zeigt die Parameter der gefitteten Funktionen.
 
 \begin{table}[h!]
 	\centering{
@@ -346,8 +352,9 @@ In Abbildung \ref{besselfits} sieht man die an die Daten gefitteten Funktionen. 
 \end{table}
 
 \subsubsection{Bestimmung der Wellenlänge von Isooktan}
-Aus den Abständen der Beugungsordnungen der Interferenz an der Schallwelle kann nun, analog zu REFERENZ AMPLITUDENGITTER, die Wellenlänge der Schallwelle bestimmt werden: $$m=\frac{\Lambda}{\lambda}\sin\theta$$
-In Abbildung \ref{schallwellenlaenge} haben wir durch einen linearen Fit die Steigung $a$ von $m$ über $\sin\theta$ bestimmt. Daraus erhalten wir die Wellenlänge der Schallwelle mit:
+Aus den Abständen der Beugungsordnungen der Interferenz an der Schallwelle kann nun, analog zu \ref{amplitudengitterkonstante}, die Wellenlänge der Schallwelle bestimmt werden: $$m=\frac{\Lambda}{\lambda}\sin\theta$$
+Hierzu wird das Beugungsmuster bei 9.69 V benutzt, da dies die meisten erkennbaren Maxima aufweist (siehe Abbildung \ref{regenbogen}).
+In Abbildung \ref{schallwellenlaenge} haben wir durch einen linearen Fit die Steigung $a=\frac{m}{\sin\theta}$ bestimmt. Daraus erhalten wir die Wellenlänge der Schallwelle mit:
 $$\Lambda=a\cdot\lambda=(557\pm2) \,\mathrm{\mu m}$$
 \gra{schallwellenlaenge}{Bestimmung der Schallwellenlänge aus der Steigung von $m$ über $\sin\theta$\label{schallwellenlaenge}}
 
@@ -371,7 +378,26 @@ Für die Wellenlänge erhalten wir nun: $$\Lambda=\frac{c_{\mathrm{schall}}}{\nu
 \section{Anhang} 
 \subsection{Gaußfits}
 \label{fitergebnisse}
-
+\begin{minipage}[h!]{\textwidth}
+	\centering
+	\includegraphics[width=0.49\textwidth]{figures/ultraschall1.png}\hskip 10 pt
+	\includegraphics[width=0.49\textwidth]{figures/ultraschall2.png}\vskip 10 pt
+	\includegraphics[width=0.49\textwidth]{figures/ultraschall3.png}\hskip 10 pt
+	\includegraphics[width=0.49\textwidth]{figures/ultraschall4.png}\vskip 10 pt
+	\includegraphics[width=0.49\textwidth]{figures/ultraschall5.png}\hskip 10 pt
+	\includegraphics[width=0.49\textwidth]{figures/ultraschall6.png}\vskip 10 pt
+	\captionof{figure}{Gaußfits an die Beugungsbilder der Spannungen 0 V bis 4.2 V}
+\end{minipage}\newpage
+\begin{minipage}[h!]{\textwidth}
+	\centering
+	\includegraphics[width=0.49\textwidth]{figures/ultraschall7.png}\hskip 10 pt
+	\includegraphics[width=0.49\textwidth]{figures/ultraschall8.png}\vskip 10 pt
+	\includegraphics[width=0.49\textwidth]{figures/ultraschall9.png}\hskip 10 pt
+	\includegraphics[width=0.49\textwidth]{figures/ultraschall10.png}\vskip 10 pt
+	\includegraphics[width=0.49\textwidth]{figures/ultraschall11.png}\hskip 10 pt
+	\includegraphics[width=0.49\textwidth]{figures/ultraschall12.png}\vskip 10 pt
+	\captionof{figure}{Gaußfits an die Beugungsbilder der Spannungen 5.1 V bis 9.69 V}
+\end{minipage}\newpage
 \subsection{Laborheft\label{Laborheft}} 
 \begin{minipage}{\textwidth}
 \centering
