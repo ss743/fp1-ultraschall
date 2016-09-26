@@ -185,7 +185,7 @@ I(\Theta) &= \left| \mathscr{F}\left[ g(x) \right]\right| ^2 = \left(\frac{\sin\
 Das Begungsmuster wird mit höheren Werten von N schmäler und die sekundären Maxima kleiner. Der Zusammenhang zwischen Beugungswinkel und Maxima m-ter Ordnung ist:
 
 \begin{align}
-m\lambda = Ksin(\Theta)
+m\lambda = Ksin(\Theta) \label{11}
 \end{align}
 
 Der Beugungswinkel lässt sich aus dem Versuchsaufbau wie folgt berechnen:
@@ -243,7 +243,7 @@ I = \left| \mathscr{F}\left[ g(x) \right]\right| ^2 = \sinc^2 \left(bk \right) +
 \gra{Sinusgitter}{Fraunhoferbeugungsmuster für ein dünnes Sinusgitter \label{Sinusgitter}}
 
 Aus Abbildung \ref{Sinusgitter} ist ersichtlich, dass es drei Hauptmaxima an den Stellen $k = 0$ 
-sowie $ k = \pm 2 \pi z $ ( wobei $z$ die Entfernung zum Sinusgitter ist). Die Intensitäten der Maxima 1. Ordnung entsprechen dabei einem Viertel der Intensität des Maximums 0. Ordnung. Die Aperturfunktion kann mit ref!!!!!!! wie folgt ausgedrückt werden:
+sowie $ k = \pm 2 \pi z $ ( wobei $z$ die Entfernung zum Sinusgitter ist). Die Intensitäten der Maxima 1. Ordnung entsprechen dabei einem Viertel der Intensität des Maximums 0. Ordnung. Die Aperturfunktion kann mit \ref{Fourier1} wie folgt ausgedrückt werden:
 
 \begin{align}
 g\left( x\right) = \sqrt{I_0} + \sqrt{I_1}\cdot\cos\left( \frac{2 \pi x}{K}\right) 
@@ -317,14 +317,12 @@ Der Laserstrahl eines Helium-Neon-Lasers mit der Wellenlänge $\lambda = 632.8 n
 
 \section{Sinusgitter}
 
-\newpage
+
 \subsection{Versuchsaufbau und -Durchführung}
 
 In diesem Teil des Versuchs wird ein vereinfachter Versuchsaufbau benutzt. Ein Laserstrahl trifft direkt auf das Sinusgitter und das Beugungsmuster ist auf einem Schirm wenige Zentimeter hinter dem Sinusgitter zu beobachten. Für fünf verschiedene Abstände zwischen Gitter und Schirm wird jeweils die Lage der Beugungsmaxima 1. Ordnung gemessen und hieraus die Gitterkonstante bestimmt, sodass wir über die Mittelung mehrerer Werte einen genaueren Wert für die Gitterkonstante des Sinusgitters erwarten.
 
 
-
-\newpage
 \subsection{Auswertung}
 
 Aus den gemessenen Koordinaten der Punkte $P(x/y)$ der Maxima (siehe \ref{Laborheft})berechnen wir zunächst die Abstände $l_1 = \sqrt{x_1²+y_1²}$ und $l_2= \sqrt{x_2^2+y_2^2} $ zwischen dem Maximum $0.$ Ordnung und den Maxima $1.$ Ordnung. Aus den beiden Abständen zum linken und rechten Maximum $1.$ Ordnung berechnen wir einen gemittelten Abstand $l_{ges}$. Die Fehler berechnen wir mit Gauß'scher Fehlerfortpflanzung aus dem Fehler $s_{x/y}$ auf die Koordinaten:
@@ -353,7 +351,7 @@ Messung 5  & $5.6 \pm 0.1$  & $5.7 \pm 0.1$ & $5.61 \pm 0.07$
 \end{table}
 \vskip 10 pt
 
-Hieraus lässt sich nun mit ref!!!!!! die Gitterkonstante $K$ berechnen wobei sich der Fehler wieder mit Gauß'scher Fehlerfortpflanzung berechnen lässt:
+Hieraus lässt sich nun mit \ref{11} die Gitterkonstante $K$ berechnen wobei sich der Fehler wieder mit Gauß'scher Fehlerfortpflanzung berechnen lässt:
 
 \begin{align*}
 s_K = \sqrt{\left(\del[K]{l}\cdot s_{l}\right)^2+\left(\del[K]{d}\cdot s_{d}\right)^2}
@@ -384,6 +382,10 @@ K_{ges} = 996 \pm 7 nm
 
 \newpage
 \subsection{Diskussion}
+
+
+
+
 
 \newpage
 \section{Amplitudengitter}
@@ -432,13 +434,13 @@ a &= (74.35\pm0.05)\,\frac1{\mathrm{s}}&
 Wir haben für 5 verschiedenen unbekannte Amplitudengitter Interferenzmuster aufgenommen und bestimmen nun aus diesen die jeweilige Gitterkonstante. Die Zeitabhängigkeit der Interferenzmuster werden nun mithilfe des in \ref{Happyisttoll} berechneten Wertes in eine $\sin\theta$-Abhängigkeit umgerechnet. Anschließend wird aus den Beugungsordnungen in Abhängigkeit der Positionen der Maxima die Gitterkonstante des jeweiligen Gitters bestimmt. Die Steigung $a$ des linearen Fits $m=\frac{K}{\lambda}\sin\theta$ beträgt nun $a=\frac{K}{\lambda}$. Damit gilt für die Gitterkonstante: $$K=a\cdot\lambda$$.
 
 Wir erhalten nun mit dieser Rechnung die folgenden Werte für die Gitterkonstanten:
-\begin{align*}
-	K_1&=(129.26\pm0.07)\,\mathrm{\mu m}\\
+\begin{align}
+	K_1&=(129.26\pm0.07)\,\mathrm{\mu m}  \label{K1}\\
 	K_2&=(34.26\pm0.03)\,\mathrm{\mu m}\\
 	K_3&=(102.9\pm0.3)\,\mathrm{\mu m}\\
 	K_4&=(72\pm6)\,\mathrm{\mu m}\\
-	K_5&=(51.57\pm0.08)\,\mathrm{\mu m}\\  \label{K1}
-\end{align*}
+	K_5&=(51.57\pm0.08)\,\mathrm{\mu m}
+\end{align}
 
 
 \subsubsection{Aperturfunktion}
@@ -464,13 +466,13 @@ Maximumg 0. Ordnung  & -  & - & $2.72 \pm 0.06$
 \vskip 10 pt
 
 
-Aus diesen und der zuvor berechneten Gitterkonstante $K_1 = (129.26 \pm 0.07) \mu m$ (siehe \ref{K1} lässt sich mittels der Fourierreihe (siehe \ref{Fourier1}) nun die Aperturfunktion näherungsweise bestimmen:
+Aus diesen und der zuvor berechneten Gitterkonstante $K_1 = (129.26 \pm 0.07) \mu m$ (siehe \ref{K1}) lässt sich mittels der Fourierreihe (siehe \ref{Fourier1}) nun die Aperturfunktion näherungsweise bestimmen:
 
 \begin{align}
-g(x)\approx\sum^{5}_{k=0}\pm\sqrt{I_k}\cos\left(\frac{2k\pi x}{K_1} \right \label{summe}
+g(x)\approx\sum^{5}_{k=0}\pm\sqrt{I_k}\cos\left(\frac{2k\pi x}{K_1} \right) \label{summe}
 \end{align}
 
-)  
+  
 
 \gra{apertur}{Genäherte Aperturfunktion von Gitter 1 \label{kotz}} 
 
