@@ -154,7 +154,7 @@ Die Intensitätsverteilung des Beugungsmusters im Fernfeld ist somit:
 I = \left| \mathscr{F}\left[ g(x) \right]\right| ^2 = \left( \left| b\right| \cdot \sinc\left( \frac{k \cdot \left| b\right| }{2} \right) \right) ^2
 \end{align}
 
-\subsection{Gitter mit N Linien}
+\subsection{Gitter mit N Linien} \label{Gitter}
 
 Für ein Gitter der  Breite L mit N Linien, der Spaltbreite b und der Gitterkonstane K ergibt sich die Aperturfunktion durch Wiederholung der Funktion eines Einzelspaltes:
 
@@ -466,7 +466,11 @@ Maximumg 0. Ordnung  & -  & - & $2.72 \pm 0.06$
 
 Aus diesen und der zuvor berechneten Gitterkonstante $K_1 = (129.26 \pm 0.07) \mu m$ (siehe \ref{K1} lässt sich mittels der Fourierreihe (siehe \ref{Fourier1}) nun die Aperturfunktion näherungsweise bestimmen:
 
-\[g(x)\approx\sum^{5}_{k=0}\pm\sqrt{I_k}\cos\left(\frac{2k\pi x}{K_1} \right) \]
+\begin{align}
+g(x)\approx\sum^{5}_{k=0}\pm\sqrt{I_k}\cos\left(\frac{2k\pi x}{K_1} \right \label{summe}
+\end{align}
+
+)  
 
 \gra{apertur}{Genäherte Aperturfunktion von Gitter 1 \label{kotz}} 
 
@@ -510,7 +514,7 @@ wobei der Fehler sich mit Gauß'scher Fehlerfortpflanzung berechnet:
 \newpage
 \subsection{Diskussion\label{BOOOOOMMMM!!!!!!!!!}} 
 
-
+Thoeretisch ist die Aperturfunktion eines Amplitudengitters eine periodische Rechteckfunktion (siehe \ref{Gitter}). Da in einem Experiment jedoch nie unendlich viele Maxima beobachtet werden und die Summe der Fourierreihe daher abbricht (siehe \ref{summe}), erwarten wir keine perfekte Rechteckfunktion sondern lediglich eine Annäherung, an der Kosinusverläufe erkennbar sind. Dem entsprechend entspricht unser Ergebnis (siehe Abbildung \ref{kotz}) unseren Erwartungen. Die Tatsache, dass wir in der Praxis eine endliche Fourierreihe erhalten, führt zu einem unbekannten Fehler der eine sinnvolle Fehlerabschätzung der Spaltbreite sehr erschwert. Jegliche Fehlerabschätzung vernachlässigt diesen Fehler, sodass die hier verwendete Methode lediglich als Versuch einer Abschätzung aufgefasst werden kann, eine genaue und somit realistische Fehlerabschätzung ist nicht möglich.
 \newpage
 \section{Ultraschall-Phasengitter}
 
