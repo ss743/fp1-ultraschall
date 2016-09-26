@@ -510,7 +510,7 @@ In Abbildung \ref{regenbogen} sind die Beugungsbilder an der Ultraschallwelle f�
 \end{align*} 
 Die Ergebnisse der Fits sind im Anhang unter \ref{fitergebnisse} zu finden. Bei hohen Spannungen lassen sich bis zu 3 Beugungsordnungen sehen und sinnvoll an die Daten zu fitten, wobei bei niedrigen Spannungen nur noch das nullte Hauptmaximum sinnvoll zu bestimmen ist. 
 
-\subsubsection{Berechnung der Intensitäten an den Maxima}
+\subsubsection{Berechnung der Intensitäten an den Maxima}\label{maxima}
 Zur Überprüfung der Raman-Nath-Theorie (siehe \ref{Raman-Nath-Auswertung}) werden die Intensitäten der Intensitätsmaxima bei verschiedenen Spannungen benötigt. Da jedoch nicht für jede Spannung alle Beugungsmaxima zu sehen sind, wurde für jedes Maximum über alle für dieses Maximum bestimmten Positionen gewichtet gemittelt und an den Kurven, an denen diese Beugungsordnung nicht zu erkennen ist, für die Intensität der Funktionswert des Fits an der gemittelten Position benutzt. Nun werden die Intensitäten $I$ mit $\hat{I}=\frac{I}{I_0}$ genormt. $I_0$ ist hierbei die Intensität am Maximum nullter Ordnung bei der Spannung $U=0$V.
 
 \subsubsection{Überprüfung der Raman-Nath-Theorie}\label{Raman-Nath-Auswertung}
@@ -522,7 +522,7 @@ $J_m(x)$ sind hierbei die Besselfunktionen.
 
 \gra[1]{ultraschall-besselfits}{Normierte Intensität der Beugungsmaxima über die Spannung mit Besselquadratfits zur Überprüfung der Raman-Nath-Theorie\label{besselfits}}
 
-In Abbildung \ref{besselfits} wird nun die normierte Intensität über die Spannung aufgetragen. Anschließend werden quadrierte Besselfunktionen an die Datensätze gefittet. Tabelle \ref{besselfitdaten} zeigt die Parameter der gefitteten Funktionen.
+In Abbildung \ref{besselfits} wird nun die normierte Intensität über die Spannung aufgetragen. Anschließend werden quadrierte Besselfunktionen an die Datensätze gefittet. Wir schätzen den Fehler auf die Datenpunkte ab durch $s_{I}=\frac12\left|I(\sin\theta+s_{\sin\theta})-I(\sin\theta-s_{\sin\theta})\right|$ und wichten den Fit mit diesen Fehlern. Bei $m=3$ konnten wir keinen gewichteten Fit durchführen, da dieser aufgrund negativer Intensitätswerte fehlschlug, der ungewichtete Fit jedoch funktionierte. Tabelle \ref{besselfitdaten} zeigt die Parameter der gefitteten Funktionen.
 
 \begin{table}[h!]
 	\centering{
@@ -533,7 +533,7 @@ In Abbildung \ref{besselfits} wird nun die normierte Intensität über die Spann
 			-3&$0,2\pm0,4$\\
 			-2&$0,231\pm0,009$\\
 			-1&$0,265\pm0,010$\\
-			 0&$0,190\pm0,004$\\
+			 0&$0,182\pm0,005$\\
 			 1&$0,271\pm0,009$\\
 			 2&$0,250\pm0,005$\\
 			 3&$0,280\pm0,003$\\			
@@ -564,7 +564,7 @@ Das Ziel dieses Versuchteils war die Bestätigung der Raman-Nath-Theorie (siehe 
 			-3&$0,2\pm0,4$\\
 			-2&$0,231\pm0,009$\\
 			-1&$0,265\pm0,010$\\
-			0&$0,190\pm0,004$\\
+			0&$0,182\pm0,005$\\
 			1&$0,271\pm0,009$\\
 			2&$0,250\pm0,005$\\
 			3&$0,280\pm0,003$\\			
@@ -573,7 +573,9 @@ Das Ziel dieses Versuchteils war die Bestätigung der Raman-Nath-Theorie (siehe 
 	}
 \end{table}
 
-Deshalb können wir die Raman-Nath-Theorie hier nicht experimentell bestätigen. Unsere Daten decken allerdings nur einen kleinen Funktionsbereich der quadrierten Besselfunktion ab, weshalb sie nicht ausreichen, um eine qualifizierte Aussage über die Raman-Nath-Theorie treffen zu können.\\
+Die Werte für die äußeren Beugungsordnungen bei kleineren Spannungen erzielten wir in \ref{maxima} über die Intensität des Gauß-Fits an der gemittelten Position der sichtbaren Maxima dieser Beugungsordnungen. Dies führt dazu, dass die Werte ungenau und teilweise sogar negativ sind. Deshalb konnten wir für $m=3$ keinen gewichteten Fit durchführen.
+
+Durch die deutlichen Abweichungen unserer Ergebnisse für die Konstante $\alpha$ können wir die Raman-Nath-Theorie hier nicht experimentell bestätigen. Unsere Daten decken allerdings auch nur einen kleinen Funktionsbereich der quadrierten Besselfunktion ab, weshalb sie nicht ausreichen, um eine qualifizierte Aussage über die Raman-Nath-Theorie treffen zu können.\\
 
 Aus den Abständen der Intensitätsmaxima der Interferenz an der Schallwelle haben wir die Wellenlänge der Schallwelle bestimmt (siehe \ref{isooktan}). Als Ergebnis erhielten wir: $$\Lambda=(557\pm2)\,\mathrm{\mu m}$$ Zum Vergleich berechneten wir in \ref{isooktanlit} die Wellenlänge mithilfe des Literaturwerts für die Schallgeschwindigkeit in Isooktan. Das Ergebnis hierbei ist: $$\Lambda_{\mathrm{lit}}=(530.982\pm0.008)\,\mathrm{\mu m}$$
 
