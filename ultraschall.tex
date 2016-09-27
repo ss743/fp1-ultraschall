@@ -95,7 +95,7 @@
 \section*{Abstract}
 
 
-In diesem Versuch wird über die Messung von Beugungs-Spektren eines He-Ne-Lasers ($\lambda = 632,8nm$) die Gitterkonstante verschiedener Gitter (Sinusgitter, Amplitudengitter) und die Aperturfunktion eines bestimmten Gitters bestimmt. Der Hauptteil des Versuches beschäftigt sich mit der Untersuchung von Ultraschallwellen in Flüssigkeit als Phasengitter. Dazu wird die Intensitätsänderung der Beugungsordnung in Abhängigkeit der Spannung des Schallerzeugers (Piezoquarz) ausgewertet, die Wellenlänge der Ultraschallwelle bestimmt und mit der Raman-Nath-Theorie verglichen.
+In diesem Versuch wird über die Messung von Beugungs-Spektren eines He-Ne-Lasers ($\lambda = 632,8nm$) die Gitterkonstante $K$ und das Auflösungsvermögen $a$ verschiedener Gitter (Sinusgitter, Amplitudengitter) und die Aperturfunktion eines bestimmten Gitters bestimmt. Der Hauptteil des Versuches beschäftigt sich mit der Untersuchung von Ultraschallwellen in Flüssigkeit als Phasengitter. Dazu wird die Intensitätsänderung der Beugungsordnung in Abhängigkeit der Spannung des Schallerzeugers (Piezoquarz) ausgewertet, die Wellenlänge der Ultraschallwelle bestimmt und mit der Raman-Nath-Theorie verglichen.
 
 Für das Sinusgitter erhalten wir $K_{ges} = 996 \pm 7 nm$, für die Amplitudengitter erhalten wir folgende Ergebnisse:
 
@@ -126,8 +126,9 @@ In diesem Experiment wird das optische Phänomen der Interferenz an Gittern unte
 
 Anschließend untersuchen wir mehrere Amplitudengitter. Von diesen berechnen wir zunächst die Gitterkonstante und anschließend das Auflösungsvermögen. Für eines dieser Gitter stellen wir zusätzlich die Aperturfunktion auf und untersuchen mithilfe dieser das Verhältnis von der Spaltbreite zur Gitterkonstante dieses Gitters.\\
 
-Abschließend widmen wir uns dem Ultraschall-Phasengitter. Dies ist ein Gitter, welches durch eine Ultraschallwelle in Isooktan erzeugt wird. Wir untersuchen nun die Beugungsmuster des Ultraschall-Phasengitters bei verschiedenen Spannungen und vergleichen die Ergebnisse mit der Raman-Nath-Theorie (siehe \ref{Raman-Nath}). Danach bestimmen wir die Wellenlänge der Schallwelle und vergleichen sie mit dem berechneten Wert.
+Abschließend widmen wir uns dem Ultraschall-Phasengitter. Dies ist ein Gitter, welches durch eine Ultraschallwelle in Isooktan erzeugt wird. Wir untersuchen nun die Beugungsmuster des Ultraschall-Phasengitters bei verschiedenen Spannungen und vergleichen die Ergebnisse mit der Raman-Nath-Theorie (siehe \ref{Raman-Nath}). Danach bestimmen wir die Wellenlänge der Schallwelle und vergleichen sie mit dem berechneten Wert.\\
 
+Für die Auswertung verwenden wir die Programmiersprache R, Der Programmcode befindet sich im Anhang (siehe \ref{Programmcode}).
 
 
 \newpage
@@ -137,11 +138,11 @@ Abschließend widmen wir uns dem Ultraschall-Phasengitter. Dies ist ein Gitter, 
 
 Trifft eine Lichtwelle auf ein Hindernis z.B. einen Spalt wird das Phänomen der Beugung beobachtet. In Abbildung \ref{Fraunhofer} ist  der Grundaufbau eines Experiments zum Nachweis von Beugungsphänomenen (Fraunhofersche Anordnung) dargestellt, der in diesem Experiment verwendet wird. 
 
-\gra{Fraunhofer}{Fraunhofersche Anordnung \label{Fraunhofer}}   
+\gra{Fraunhofer}{Fraunhofersche Anordnung \label{Fraunhofer} \cite{3}}   
 
-Ein paralleles Lichtbündel lässt sich durch eine Sammellinse, die im Abstand einer Brennweite zur Lichtquelle steht, erzeugen. Am Gitter wird das Licht dann gebeugt. Dabei gilt das Huygen'sche Prinzip, nach dem jeder Punkt einer Wellenfront Quelle einer Kugelwelle mit gleicher Frequenz der ursprünglichen Welle ist. Die Amplitude des optischen Feldes hinter dem Gitter ergibt sich demnach aus der Überlagerung aller so entstehenden Wellen unter Berücksichtigung ihrer Amplitude und Phase. Konstruktive und destruktive Interferenz (je nach Gangunterschied), die sich aus diesen Überlagerungen ergibt, bildet schließlich das charakteristische Beugungsmuster. Eine zweite Sammellinse bildet das Beugungsmuster auf einen Schirm ab, der als unendlich weit entfernt angenommen wird, sodass von Fraunhofer-Beugung gesprochen werden kann. Man spricht von Fraunhofer-Beugung, wenn das Beugungsmuster im Fernfeld beobachtet wird. Die Position der Maxima und Minima kann dann an Hand von geometrischen Überlegungen bestimmt werden oder alternativ mit Hilfe des Kirchhoff'schen Integraltheorems und den daraus abgeleiteten Fresnel-Kirchhoff-Integralformel (siehe \label{Fourier})
+Ein paralleles Lichtbündel lässt sich durch eine Sammellinse, die im Abstand einer Brennweite zur Lichtquelle steht, erzeugen. Am Gitter wird das Licht dann gebeugt. Dabei gilt das Huygen'sche Prinzip, nach dem jeder Punkt einer Wellenfront Quelle einer Kugelwelle mit gleicher Frequenz der ursprünglichen Welle ist. Die Amplitude des optischen Feldes hinter dem Gitter ergibt sich demnach aus der Überlagerung aller so entstehenden Wellen unter Berücksichtigung ihrer Amplitude und Phase. Konstruktive und destruktive Interferenz (je nach Gangunterschied), die sich aus diesen Überlagerungen ergibt, bildet schließlich das charakteristische Beugungsmuster. Eine zweite Sammellinse bildet das Beugungsmuster auf einen Schirm ab, der als unendlich weit entfernt angenommen wird, sodass von Fraunhofer-Beugung gesprochen werden kann. Man spricht von Fraunhofer-Beugung, wenn das Beugungsmuster im Fernfeld beobachtet wird. Die Position der Maxima und Minima kann dann an Hand von geometrischen Überlegungen bestimmt werden oder alternativ mit Hilfe des Kirchhoff'schen Integraltheorems und den daraus abgeleiteten Fresnel-Kirchhoff-Integralformel (siehe \ref{Fourier}) \cite{Demtröder} \cite{good}.
 
-\subsection{Fourieroptik}  
+\subsection{Fourieroptik} \label{Fourier}  
 
 Aus dem  Kirchhoff'schen Integraltheorems lässt sich die Fresnel-Kirchhoff-Integralformel entwickeln, mit der sich die Beugung von Licht durch ein beliebiges Hindernis errechnen lässt. Die Geometrie des Hindernisses ist dabei durch die Aperturfunktion $g$ gegeben. Es gilt dann für die Intensitätsverteilung $I$ auf dem Schirm im Fernfeld: \textsuperscript{\cite{kirch}} 
 
@@ -420,7 +421,7 @@ und erhalten:
 K_{ges} = 996 \pm 7 nm
 \end{align*}
 
-\newpage
+
 \subsection{Diskussion}
 
 Als Ergebnis der Gitterkonstante erhalten wir $K_{ges} = 996 \pm 7 nm$. Laut Beschriftung hat das Gitter eine Gitterkonstante von 1016 Linien/mm das heißt $K_{lit} = 984 nm$. Innerhalb von zwei Standardabweichungen ist dieser Wert mit unserem gemessenen Wert verträglich. Auffallend ist bei den Messergebnissen außerdem, dass der Gitterkonstantenwert, der sich aus der zweiten Messung ergibt, stark von den anderen Werten abweicht. Dies kann damit zusammenhängen, dass es sich bei der zweiten Messung um die Messung mit dem geringsten Abstand zwischen Schirm und Gitter handelt und der Messwert daher ungenauer ist, was sich in dem größeren Fehler auf diesen Wert äußert. \\
@@ -521,8 +522,8 @@ Für das Auflösungsvermögen der einzelnen Gitter erhalten wir folgende Werte:
 \subsubsection{Aperturfunktion}
 
 
-Wir bestimmen die Aperturfunktion für Gitter 1, da wir hier die meisten Maxima beobachten konnten (siehe Abbildung ref!!!).
-Aus den Amplituden der gefitteten  Gaußfunktionen erhalten wir hierbei die Intensität, wobei wir wir für jedes Maximum die Amplitude aus linkem und rechtem Maximum gewichtet mitteln (siehe ref!!!). 
+Wir bestimmen die Aperturfunktion für Gitter 1, da wir hier die meisten Maxima beobachten konnten (siehe Abbildung \ref{amp1}).
+Aus den Amplituden der gefitteten  Gaußfunktionen erhalten wir hierbei die Intensität, wobei wir für jedes Maximum die Amplitude aus linkem und rechtem Maximum gewichtet mitteln (siehe \ref{fitgitter1} und \ref{fitgitter1b}). 
  \vskip 10 pt
  \begin{table}[h!]
  {\centering
@@ -541,7 +542,7 @@ Maximumg 0. Ordnung  & -  & - & $2.72 \pm 0.06$
 \vskip 10 pt
 
 
-Aus diesen und der zuvor berechneten Gitterkonstante $K_1 = (129.26 \pm 0.07) \mu m$ (siehe \ref{K1}) lässt sich mittels der Fourierreihe (siehe \ref{Fourier1}) nun die Aperturfunktion näherungsweise bestimmen:
+Aus diesen und der zuvor berechneten Gitterkonstante $K_1 = (129.26 \pm 0.07) \mu m$ (siehe \ref{K1}) lässt sich mittels der Fourierreihe (siehe \ref{Fourier1}) nun die Aperturfunktion näherungsweise bestimmen (siehe \ref{aperturfunktion}):
 
 \begin{align}
 g(x)\approx\sum^{5}_{k=0}\pm\sqrt{I_k}\cos\left(\frac{2k\pi x}{K_1} \right) \label{summe}
@@ -553,7 +554,7 @@ g(x)\approx\sum^{5}_{k=0}\pm\sqrt{I_k}\cos\left(\frac{2k\pi x}{K_1} \right) \lab
 
 
 
-Aus der Aperturfunktion bestimmen wir nun die Spaltbreite $b$, indem wir das FHWM durch Bestimmung des Schnittpunktes der Aperturfunktion mit der Konstanten mit dem Wert $x=\frac{max}{2}$  berechnen (siehe Abbildung \ref{LONDOOON}), wobei max für das Maximum der Aperturfunktion steht.
+Aus der Aperturfunktion bestimmen wir nun die Spaltbreite $b$, indem wir das FHWM durch Bestimmung des Schnittpunktes der Aperturfunktion mit der Konstanten mit dem Wert $x=\frac{max}{2}$  berechnen (siehe Abbildung \ref{LONDOOON}), wobei max für das Maximum der Aperturfunktion steht (siehe \ref{aperturfunktion-intersect}).
 
 \gra{Fehler-apertur}{Bestimmung der Spaltbreite aus der Aperturfunktion\label{LONDOOON}}
 
@@ -622,7 +623,7 @@ Theoretisch ist die Aperturfunktion eines Amplitudengitters eine periodische Rec
 
 Bei diesem Versuchsteil wird die Versuchsanordnung aus \ref{Aufbau} in Abbildung \ref{Versuchsaufbau} verwendet. Anstatt der Gitter wird hier nun eine Ultraschallzelle verwendet. Die Ultraschallzelle besteht aus zwei Quarzkristallen, welche eine Schallwelle erzeugen. Die Zelle ist in diesem Versuchsteil mit Isooktan gefüllt. Die Schallwelle im Isooktan wirkt nun als Phasengitter auf den Laserstrahl (siehe \ref{phasengitter}). \\
 
-Zunächst wird bei ausgeschalteter Spannung ein Referenzgitter vermessen, um eine erneute Zeiteichung durchzuführen. Anschließend wird die Spannung variiert und für verschiedene Spannungen die Beugungsbilder aufgezeichnet. Aus diesen wird anschließend das Verhalten der Intensität in Abhängigkeit der Spannung untersucht und mit der Raman-Nath-Theorie (siehe \ref{Raman-Nath}) verglichen. Zuletzt wird aus den Positionen der Intensitätsmaxima die Wellenlänge der Schallwelle bestimmt und mit dem aus dem Literaturwert berechneten Wert verglichen.
+Zunächst wird bei ausgeschalteter Spannung ein Referenzgitter vermessen, um eine erneute Zeiteichung durchzuführen, da sich der Versuchsaufbau geändert hat. Anschließend wird die Spannung variiert und für verschiedene Spannungen die Beugungsbilder aufgezeichnet. Aus diesen wird anschließend das Verhalten der Intensität in Abhängigkeit der Spannung untersucht und mit der Raman-Nath-Theorie (siehe \ref{Raman-Nath}) verglichen. Zuletzt wird aus den Positionen der Intensitätsmaxima die Wellenlänge der Schallwelle bestimmt und mit dem aus dem Literaturwert berechneten Wert verglichen.
 
 
 
@@ -661,7 +662,7 @@ $J_m(x)$ sind hierbei die Besselfunktionen.
 
 \gra[1]{ultraschall-besselfits}{Normierte Intensität der Beugungsmaxima über die Spannung mit Besselquadratfits zur Überprüfung der Raman-Nath-Theorie\label{besselfits}}
 
-In Abbildung \ref{besselfits} wird nun die normierte Intensität über die Spannung aufgetragen. Anschließend werden quadrierte Besselfunktionen an die Datensätze gefittet (siehe \ref{auswertung3}). Wir schätzen den Fehler auf die Datenpunkte ab durch $s_{I}=\frac12\left|I(\sin\theta+s_{\sin\theta})-I(\sin\theta-s_{\sin\theta})\right|$ und wichten den Fit mit diesen Fehlern. Bei $m=3$ konnten wir keinen gewichteten Fit durchführen, da dieser aufgrund negativer Intensitätswerte fehlschlug, der ungewichtete Fit jedoch funktionierte. Tabelle \ref{besselfitdaten} zeigt die Parameter der gefitteten Funktionen.
+In Abbildung \ref{besselfits} wird nun die normierte Intensität über die Spannung aufgetragen. Anschließend werden quadrierte Besselfunktionen an die Datensätze gefittet(siehe \ref{auswertung3}). Wir schätzen den Fehler auf die Datenpunkte ab durch $s_{I}=\frac12\left|I(\sin\theta+s_{\sin\theta})-I(\sin\theta-s_{\sin\theta})\right|$ und gewichten den Fit mit diesen Fehlern. Bei $m=3$ konnten wir keinen gewichteten Fit durchführen, da dieser aufgrund negativer Intensitätswerte fehlschlug, der ungewichtete Fit jedoch funktionierte. Tabelle \ref{besselfitdaten} zeigt die Parameter der gefitteten Funktionen.
 
 \begin{table}[h!]
 	\centering{
@@ -693,7 +694,7 @@ Zum Vergleich berechnen wir die Wellenlänge der Schallwelle nun mithilfe der Fr
 Für die Wellenlänge erhalten wir nun: $$\Lambda=\frac{c_{\mathrm{schall}}}{\nu}=(530,982\pm0.008) \,\mathrm{\mu m}$$
 \newpage
 \subsection{Diskussion}
-Das Ziel dieses Versuchteils war die Bestätigung der Raman-Nath-Theorie (siehe \ref{Raman-Nath-Auswertung}). Wie in Abbildung \ref{besselfits} zu sehen ist, passen unsere Daten grob zu den quadrierten Besselfunktionen. Allerdings erhalten wir für die verschiedenen Beugungsordnungen deutlich abweichende Werte für die Konstante $\alpha$ (siehe Tabelle \ref{alphas}). 
+Das Ziel dieses Versuchsteils war die Bestätigung der Raman-Nath-Theorie (siehe \ref{Raman-Nath-Auswertung}). Wie in Abbildung \ref{besselfits} zu sehen ist, passen unsere Daten grob zu den quadrierten Besselfunktionen. Allerdings erhalten wir für die verschiedenen Beugungsordnungen deutlich abweichende Werte für die Konstante $\alpha$ (siehe Tabelle \ref{alphas}). 
 \begin{table}[h!]
 	\centering{
 		
@@ -749,7 +750,7 @@ Wellenlänge der Schallwelle in Isooktan:
 \end{align*}
 
 %\subsection{Diskussion}
-In den ersten beiden Versuchsteilen zum Untersuchen des Sinusgitters und der Amplitudengitter erzielten wir, sofern wir das mangels fehlender Literaturwerter beurteilen können, zufriedenstellende Ergebnisse. Im dritten Teil erhielten wir allerdings deutliche Abweichungen vom Literaturwert. Außerdem konnten wir die Raman-Nath-Theorie nicht bestätigen. 
+In den ersten beiden Versuchsteilen zum Untersuchen des Sinusgitters und der Amplitudengitter erzielten wir, sofern wir das mangels fehlender Literaturwerte beurteilen können, zufriedenstellende Ergebnisse. Im dritten Teil erhielten wir allerdings deutliche Abweichungen vom Literaturwert. Außerdem konnten wir die Raman-Nath-Theorie nicht bestätigen. 
 
 \newpage
 \section{Anhang} 
@@ -778,7 +779,7 @@ In den ersten beiden Versuchsteilen zum Untersuchen des Sinusgitters und der Amp
 		&$\mu$&$\sigma$&$A$\\\hline
 		Peak 1&$0.036927\pm7e-06$&$0.036927\pm7e-06$&$0.036927\pm7e-06$\\
 	\end{tabular}
-	\caption{Gitter 1 - Fit 1b}
+	\caption{Gitter 1 - Fit 1b\label{fitgitter1b}}
 \end{table}
 \begin{table}[h!]
 	\centering
@@ -860,7 +861,7 @@ In den ersten beiden Versuchsteilen zum Untersuchen des Sinusgitters und der Amp
 \includegraphics[width=0.9\textwidth]{figures/Laborbuch1.pdf}
 \end{minipage}
 \newpage
-\subsection{Programmcode}
+\subsection{Programmcode \label{Programmcode}}
 Unsere Auswertung wurde mit der Programmiersprache R gemacht. Im Folgenden ist der Programmcode.
 \subsubsection{auswertung.R}\label{auswertungR}
 \lstinputlisting[language=R]{r_files/auswertung.R}
@@ -942,6 +943,9 @@ Wolfgang Demtröder
  \bibitem{2}
  \emph{http://cdn.iopscience.com/images/books/978-0-750-31056-7/live/bk978-0-750-31056-7ch3f7\_online.jpg},
  Stand 26.9.2016
+ 
+ \bibitem{3}
+ \emph{http://www.doitpoms.ac.uk/tlplib/DD1-6/images/diagram11.png}, Stand 26.9.16 
 \end{thebibliography}
 
 \end{document}
