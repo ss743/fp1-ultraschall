@@ -154,47 +154,65 @@ for(i in 1:5){
   plot(sinamp[,1,i],sinamp[,2,i],type="p",pch=4,cex=0.6,bty="l",xlab="sin(theta)",ylab="Amplitude / V")#,col=colors[i])
   grid()
   if(i==1){
+    cat(paste("\\begin{table}[h!]\n\\centering\n\\begin{tabular}{l|c|c|c}\n"))
+    cat(paste("&$\\mu$&$\\sigma$&$A$\\\\\\hline\n",sep=""))
     for(j in 1:length(fitgrenzen1[1,])) {
       try({fit=gausfit(data.frame(x=sinamp[,1,i],y=sinamp[,2,i]),bereich=fitgrenzen1[,j])})
       plotgaus(fit, fitgrenzen1[,j])
-      printfitdata(fit,paste("Peak ",j,sep=""))
+      texfitdata(fit,paste("Peak ",j,sep=""))
     }
+    cat(paste("\\end{tabular}\n\\caption{Gitter 1 - Fit 1a}\n\\end{table}\n"))
+    cat(paste("\\begin{table}[h!]\n\\centering\n\\begin{tabular}{l|c|c|c}\n"))
+    cat(paste("&$\\mu$&$\\sigma$&$A$\\\\\\hline\n",sep=""))
     plot(sinamp2[,1,i],sinamp2[,2,i],type="p",pch=4,cex=0.6,bty="l",xlab="sin(theta)",ylab="Amplitude / V")#,col=colors[i])
     grid()
     for(j in 1:length(fitgrenzen1b[1,])) {
       try({fit=gausfit(data.frame(x=sinamp2[,1,i],y=sinamp2[,2,i]),bereich=fitgrenzen1b[,j])})
       plotgaus(fit, fitgrenzen1b[,j])
-      printfitdata(fit,paste("Peak ",j,sep=""))
+      texfitdata(fit,paste("Peak ",j,sep=""))
     }
+    cat(paste("\\end{tabular}\n\\caption{Gitter 1 - Fit 1b}\n\\end{table}\n"))
     
   }
   if(i==2){
+    cat(paste("\\begin{table}[h!]\n\\centering\n\\begin{tabular}{l|c|c|c}\n"))
+    cat(paste("&$\\mu$&$\\sigma$&$A$\\\\\\hline\n",sep=""))
     for(j in 1:length(fitgrenzen2[1,])) {
       try({fit=gausfit(data.frame(x=sinamp[,1,i],y=sinamp[,2,i]),bereich=fitgrenzen2[,j])})
       plotgaus(fit, fitgrenzen2[,j])
-      printfitdata(fit,paste("Peak ",j,sep=""))
+      texfitdata(fit,paste("Peak ",j,sep=""))
     }
+    cat(paste("\\end{tabular}\n\\caption{Gitter 2}\n\\end{table}\n"))
   }
   if(i==3){
+    cat(paste("\\begin{table}[h!]\n\\centering\n\\begin{tabular}{l|c|c|c}\n"))
+    cat(paste("&$\\mu$&$\\sigma$&$A$\\\\\\hline\n",sep=""))
     for(j in 1:length(fitgrenzen3[1,])) {
       try({fit=gausfit(data.frame(x=sinamp[,1,i],y=sinamp[,2,i]),bereich=fitgrenzen3[,j])})
       plotgaus(fit, fitgrenzen3[,j])
-      printfitdata(fit,paste("Peak ",j,sep=""))
+      texfitdata(fit,paste("Peak ",j,sep=""))
     }
+    cat(paste("\\end{tabular}\n\\caption{Gitter 3}\n\\end{table}\n"))
   }
   if(i==4){
+    cat(paste("\\begin{table}[h!]\n\\centering\n\\begin{tabular}{l|c|c|c}\n"))
+    cat(paste("&$\\mu$&$\\sigma$&$A$\\\\\\hline\n",sep=""))
     for(j in 1:length(fitgrenzen4[1,])) {
       try({fit=gausfit(data.frame(x=sinamp[,1,i],y=sinamp[,2,i]),bereich=fitgrenzen4[,j])})
       plotgaus(fit, fitgrenzen4[,j])
-      printfitdata(fit,paste("Peak ",j,sep=""))
+      texfitdata(fit,paste("Peak ",j,sep=""))
     }
+    cat(paste("\\end{tabular}\n\\caption{Gitter 4}\n\\end{table}\n"))
   }
   if(i==5){
+    cat(paste("\\begin{table}[h!]\n\\centering\n\\begin{tabular}{l|c|c|c}\n"))
+    cat(paste("&$\\mu$&$\\sigma$&$A$\\\\\\hline\n",sep=""))
     for(j in 1:length(fitgrenzen5[1,])) {
       try({fit=gausfit(data.frame(x=sinamp[,1,i],y=sinamp[,2,i]),bereich=fitgrenzen5[,j])})
       plotgaus(fit, fitgrenzen5[,j])
-      printfitdata(fit,paste("Peak ",j,sep=""))
+      texfitdata(fit,paste("Peak ",j,sep=""))
     }
+    cat(paste("\\end{tabular}\n\\caption{Gitter 5}\n\\end{table}\n"))
   }
   
 }

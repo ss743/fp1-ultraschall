@@ -1,5 +1,6 @@
 library("plotrix")
 source("linearfit.R")
+source("round.R")
 
 lambda=632.8
 #corrfac=1/63.21204
@@ -38,30 +39,60 @@ fit1=linearfit(data.frame(x=sin1,y=m1))
 plotlinear(fit1,c(sin1[1],sin1[length(sin1)]))
 plotlindata(fit1)
 grid()
+slope=roundfunc(c(fit1[2],fit1[4]))
+intercept=roundfunc(c(fit1[1],fit1[3]))
+vorzeichen="+"
+if(fit1[1]<0)
+  vorzeichen=""
+legend(-0.02,4,paste("m=(",slope[1],"+-",slope[2],")sin(theta) ",vorzeichen,intercept[1],"+-",intercept[2],sep=""))
 plot(sin2,m2,pch=4,cex=0.6,bty="l",xlab="sin(theta)",ylab="m")
 plotCI(sin2,m2,uiw=ssin2,err="x",pch=4,cex=0.6,add=TRUE)
 fit2=linearfit(data.frame(x=sin2,y=m2))
 plotlinear(fit2,c(sin2[1],sin2[length(sin2)]))
 plotlindata(fit2)
 grid()
+slope=roundfunc(c(fit2[2],fit2[4]))
+intercept=roundfunc(c(fit2[1],fit2[3]))
+vorzeichen="+"
+if(fit2[1]<0)
+  vorzeichen=""
+legend(-0.015,1.5,paste("m=(",slope[1],"+-",slope[2],")sin(theta) ",vorzeichen,intercept[1],"+-",intercept[2],sep=""))
 plot(sin3,m3,pch=4,cex=0.6,bty="l",xlab="sin(theta)",ylab="m")
 plotCI(sin3,m3,uiw=ssin3,err="x",pch=4,cex=0.6,add=TRUE)
 fit3=linearfit(data.frame(x=sin3,y=m3))
 plotlinear(fit3,c(sin3[1],sin3[length(sin3)]))
 plotlindata(fit3)
 grid()
+slope=roundfunc(c(fit3[2],fit3[4]))
+intercept=roundfunc(c(fit3[1],fit3[3]))
+vorzeichen="+"
+if(fit3[1]<0)
+  vorzeichen=""
+legend(-0.01,1.5,paste("m=(",slope[1],"+-",slope[2],")sin(theta) ",vorzeichen,intercept[1],"+-",intercept[2],sep=""))
 plot(sin4,m4,pch=4,cex=0.6,bty="l",xlab="sin(theta)",ylab="m")
 plotCI(sin4,m4,uiw=ssin4,err="x",pch=4,cex=0.6,add=TRUE)
 fit4=linearfit(data.frame(x=sin4,y=m4))
 plotlinear(fit4,c(sin4[1],sin4[length(sin4)]))
 plotlindata(fit4)
 grid()
+slope=roundfunc(c(fit4[2],fit4[4]))
+intercept=roundfunc(c(fit4[1],fit4[3]))
+vorzeichen="+"
+if(fit4[1]<0)
+  vorzeichen=""
+legend(-0.015,1.5,paste("m=(",slope[1],"+-",slope[2],")sin(theta) ",vorzeichen,intercept[1],"+-",intercept[2],sep=""))
 plot(sin5,m5,pch=4,cex=0.6,bty="l",xlab="sin(theta)",ylab="m")
 plotCI(sin5,m5,uiw=ssin5,err="x",pch=4,cex=0.6,add=TRUE)
 fit5=linearfit(data.frame(x=sin5,y=m5))
 plotlinear(fit5,c(sin5[1],sin5[length(sin5)]))
 plotlindata(fit5)
 grid()
+slope=roundfunc(c(fit5[2],fit5[4]))
+intercept=roundfunc(c(fit5[1],fit5[3]))
+vorzeichen="+ "
+if(fit5[1]<0)
+  vorzeichen=""
+legend(-0.02,1.5,paste("m=(",slope[1],"+-",slope[2],")sin(theta) ",vorzeichen,intercept[1],"+-",intercept[2],sep=""))
 
 a=c(fit1[2],fit2[2],fit3[2],fit4[2],fit5[2])
 aerr=c(fit1[4],fit2[4],fit3[4],fit4[4],fit5[4])
