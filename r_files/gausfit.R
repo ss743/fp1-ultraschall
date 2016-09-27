@@ -378,6 +378,29 @@ plotgauslin <- function(fitdata,bereich){ #--- Plotten der gefitteten Gaußfunkt
 
 texfitdata <- function(fitdata,title=""){ #--- Ausgabe der Gaußfit-Daten
   
+  #mu=c()
+  #smu=c()
+  #A=c()
+  #sA=c()
+  #sig=c()
+  #ssig=c()
+  
+  #for(i in 1:9){
+  #  try({
+  #    mu[i]<-fitdata["mu","Estimate"]
+  #    smu[i]<-fitdata["mu","Std. Error"]
+  #    A[i]<-fitdata["N","Estimate"]
+  #    sA[i]<-fitdata["N","Std. Error"]
+  #    sig[i]<-fitdata["sig","Estimate"]
+  #    ssig[i]<-fitdata["sig","Std. Error"]
+   #   
+  #    N=i
+  #  })
+  #}
+  #cat(paste(title,"\\\\\n",sep=""))
+
+  source("round.R")
+  
   mu<-fitdata["mu","Estimate"]
   smu<-fitdata["mu","Std. Error"]
   A<-fitdata["N","Estimate"]
@@ -385,28 +408,22 @@ texfitdata <- function(fitdata,title=""){ #--- Ausgabe der Gaußfit-Daten
   sig<-fitdata["sig","Estimate"]
   ssig<-fitdata["sig","Std. Error"]
   
-  cat(paste("\\text{",title,"}",sep=""))
-  cat("\\\\\n")
+  mus<-roundfunc(c(mu,smu))
+  mu<-mus[1]
+  smu<-mus[2]
+  As<-roundfunc(c(mu,smu))
+  A<-As[1]
+  sA<-As[2]
+  sigs<-roundfunc(c(mu,smu))
+  sig<-sigs[1]
+  ssig<-sigs[2]
   
-  cat(" \\mu = ")
-  cat(mu)
-  cat("\\pm")
-  cat(smu)
-  cat("\\\\\n")
-  
-  cat(" \\sigma = ")
-  cat(sig)
-  cat("\\pm")
-  cat(ssig)
-  cat("\\\\\n")
-  
-  cat(" A = ")
-  cat(A*1/(sqrt(2*pi)*sig))
-  cat("\\pm")
-  cat(A*1/(sqrt(2*pi)*sig)*sqrt((sA/A)^2+(ssig/sig)^2))
-  cat("\\\\\n")
-  
-  
+  #for(i in 1:N){
+    cat(paste(title,"&$",mu,"\\pm",smu,"$&$",sep=""))
+    cat(paste(sig,"\\pm",smu,"$&$",sep=""))
+    cat(paste(N,"\\pm",sN,"$\\\\\n",sep=""))
+  #}
+
 }
 
 printfitdata <- function(fitdata,title=""){ #--- Ausgabe der Gaußfit-Daten

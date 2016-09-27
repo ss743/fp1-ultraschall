@@ -458,16 +458,28 @@ a &= (74.35\pm0.05)\,\frac1{\mathrm{s}}&
 \subsubsection{Bestimmung verschiedener Gitterkonstanten}\label{amplitudengitterkonstante}
 Wir haben für 5 verschiedenen unbekannte Amplitudengitter Interferenzmuster aufgenommen und bestimmen nun aus diesen die jeweilige Gitterkonstante. Die Zeitabhängigkeit der Interferenzmuster werden nun mithilfe des in \ref{Happyisttoll} berechneten Wertes in eine $\sin\theta$-Abhängigkeit umgerechnet. 
 
-Durch Gaußfits an die im Beugungsmuster sichtbaren Maxima wird die Position und die Amplitude der Maxima bestimmt.
+Durch Gaußfits mit der Formel $$A(x)=C+N\cdot\frac1{\sqrt{2\pi}\sigma}\cdot\exp{\frac{-(\sin\theta-\mu)^2}{2\sigma^2}}$$ an die im Beugungsmuster sichtbaren Maxima wird die Position aus dem Mittelwert $\mu$ der Gaußfunktion und die Amplitude der Maxima aus der multiplikativen Fitkonstante $N$ bestimmt. In den Abbildungen \ref{amp1} - \ref{amp45} sind die Beugungsmuster und die gefitteten Gaußkurven zu sehen. Die Daten der Fits sind im Anhang unter \ref{tabellen} zu finden. 
 \vskip 30 pt
-\graTwo[0.49]{amplitudengitter1a}{amplitudengitter1b}{Bestimmung der Maxima des ersten Amplitudengitters (Verschiedene Skalierungen, um alle Maxima gut erkennen zu können)}
+\graTwo[0.49]{amplitudengitter1a}{amplitudengitter1b}{Bestimmung der Maxima des ersten Amplitudengitters (Verschiedene Skalierungen, um alle Maxima gut erkennen zu können)\label{amp1}}
 \graTwo[0.49]{amplitudengitter2}{amplitudengitter3}{\label{amp23}Bestimmung der Maxima des zweiten und des dritten Amplitudengitters}
-\graTwo[0.49]{amplitudengitter4}{amplitudengitter5}{Bestimmung der Maxima des vierten und des fünften Amplitudengitters}
+\graTwo[0.49]{amplitudengitter4}{amplitudengitter5}{Bestimmung der Maxima des vierten und des fünften Amplitudengitters\label{amp45}}
 
-Anschließend wird aus den Beugungsordnungen in Abhängigkeit der Positionen der Maxima die Gitterkonstante des jeweiligen Gitters bestimmt. Die Steigung $a$ des linearen Fits $m=\frac{K}{\lambda}\sin\theta$ beträgt nun $a=\frac{K}{\lambda}$. Damit gilt für die Gitterkonstante: $$K=a\cdot\lambda$$
+Anschließend wird aus den Beugungsordnungen in Abhängigkeit der Positionen der Maxima die Gitterkonstante des jeweiligen Gitters bestimmt (siehe Abbildungen \ref{fitK1} - \ref{fitK5}). 
+
+\gra[0.5]{gitterkonstante1}{Bestimmung von $K_1$\label{fitK1}}
+\gra[0.5]{gitterkonstante2}{Bestimmung von $K_2$}
+\gra[0.5]{gitterkonstante3}{Bestimmung von $K_3$}
+\gra[0.5]{gitterkonstante4}{Bestimmung von $K_4$}
+\gra[0.5]{gitterkonstante5}{Bestimmung von $K_5$\label{fitK5}}
+
+Die Steigung $a$ des linearen Fits $m=\frac{K}{\lambda}\sin\theta$ beträgt nun $a=\frac{K}{\lambda}$. Damit gilt für die Gitterkonstante: 
+\begin{align}
+	K=a\cdot\lambda \label{K}
+\end{align}
 Der Fehler auf die Gitterkonstante berechnet sich durch Gauß'sche Fehlerfortpflanzung aus der Breite $\sigma$ des Gauß-Peaks.
 
-Wir erhalten nun mit dieser Rechnung die folgenden Werte für die Gitterkonstanten:
+
+Wir erhalten nun mit Formel (\ref{K}) die folgenden Werte für die Gitterkonstanten:
 \begin{align}
 	K_1&=(129.26\pm0.07)\,\mathrm{\mu m}  \label{K1}\\
 	K_2&=(34.26\pm0.03)\,\mathrm{\mu m}\\
@@ -683,27 +695,122 @@ Das Ziel dieses Versuchteils war die Bestätigung der Raman-Nath-Theorie (siehe 
 	}
 \end{table}
 
-Die Werte für die äußeren Beugungsordnungen bei kleineren Spannungen erzielten wir in \ref{maxima} über die Intensität des Gauß-Fits an der gemittelten Position der sichtbaren Maxima dieser Beugungsordnungen. Dies führt dazu, dass die Werte ungenau und teilweise sogar negativ sind. Deshalb konnten wir für $m=3$ keinen gewichteten Fit durchführen.
+Die Werte für die äußeren Beugungsordnungen bei kleineren Spannungen erzielten wir in \ref{maxima} über die Intensität des Gauß-Fits an der gemittelten Position der sichtbaren Maxima dieser Beugungsordnungen. Dies führt dazu, dass die Werte ungenau und teilweise sogar negativ sind. Deshalb konnten wir für $m=3$ keinen gewichteten Fit durchführen.\\
 
 Durch die deutlichen Abweichungen unserer Ergebnisse für die Konstante $\alpha$ können wir die Raman-Nath-Theorie hier nicht experimentell bestätigen. Unsere Daten decken allerdings auch nur einen kleinen Funktionsbereich der quadrierten Besselfunktion ab, weshalb sie nicht ausreichen, um eine qualifizierte Aussage über die Raman-Nath-Theorie treffen zu können.\\
 
+Außerdem beobachteten wir Schwankungen in der Anzeige der Frequenz bei Verstellung der Spannung. Diese kann auch Einflüsse auf unsere Ergebnisse gehabt haben.\\
+
 Aus den Abständen der Intensitätsmaxima der Interferenz an der Schallwelle haben wir die Wellenlänge der Schallwelle bestimmt (siehe \ref{isooktan}). Als Ergebnis erhielten wir: $$\Lambda=(557\pm2)\,\mathrm{\mu m}$$ Zum Vergleich berechneten wir in \ref{isooktanlit} die Wellenlänge mithilfe des Literaturwerts für die Schallgeschwindigkeit in Isooktan. Das Ergebnis hierbei ist: $$\Lambda_{\mathrm{lit}}=(530.982\pm0.008)\,\mathrm{\mu m}$$
 
-Die beiden Werte sind in der gleichen Größenordnung, stimmen aber unter der Berücksichtigung ihrer Fehler nicht überein.
+Die beiden Werte sind in der gleichen Größenordnung, stimmen aber unter der Berücksichtigung ihrer Fehler nicht überein. 
 
 \newpage
 \section{Zusammenfassung und Diskussion}
 
-\subsection{Zusammenfassung der Ergebnisse}
+%\subsection{Zusammenfassung der Ergebnisse}
 
+\begin{table}[h!]
+	\begin{tabular}{l|c|c|c}
+		&Gitterkonstante $K$&Literaturwert $K_{\mathrm{Lit}}$&Auflösungsvermögen $a$\\\hline\hline
+		Sinusgitter&$(996\pm7)\,\mathrm{nm}$&$984\,\mathrm{nm}$&\\\hline
+		Amplitudengitter 1&$(129.26\pm0.07)\,\mathrm{\mu m}$&&$116.0\pm1.9$\\\hline
+		Amplitudengitter 2&$( 34.26\pm0.03)\,\mathrm{\mu m}$&&$175  \pm3  $\\\hline
+		Amplitudengitter 3&$(102.9 \pm0.3 )\,\mathrm{\mu m}$&&$ 58.3\pm1.0$\\\hline
+		Amplitudengitter 4&$( 72   \pm6   )\,\mathrm{\mu m}$&&$ 83  \pm7  $\\\hline
+		Amplitudengitter 5&$( 51.57\pm0.08)\,\mathrm{\mu m}$&&$116.3\pm1.9$
+	\end{tabular}
+\end{table}
+Verhältnis von Spaltbreite zur Gitterkonstante von Gitter 1:
+\begin{align*}
+	\frac{b_1}{K_1}&=0.1751\pm0.0008
+\end{align*}
+Wellenlänge der Schallwelle in Isooktan:
+\begin{align*}
+	\Lambda&=(557\pm2)\,\mathrm{\mu m}\\
+	\Lambda_{\mathrm{Lit}}&=(530.982\pm0.008)\,\mathrm{\mu m}
+\end{align*}
 
-
-\subsection{Diskussion}
-
+%\subsection{Diskussion}
+In den ersten beiden Versuchsteilen zum Untersuchen des Sinusgitters und der Amplitudengitter erzielten wir, sofern wir das mangels fehlender Literaturwerter beurteilen können, zufriedenstellende Ergebnisse. Im dritten Teil erhielten wir allerdings deutliche Abweichungen vom Literaturwert. Außerdem konnten wir die Raman-Nath-Theorie nicht bestätigen. 
 
 \newpage
 \section{Anhang} 
-\subsection{Gaußfits}
+\subsection{Gaußfits Teil II}\label{tabellen}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l|c|c|c}
+		&$\mu$&$\sigma$&$A$\\\hline
+		Peak 1&$0.01208\pm5e-05$&$0.01208\pm5e-05$&$0.01208\pm5e-05$\\
+		Peak 2&$0.016899\pm1.4e-05$&$0.016899\pm1.4e-05$&$0.016899\pm1.4e-05$\\
+		Peak 3&$0.021763\pm8e-06$&$0.021763\pm8e-06$&$0.021763\pm8e-06$\\
+		Peak 4&$0.026686\pm7e-06$&$0.026686\pm7e-06$&$0.026686\pm7e-06$\\
+		Peak 5&$0.03156\pm6e-06$&$0.03156\pm6e-06$&$0.03156\pm6e-06$\\
+		Peak 6&$0.03645\pm3e-05$&$0.03645\pm3e-05$&$0.03645\pm3e-05$\\
+		Peak 7&$0.041385\pm7e-06$&$0.041385\pm7e-06$&$0.041385\pm7e-06$\\
+		Peak 8&$0.046296\pm7e-06$&$0.046296\pm7e-06$&$0.046296\pm7e-06$\\
+		Peak 9&$0.051229\pm7e-06$&$0.051229\pm7e-06$&$0.051229\pm7e-06$\\
+		Peak 10&$0.056108\pm1.5e-05$&$0.05611\pm1.5e-05$&$0.05611\pm2e-05$\\
+		Peak 11&$0.06101\pm6e-05$&$0.06101\pm6e-05$&$0.06101\pm6e-05$\\
+	\end{tabular}
+	\caption{Gitter 1 - Fit 1a\label{fitgitter1}}
+\end{table}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l|c|c|c}
+		&$\mu$&$\sigma$&$A$\\\hline
+		Peak 1&$0.036927\pm7e-06$&$0.036927\pm7e-06$&$0.036927\pm7e-06$\\
+	\end{tabular}
+	\caption{Gitter 1 - Fit 1b}
+\end{table}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l|c|c|c}
+		&$\mu$&$\sigma$&$A$\\\hline
+		Peak 1&$0.05607\pm2e-05$&$0.05607\pm2e-05$&$0.05607\pm2e-05$\\
+		Peak 2&$0.074472\pm1e-05$&$0.074472\pm1e-05$&$0.074472\pm1e-05$\\
+		Peak 3&$0.09297\pm2e-05$&$0.09297\pm2e-05$&$0.09297\pm2e-05$\\
+		Peak 4&$0.11153\pm6e-05$&$0.11153\pm6e-05$&$0.11153\pm6e-05$\\
+	\end{tabular}
+	\caption{Gitter 2}
+\end{table}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l|c|c|c}
+		&$\mu$&$\sigma$&$A$\\\hline
+		Peak 1&$0.02464\pm5e-05$&$0.02464\pm5e-05$&$0.02464\pm5e-05$\\
+		Peak 2&$0.03078\pm2e-05$&$0.03078\pm2e-05$&$0.03078\pm2e-05$\\
+		Peak 3&$0.03693\pm5e-06$&$0.03693\pm5e-06$&$0.03693\pm5e-06$\\
+		Peak 4&$0.04309\pm2e-05$&$0.04309\pm2e-05$&$0.04309\pm2e-05$\\
+		Peak 5&$0.04925\pm6e-05$&$0.04925\pm6e-05$&$0.04925\pm6e-05$\\
+	\end{tabular}
+	\caption{Gitter 3}
+\end{table}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l|c|c|c}
+		&$\mu$&$\sigma$&$A$\\\hline
+		Peak 1&$0.01853\pm6e-05$&$0.01853\pm6e-05$&$0.01853\pm6e-05$\\
+		Peak 2&$0.03079\pm9e-06$&$0.03079\pm9e-06$&$0.03079\pm9e-06$\\
+		Peak 3&$0.036914\pm5e-06$&$0.036914\pm5e-06$&$0.036914\pm5e-06$\\
+		Peak 4&$0.043043\pm9e-06$&$0.043043\pm9e-06$&$0.043043\pm9e-06$\\
+		Peak 5&$0.05531\pm7e-05$&$0.05531\pm7e-05$&$0.05531\pm7e-05$\\
+	\end{tabular}
+	\caption{Gitter 4}
+\end{table}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l|c|c|c}
+		&$\mu$&$\sigma$&$A$\\\hline
+		Peak 1&$0.01238\pm9e-05$&$0.01238\pm9e-05$&$0.01238\pm9e-05$\\
+		Peak 2&$0.024624\pm1.2e-05$&$0.024624\pm1.2e-05$&$0.024624\pm1.2e-05$\\
+		Peak 3&$0.036887\pm5e-06$&$0.036887\pm5e-06$&$0.036887\pm5e-06$\\
+		Peak 4&$0.049134\pm1.4e-05$&$0.049134\pm1.4e-05$&$0.049134\pm1.4e-05$\\
+		Peak 5&$0.06149\pm9e-05$&$0.06149\pm9e-05$&$0.06149\pm9e-05$\\
+	\end{tabular}
+	\caption{Gitter 5}
+\end{table}
+\subsection{Gaußfits Teil III}
 \label{fitergebnisse}
 \begin{minipage}[h!]{\textwidth}
 	\centering
