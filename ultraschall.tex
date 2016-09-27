@@ -143,7 +143,7 @@ Ein paralleles Lichtbündel lässt sich durch eine Sammellinse, die im Abstand e
 
 \subsection{Fourieroptik} \label{Fourier}  
 
-Aus dem  Kirchhoff'schen Integraltheorems lässt sich die Fresnel-Kirchhoff-Integralformel entwickeln, mit der sich die Beugung von Licht durch ein beliebiges Hindernis errechnen lässt. Die Geometrie des Hindernisses ist dabei durch die Aperturfunktion $g$ gegeben. Es gilt dann für die Intensitätsverteilung $I$ auf dem Schirm im Fernfeld \cite{kirch}: 
+Aus dem  Kirchhoff'schen Integraltheorems lässt sich die Fresnel-Kirchhoff-Integralformel entwickeln, mit der sich die Beugung von Licht durch ein beliebiges Hindernis errechnen lässt. Die Geometrie des Hindernisses ist dabei durch die Aperturfunktion $g$ gegeben. Es gilt dann für die Intensitätsverteilung $I$ auf dem Schirm im Fernfeld: \textsuperscript{\cite{kirch}} 
 
 \begin{align}
 I=|U(x_0)|^2=\left| \int\limits_{-\infty}^{\infty} g(x,y)e^{-ikx}dx \right|^2
@@ -151,11 +151,11 @@ I=|U(x_0)|^2=\left| \int\limits_{-\infty}^{\infty} g(x,y)e^{-ikx}dx \right|^2
 
 
 
-Die Intensitätsverteilung auf dem Schirm ist also das Betragsquadrat der Fouriertransformierten. Umgekehrt lässt sich damit auch die Aperturfunktion aus einer beobachteten Intensitätsverteilung berechnen. Im folgenden werden wir die Aperturfunktion ud die Intenstitätsverteilung für einen Einzelspalt und ein Gitter genauer betrachten. \cite{good}
+Die Intensitätsverteilung auf dem Schirm ist also das Betragsquadrat der Fouriertransformierten. Umgekehrt lässt sich damit auch die Aperturfunktion aus einer beobachteten Intensitätsverteilung berechnen. Im Folgenden werden wir die Aperturfunktion und die Intenstitätsverteilung für einen Einzelspalt und ein Gitter genauer betrachten.\textsuperscript{\cite{good}}
 
 \subsection{Einzelspalt}
        
-Die Aperturfunktion eines Einzelspaltes mit der Breite $b$ un der Länge $l$ ist wie folgt gegeben \cite{Demtröder}:
+Die Aperturfunktion eines Einzelspaltes mit der Breite $b$ un der Länge $l$ ist wie folgt gegeben \textsuperscript{\cite{Demtröder}}:
 
 \begin{align}
 g(x)=\begin{cases}1 &\mbox{ falls }|x|\leq\frac{b}{2}\\0 &\mbox{ sonst }\end{cases}
@@ -177,7 +177,7 @@ I = \left| \mathscr{F}\left[ g(x) \right]\right| ^2 = \left( \left| b\right| \cd
 
 \subsection{Gitter mit N Linien} \label{Gitter}
 
-Für ein Gitter der  Breite L mit N Linien, der Spaltbreite b und der Gitterkonstane K ergibt sich die Aperturfunktion durch Wiederholung der Funktion eines Einzelspaltes \cite{staat}:
+Für ein Gitter der  Breite L mit N Linien, der Spaltbreite b und der Gitterkonstane K ergibt sich die Aperturfunktion durch Wiederholung der Funktion eines Einzelspaltes: \textsuperscript{\cite{staat}}
 
 \begin{align}
 g\left( x\right) = \left( \rect\left( \frac{x}{b}\right) * \comb \left( \frac{x}{K}\right) \right) \cdot \rect \left( \frac{x}{L}\right) 
@@ -195,7 +195,7 @@ Die Fouriertransformierte der Aperturfunktion ist gegeben durch:
 	\mathscr{F}[g(x)]&=\left(|b|\cdot\underbrace{\sinc\left(\frac12\cdot b\cdot k\right)}_{\text{Einhüllende}}\cdot|K|\cdot\underbrace{\comb\left(\frac1{2\pi}\cdot K\cdot k\right)}_{\text{Lage der Beugungsmaxima}}\right)*\underbrace{\sinc\left(\frac12\cdot L\cdot k\right)}_{\text{Breite des Beugungspeaks}}\cdot|L|
 \end{align}
 
-\gra{bla}{Fraunhoferbeugungsmuster eines Gitters \cite{Demtröder}} 
+\gra{bla}{Fraunhoferbeugungsmuster eines Gitters \textsuperscript{\cite{Demtröder}}} 
 
 Die Intensitätsverteilung des Lichts ergibt sich dabei als proportional zu folgendem Ausdruck:
 
@@ -205,7 +205,7 @@ I(\Theta) &= \left| \mathscr{F}\left[ g(x) \right]\right| ^2 = \left(\frac{\sin\
 \gamma(\Theta) &= \frac{kK\sin(\Theta)}{2}\\
 \end{align}
 
-Das Begungsmuster wird mit höheren Werten von N schmäler und die sekundären Maxima kleiner. Der Zusammenhang zwischen Beugungswinkel und Maxima m-ter Ordnung ist \cite{Demtröder}:
+Das Begungsmuster wird mit höheren Werten von N schmäler und die sekundären Maxima kleiner. Der Zusammenhang zwischen Beugungswinkel und Maxima m-ter Ordnung ist \textsuperscript{\cite{Demtröder}}:
 
 \begin{align}
 m\lambda = Ksin(\Theta) \label{11} 
@@ -225,7 +225,7 @@ Die Auflösung $a$ eines optischen Gitters ist definiert als:  \label{aufloesung
 a = \frac{\lambda}{\Delta \lambda}
 \end{align}
 
-dabei gibt $\lambda$ die Wellenlänge des Lichts und $\Delta \lambda$ den Wellenlängenabstand an, bei welchem eine andere Wellenlänge von $\lambda$ bei der Beugung noch unterscheidbar ist \cite{Anleitung}
+dabei gibt $\lambda$ die Wellenlänge des Lichts und $\Delta \lambda$ den Wellenlängenabstand an, bei welchem eine andere Wellenlänge von $\lambda$ bei der Beugung noch unterscheidbar ist.\textsuperscript{\cite{anleitung}}
 Das Auflösungsvermögen lässt sich außerdem auch wie folgt ausdrücken:
 \begin{align}
 a = N \cdot m 
@@ -263,7 +263,7 @@ Die Intensitätsverteilung für ein Sinusgitter ist dementsprechend:
 I = \left| \mathscr{F}\left[ g(x) \right]\right| ^2 = \sinc^2 \left(bk \right) + \frac{m^2}{4}\cdot\sinc\left[  b \left( k + k_0\right) \right] + \frac{m^2}{4}\cdot\sinc\left[  b \left( k - k_0\right) \right]
 \end{align}
 
-\gra{Sinusgitter}{Fraunhoferbeugungsmuster für ein dünnes Sinusgitter \label{Sinusgitter} \cite{2}}
+\gra{Sinusgitter}{Fraunhoferbeugungsmuster für ein dünnes Sinusgitter \label{Sinusgitter} \textsuperscript{\cite{2}}}
 
 Aus Abbildung \ref{Sinusgitter} ist ersichtlich, dass es drei Hauptmaxima an den Stellen $k = 0$ 
 sowie $ k = \pm 2 \pi z $ (wobei $z$ die Entfernung zum Sinusgitter ist). Die Intensitäten der Maxima 1. Ordnung entsprechen dabei einem Viertel der Intensität des Maximums 0. Ordnung. Die Aperturfunktion kann mit \ref{Fourier1} wie folgt ausgedrückt werden:
@@ -275,9 +275,9 @@ g\left( x\right) = \sqrt{I_0} + \sqrt{I_1}\cdot\cos\left( \frac{2 \pi x}{K}\righ
 
 \subsection{Phasengitter}\label{phasengitter}
 
-Während Amplitudegitter lediglich die Amplitude gebeugten Lichtes modulieren, beeinflussen optische Gitter die Phase des durchlaufenden Lichts durch Variationen im Brechungsindex, während kein Intensitätsverlust statt findet. In Abbildung \ref{Phasengitter} ist das Fraunhoferbeugungsmuster eines Sinus-Phasengitters dargestellt.
+Während Amplitudengitter lediglich die Amplitude gebeugten Lichtes modulieren, beeinflussen optische Gitter die Phase des durchlaufenden Lichts durch Variationen im Brechungsindex, während kein Intensitätsverlust stattfindet. In Abbildung \ref{Phasengitter} ist das Fraunhoferbeugungsmuster eines Sinus-Phasengitters dargestellt.
 
-\gra{Phasengitter}{Fraunhoferbeugungsmuster für ein Sinus - Phasengitter \label{Phasengitter} \cite{1}}
+\gra{Phasengitter}{Fraunhoferbeugungsmuster für ein Sinus - Phasengitter \label{Phasengitter} \textsuperscript{\cite{1}}}
 
 
 Die Aperturfunktion eines solchen Gitters ist wie folgt gegeben:
@@ -300,12 +300,12 @@ I_q \left(k \right) = J_q ^2\frac{m}{2}
 \subsection{Ultraschallphasengitter und Raman-Nath-Theorie}
 \label{Raman-Nath}
 
-Eine laufende Schallwelle verursacht periodische Dichteschwankungen in einem Medium, was wiederum periodische Schwankungen des Brechungsindexes zur Folge hat. Trifft ein kohärenter, paralleler Lichtstrahl (in diesem Experiment ein Helium-Neon-Laser) nun senkrecht zur Ultraschallwelle auf das Medium, tritt das Licht phasenversetzt aus und im Fernfeld führt diese verzerrte Phasenfront zu einer Überlagerung und einem Beugungsbild \cite{anleitung}. Der Brechungsindex $n$ eines schalldurchsetzten Mediums mit Schall der Wellenlänge $\Gamma$ ist gegeben durch:
+Eine laufende Schallwelle verursacht periodische Dichteschwankungen in einem Medium, was wiederum periodische Schwankungen des Brechungsindexes zur Folge hat. Trifft ein kohärenter, paralleler Lichtstrahl (in diesem Experiment ein Helium-Neon-Laser) nun senkrecht zur Ultraschallwelle auf das Medium, tritt das Licht phasenversetzt aus und im Fernfeld führt diese verzerrte Phasenfront zu einer Überlagerung und einem Beugungsbild.\textsuperscript{\cite{anleitung}} Der Brechungsindex $n$ eines schalldurchsetzten Mediums mit Schall der Wellenlänge $\Lambda$ ist gegeben durch:
 
 \begin{align}
-n\left(x \right) = n_0 + \Delta n \cdot \sin \left(\frac{2 \pi x}{\Gamma} \right) 
+n\left(x \right) = n_0 + \Delta n \cdot \sin \left(\frac{2 \pi x}{\Lambda} \right) 
 \end{align}
-Die Intensität des Schalls $S$ ist proportional zum Quadrat der an der Ultraschallzelle angelegten Spannung $ U$. Dies bedeutet, dass durch Anlegen verschiedener Spannungen die Dichte $\rho$ und damit der Brechungsindex variiert werden können \cite{anleitung}:
+Die Intensität des Schalls $S$ ist proportional zum Quadrat der an der Ultraschallzelle angelegten Spannung $ U$. Dies bedeutet, dass durch Anlegen verschiedener Spannungen die Dichte $\rho$ und damit der Brechungsindex variiert werden können: \textsuperscript{\cite{anleitung}}
 
 \begin{align}
 U^2 \propto S \propto \left( \frac{\Delta n}{n -1} \right)^2 = \left( \frac{\Delta \rho}{\rho_0}\right)^2  
@@ -324,7 +324,7 @@ Die Winkel, unter denen die Peaks des Beugungsmusters beobachtet werden, können
 \sin\left( \Theta\right) = \pm m \frac{\lambda}{\Lambda}
 \end{align}
 
-Gleichung \ref{23} wird außerdem zu \cite{rana}:
+Gleichung \ref{23} wird außerdem zu: \textsuperscript{\cite{rana}}
 
 \begin{align}
 I_m = J_m^2 \left( \frac{\Delta n D 2 \pi}{\lambda} \right) = J_m^2\left(\alpha U \right) 
@@ -332,7 +332,7 @@ I_m = J_m^2 \left( \frac{\Delta n D 2 \pi}{\lambda} \right) = J_m^2\left(\alpha 
 \newpage
 \section{Genereller Versuchsaufbau} \label{Aufbau}
 
-\gra[1]{Versuchsaufbau}{Versuchsaufbau \label{Versuchsaufbau} \cite{anleitung}}
+\gra[1]{Versuchsaufbau}{Versuchsaufbau \label{Versuchsaufbau} \textsuperscript{\cite{anleitung}}}
 
 In Abbildung \ref{Versuchsaufbau} ist der generelle Versuchsaufbau dargestellt, der in den eintelnen Versuchsteilen angepasst wird.
 Der Laserstrahl eines Helium-Neon-Lasers mit der Wellenlänge $\lambda = 632.8 nm$ wird nach Aufteilen durch einen Strahlteiler  teilweise durch eine erste Sammellinse (Linse 1) aufgeweitet und beim Treffen auf eine zweite Sammellinse (Linse 2), welche im Abstand der Summe der beiden Brennweiten steht, parallelisiert. Das Lichtbündel wird dann nach Durchlauf durch eine Blende an einem Gitter (je nach Versuchsaufbau Sinus-, Amplituden-, oder Phasengitter) gebeugt und trifft auf einen rotierenden Spiegel. Auf Grund der Drehung wird das Beugungsmuster 12.5 mal pro Sekunde auf die Photodiode (Diode 2) projiziert. Das detektierte Signal wird verstärkt und an einem Oszilloskop, das mit einem Computer verbunden ist analysiert. Das Oszilloskop wird durch das Signal der ersten Photodiode getriggert, die das Signal des ungebeugten Lichtstrahls, das nach dem Strahlteiler direkt auf den rotierenden Spiegel trifft, detektiert.
@@ -859,6 +859,37 @@ In den ersten beiden Versuchsteilen zum Untersuchen des Sinusgitters und der Amp
 \centering
 \includegraphics[width=0.9\textwidth]{figures/Laborbuch1.pdf}
 \end{minipage}
+\newpage
+\subsection{Programmcode}
+Unsere Auswertung wurde mit der Programmiersprache R gemacht. Im Folgenden ist der Programmcode.
+\subsubsection{auswertung.R}\label{auswertungR}
+\lstinputlisting[language=R]{r_files/auswertung.R}
+\subsubsection{auswertung2.R}\label{auswertung2}
+\lstinputlisting[language=R]{r_files/auswertung2.R}
+\subsubsection{auswertung3.R}\label{auswertung3}
+\lstinputlisting[language=R]{r_files/auswertung3.R}
+\subsubsection{readFiles.R}\label{readFiles}
+\lstinputlisting[language=R]{r_files/readFiles.R}
+\subsubsection{linearfit.R}\label{linearfit}
+\lstinputlisting[language=R]{r_files/linearfit.R}
+\subsubsection{gausfit.R}\label{gausfit}
+\lstinputlisting[language=R]{r_files/gausfit.R}
+\subsubsection{gitterkonstanten.R}\label{gitterkonstanten}
+\lstinputlisting[language=R]{r_files/gitterkonstanten.R}
+\subsubsection{besselsquare.R}\label{besselsquare}
+\lstinputlisting[language=R]{r_files/besselsquare.R}
+\subsubsection{aperturfunktion.R}\label{aperturfunktion}
+\lstinputlisting[language=R]{r_files/aperturfunktion.R}
+\subsubsection{aperturfunktion-intersect.R}\label{aperturfunktion-intersect}
+\lstinputlisting[language=R]{r_files/aperturfunktion_intersect.R}
+\subsubsection{round.R}\label{round}
+\lstinputlisting[language=R]{r_files/round.R}
+\subsubsection{Zeiteichung-linearer-Fit.R}\label{Zeiteichung}
+\lstinputlisting[language=R]{r_files/Zeiteichung_linearer_Fit.R}
+\subsubsection{Zeiteichung-linearer-Fit-ultraschall.R}\label{Zeiteichung-ultraschall}
+\lstinputlisting[language=R]{r_files/Zeiteichung_linearer_Fit_ultraschall.R}
+\subsubsection{ultraschall-wellenlaenge.R}\label{ultraschall-wellenlaenge}
+\lstinputlisting[language=R]{r_files/ultraschall-wellenlaenge.R}
 \newpage
 \listoffigures
 

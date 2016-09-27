@@ -79,7 +79,7 @@ ylim=c(min(c(ypeaksm3,ypeaksm2,ypeaksm1,ypeaks0,ypeaksp1,ypeaksp2,ypeaksp2)),max
 colors=c("darkred","green","black","deeppink","blue","blueviolet","darkgreen")
 
 par(mar=c(5,5,1,2))
-plotCI(x=U,ypeaksm3,pch=4,cex=0.6,bty="l",col=colors[1],ylim=ylim,ylab="Î",xlab="U / V",uiw=sypeaksm3)
+plotCI(x=U,ypeaksm3,pch=4,cex=0.6,bty="l",col=colors[1],ylim=ylim,ylab="??",xlab="U / V",uiw=sypeaksm3)
 plotCI(x=U,ypeaksm2,pch=4,cex=0.6,bty="l",col=colors[2],uiw=sypeaksm2,add=TRUE)
 plotCI(x=U,ypeaksm1,pch=4,cex=0.6,bty="l",col=colors[3],uiw=sypeaksm1,add=TRUE)
 plotCI(x=U,ypeaks0,pch=4,cex=0.6,bty="l",col=colors[4],uiw=sypeaks0,add=TRUE)
