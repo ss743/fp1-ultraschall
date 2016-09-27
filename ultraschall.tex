@@ -445,7 +445,7 @@ In diesem Teil des Versuchs wird der generelle Aufbau aus Abschnitt \ref{Aufbau}
 
 \label{Happyisttoll}
 
-Da das Oszilloskop eine Zeitdifferenz zwischen den Maxima angibt und keine Winkel, wird mit einem Referenzgitter mit bekannter Gitterkonstante zunächst eine Eichung des Winkel-Zeit-Verhältnisses durchgeführt und ein Umrechnungsfaktor bestimmt. Wir tragen hierfür die Zeit über die theoretische Lage der Maxima auf, die sich aus \[\sin\theta=\frac{n\lambda}{K_R}\] mit $K_R = 0.125 mm$ ergibt und führen einen linearen Fit durch.
+Da das Oszilloskop eine Zeitdifferenz zwischen den Maxima angibt und keine Winkel, wird mit einem Referenzgitter mit bekannter Gitterkonstante zunächst eine Eichung des Winkel-Zeit-Verhältnisses durchgeführt und ein Umrechnungsfaktor bestimmt. Wir tragen hierfür die Zeit über die theoretische Lage der Maxima auf, die sich aus \[\sin\theta=\frac{n\lambda}{K_R}\] mit $K_R = 0.125 mm$ ergibt und führen einen linearen Fit durch (siehe \ref{Zeiteichung}).
 
 \vskip 10 pt
  \begin{table}[h!]
@@ -474,15 +474,15 @@ a &= (74.35\pm0.05)\,\frac1{\mathrm{s}}&
 \end{align*}
 
 \subsubsection{Bestimmung verschiedener Gitterkonstanten}\label{amplitudengitterkonstante}
-Wir haben für 5 verschiedenen unbekannte Amplitudengitter Interferenzmuster aufgenommen und bestimmen nun aus diesen die jeweilige Gitterkonstante. Die Zeitabhängigkeit der Interferenzmuster werden nun mithilfe des in \ref{Happyisttoll} berechneten Wertes in eine $\sin\theta$-Abhängigkeit umgerechnet. 
+Wir haben für 5 verschiedenen unbekannte Amplitudengitter Interferenzmuster aufgenommen und bestimmen nun aus diesen die jeweilige Gitterkonstante. Die Zeitabhängigkeit der Interferenzmuster werden nun mithilfe des in \ref{Happyisttoll} berechneten Wertes in eine $\sin\theta$-Abhängigkeit umgerechnet. (siehe \ref{Zeiteichung})
 
-Durch Gaußfits mit der Formel $$A(x)=C+N\cdot\frac1{\sqrt{2\pi}\sigma}\cdot\exp{\frac{-(\sin\theta-\mu)^2}{2\sigma^2}}$$ an die im Beugungsmuster sichtbaren Maxima wird die Position aus dem Mittelwert $\mu$ der Gaußfunktion und die Amplitude der Maxima aus der multiplikativen Fitkonstante $N$ bestimmt. In den Abbildungen \ref{amp1} - \ref{amp45} sind die Beugungsmuster und die gefitteten Gaußkurven zu sehen. Die Daten der Fits sind im Anhang unter \ref{tabellen} zu finden. 
+Durch Gaußfits mit der Formel $$A(x)=C+N\cdot\frac1{\sqrt{2\pi}\sigma}\cdot\exp{\frac{-(\sin\theta-\mu)^2}{2\sigma^2}}$$ an die im Beugungsmuster sichtbaren Maxima wird die Position aus dem Mittelwert $\mu$ der Gaußfunktion und die Amplitude der Maxima aus der multiplikativen Fitkonstante $N$ bestimmt (siehe \ref{auswertungR}). In den Abbildungen \ref{amp1} - \ref{amp45} sind die Beugungsmuster und die gefitteten Gaußkurven zu sehen. Die Daten der Fits sind im Anhang unter \ref{tabellen} zu finden. 
 \vskip 30 pt
 \graTwo[0.49]{amplitudengitter1a}{amplitudengitter1b}{Bestimmung der Maxima des ersten Amplitudengitters (Verschiedene Skalierungen, um alle Maxima gut erkennen zu können)\label{amp1}}
 \graTwo[0.49]{amplitudengitter2}{amplitudengitter3}{\label{amp23}Bestimmung der Maxima des zweiten und des dritten Amplitudengitters}
 \graTwo[0.49]{amplitudengitter4}{amplitudengitter5}{Bestimmung der Maxima des vierten und des fünften Amplitudengitters\label{amp45}}
 
-Anschließend wird aus den Beugungsordnungen in Abhängigkeit der Positionen der Maxima die Gitterkonstante des jeweiligen Gitters bestimmt (siehe Abbildungen \ref{fitK1} - \ref{fitK5}). 
+Anschließend wird aus den Beugungsordnungen in Abhängigkeit der Positionen der Maxima die Gitterkonstante des jeweiligen Gitters bestimmt (siehe \ref{gitterkonstanten} und Abbildungen \ref{fitK1} - \ref{fitK5}). 
 
 \gra[0.5]{gitterkonstante1}{Bestimmung von $K_1$\label{fitK1}}
 \gra[0.5]{gitterkonstante2}{Bestimmung von $K_2$}
@@ -508,7 +508,7 @@ Wir erhalten nun mit Formel (\ref{K}) die folgenden Werte für die Gitterkonstan
 
 \subsubsection{Auflösungsvermögen}
 
-Aus den berechneten Gitterkonstanten $K_i$ und der Anzahl der sichtbaren Beugungsmaxima lässt sich nun mit den gemessenen Werten für die Blendenbreite $d$ das Auflösungsvermögen (siehe \ref{aufloesung}) $$a=N\cdot m=\frac1K\cdot d\cdot m$$ bestimmen.
+Aus den berechneten Gitterkonstanten $K_i$ und der Anzahl der sichtbaren Beugungsmaxima lässt sich nun mit den gemessenen Werten für die Blendenbreite $d$ das Auflösungsvermögen (siehe \ref{aufloesung}) $$a=N\cdot m=\frac1K\cdot d\cdot m$$ bestimmen. (siehe \ref{gitterkonstanten})
 
 Für das Auflösungsvermögen der einzelnen Gitter erhalten wir folgende Werte:
 \begin{align}
@@ -630,7 +630,7 @@ Zunächst wird bei ausgeschalteter Spannung ein Referenzgitter vermessen, um ein
 
 \subsection{Auswertung}
 \subsubsection{Zeiteichung}
-Wie in \ref{Happyisttoll} haben wir das Referenzgitter mit $K_R=125 \mu m$ zur Zeiteichung benutzt, indem wir die gemessene zeitliche Position der Beugungsmaxima mit der berechneten Position in folgende Beziehung gesetzt haben:
+Wie in \ref{Happyisttoll} haben wir das Referenzgitter mit $K_R=125 \mu m$ zur Zeiteichung benutzt (siehe \ref{Zeiteichung-ultraschall}), indem wir die gemessene zeitliche Position der Beugungsmaxima mit der berechneten Position in folgende Beziehung gesetzt haben:
 $$t=\frac1a\sin\theta$$
 
 \graTwo[0.49]{ultraschall-eichgitter}{ultraschall-zeiteichung}{Interferenzmuster des Referenzgitters und linearer Fit zur Bestimmung des Umrechnungsfaktors\label{simonhatsverkackt}}
@@ -644,14 +644,14 @@ Im restlichen Teil dieser Auswertung werden die Zeiten nun über diesen Faktor i
 
 \subsubsection{Bestimmung der Beugungsmaxima}
 \gra[1]{ultraschall-regenbogen}{Interferenzmuster der Ultraschallwelle für verschiedene Spannungen \label{regenbogen}}
-In Abbildung \ref{regenbogen} sind die Beugungsbilder an der Ultraschallwelle für verschiedene Spannungen aufgetragen. An diese Beugungsmuster haben wir eine Summe von Gaußfunktionen gefittet.
+In Abbildung \ref{regenbogen} sind die Beugungsbilder an der Ultraschallwelle für verschiedene Spannungen aufgetragen. An diese Beugungsmuster haben wir eine Summe von Gaußfunktionen gefittet. (siehe \ref{auswertung2})
 \begin{align*}
 	I(\sin\theta)&=C+\sum_{i=1}^{N}A_i\frac{1}{\sqrt{2\pi}\sigma_i}\exp{\frac{-(\sin\theta-\mu_i)}{2\sigma_i^2}}
 \end{align*} 
 Die Ergebnisse der Fits sind im Anhang unter \ref{fitergebnisse} zu finden. Bei hohen Spannungen lassen sich bis zu 3 Beugungsordnungen sehen und sinnvoll an die Daten zu fitten, wobei bei niedrigen Spannungen nur noch das nullte Hauptmaximum sinnvoll zu bestimmen ist. 
 
 \subsubsection{Berechnung der Intensitäten an den Maxima}\label{maxima}
-Zur Überprüfung der Raman-Nath-Theorie (siehe \ref{Raman-Nath-Auswertung}) werden die Intensitäten der Intensitätsmaxima bei verschiedenen Spannungen benötigt. Da jedoch nicht für jede Spannung alle Beugungsmaxima zu sehen sind, wurde für jedes Maximum über alle für dieses Maximum bestimmten Positionen gewichtet gemittelt und an den Kurven, an denen diese Beugungsordnung nicht zu erkennen ist, für die Intensität der Funktionswert des Fits an der gemittelten Position benutzt. Nun werden die Intensitäten $I$ mit $\hat{I}=\frac{I}{I_0}$ genormt. $I_0$ ist hierbei die Intensität am Maximum nullter Ordnung bei der Spannung $U=0$V.
+Zur Überprüfung der Raman-Nath-Theorie (siehe \ref{Raman-Nath-Auswertung}) werden die Intensitäten der Intensitätsmaxima bei verschiedenen Spannungen benötigt. Da jedoch nicht für jede Spannung alle Beugungsmaxima zu sehen sind, wurde für jedes Maximum über alle für dieses Maximum bestimmten Positionen gewichtet gemittelt und an den Kurven, an denen diese Beugungsordnung nicht zu erkennen ist, für die Intensität der Funktionswert des Fits an der gemittelten Position benutzt. Nun werden die Intensitäten $I$ mit $\hat{I}=\frac{I}{I_0}$ genormt. $I_0$ ist hierbei die Intensität am Maximum nullter Ordnung bei der Spannung $U=0$V. (siehe \ref{auswertung2},\ref{auswertung3})
 
 \subsubsection{Überprüfung der Raman-Nath-Theorie}\label{Raman-Nath-Auswertung}
 Die Raman-Nath-Theorie (siehe \ref{Raman-Nath}) besagt, dass sich die Intensität in Abhängigkeit der Spannung nach folgender Formel verhält:
@@ -662,7 +662,11 @@ $J_m(x)$ sind hierbei die Besselfunktionen.
 
 \gra[1]{ultraschall-besselfits}{Normierte Intensität der Beugungsmaxima über die Spannung mit Besselquadratfits zur Überprüfung der Raman-Nath-Theorie\label{besselfits}}
 
+<<<<<<< HEAD
 In Abbildung \ref{besselfits} wird nun die normierte Intensität über die Spannung aufgetragen. Anschließend werden quadrierte Besselfunktionen an die Datensätze gefittet. Wir schätzen den Fehler auf die Datenpunkte ab durch $s_{I}=\frac12\left|I(\sin\theta+s_{\sin\theta})-I(\sin\theta-s_{\sin\theta})\right|$ und gewichten den Fit mit diesen Fehlern. Bei $m=3$ konnten wir keinen gewichteten Fit durchführen, da dieser aufgrund negativer Intensitätswerte fehlschlug, der ungewichtete Fit jedoch funktionierte. Tabelle \ref{besselfitdaten} zeigt die Parameter der gefitteten Funktionen.
+=======
+In Abbildung \ref{besselfits} wird nun die normierte Intensität über die Spannung aufgetragen. Anschließend werden quadrierte Besselfunktionen an die Datensätze gefittet (siehe \ref{auswertung3}). Wir schätzen den Fehler auf die Datenpunkte ab durch $s_{I}=\frac12\left|I(\sin\theta+s_{\sin\theta})-I(\sin\theta-s_{\sin\theta})\right|$ und wichten den Fit mit diesen Fehlern. Bei $m=3$ konnten wir keinen gewichteten Fit durchführen, da dieser aufgrund negativer Intensitätswerte fehlschlug, der ungewichtete Fit jedoch funktionierte. Tabelle \ref{besselfitdaten} zeigt die Parameter der gefitteten Funktionen.
+>>>>>>> 5ad62207cd476b16787d88a9a3b867bae35b0ced
 
 \begin{table}[h!]
 	\centering{
